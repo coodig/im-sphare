@@ -1,4 +1,3 @@
-
 @extends('layouts.auth')
 
 @section('title', 'Signin')
@@ -13,7 +12,7 @@
     <button type="submit">Login</button>
 
     <div class="link-group">
-        <a href="{{ route('password.request') }}">Forgot Password?</a>
+        {{-- <a href="{{ route('password.request') }}">Forgot Password?</a> | --}}
         <a href="{{ route('signup.show') }}">Create Account</a>
     </div>
 </form>

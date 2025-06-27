@@ -1,0 +1,109 @@
+/* layout.css */
+
+/* ==== STRUCTURE WRAPPER ==== */
+.layout {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+}
+
+/* ==== SIDEBAR ==== */
+.sidebar {
+    width: 220px;
+    background-color: var(--sidebar-bg);
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    top: 60px; /* Navbar height */
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+    border-right: 1px solid var(--border-color);
+}
+.sidebar a {
+    color: var(--text-color);
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+.sidebar a:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+.sidebar-bottom form,
+.sidebar-bottom a {
+    margin-top: 1rem;
+}
+
+/* ==== MAIN-WRAPPER ==== */
+.main-wrapper {
+    margin-left: 220px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 100vh;
+}
+
+/* ==== NAVBAR ==== */
+.custom-navbar {
+    background-color: var(--navbar-bg);
+    color: var(--text-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 20px;
+    border-bottom: 1px solid var(--border-color);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+}
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo {
+    width: 28px;
+    height: 28px;
+}
+.search input {
+    padding: 6px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    outline: none;
+}
+.search button {
+    margin-left: 4px;
+}
+
+/* ==== MAIN CONTENT ==== */
+.main-content {
+    padding: 20px;
+    flex: 1;
+    margin-top: 60px;
+    overflow-y: auto;
+}
+
+/* ==== FOOTER ==== */
+.footer {
+    background-color: var(--footer-bg);
+    color: var(--text-color);
+    padding: 12px;
+    text-align: center;
+    font-size: 14px;
+    border-top: 1px solid var(--border-color);
+    width: 100%;
+    margin-top: auto;
+}
+.footer a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
