@@ -23,3 +23,10 @@ link iocn : line-md:link
 logout icon : line-md:log-out
 
 sunny translation : line-md:moon-filled-to-sunny-filled-loop-transition
+
+
+star icon : line-md:star-alt-twotone
+star icon color icon : line-md:star-alt-filled
+star icon gray color :line-md:star-alt-filled
+
+tools icon : jam:tools-f

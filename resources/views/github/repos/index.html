@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Folder Explorer UI</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      padding: 30px;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    .explorer {
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 20px;
+      max-width: 600px;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    }
+
+    ul.folder {
+      list-style: none;
+      padding-left: 20px;
+    }
+
+    li {
+      margin: 5px 0;
+      cursor: pointer;
+    }
+
+    .folder-name {
+      font-weight: bold;
+      color: #1a73e8;
+    }
+
+    .file-name {
+      color: #333;
+      margin-left: 20px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .icon {
+      margin-right: 8px;
+    }
+
+    .file-name:hover {
+      text-decoration: underline;
+      color: #278fff;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>📁 Project Explorer</h2>
+  <div class="explorer">
+    <ul class="folder">
+      <li onclick="toggle(this)">
+        <span class="icon">📁</span>
+        <span class="folder-name">app</span>
+        <ul class="folder hidden">
+          <li class="file-name">Http/Controller.php</li>
+          <li class="file-name">Models/User.php</li>
+        </ul>
+      </li>
+
+      <li onclick="toggle(this)">
+        <span class="icon">📁</span>
+        <span class="folder-name">config</span>
+        <ul class="folder hidden">
+          <li class="file-name">app.php</li>
+          <li class="file-name">database.php</li>
+        </ul>
+      </li>
+
+      <li class="file-name">.env</li>
+      <li class="file-name">README.md</li>
+    </ul>
+  </div>
+
+  <script>
+    function toggle(el) {
+      const subFolder = el.querySelector('ul.folder');
+      if (subFolder) {
+        subFolder.classList.toggle('hidden');
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -6,7 +6,13 @@
     <title>Dashboard | {{ config('app.name') }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('asset/css/layout.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('asset/css/theme.css') }}">
+    <link rel="stylesheet" href="{{ asset('asset/css/setting.css') }}">
+    <link rel="stylesheet" href="{{ asset('asset/css/contact.css') }}">
+    <link rel="stylesheet" href="{{ asset('asset/css/profile.css') }}">
+    <link rel="stylesheet" href="{{ asset('asset/css/about.css') }}">
+    <link rel="stylesheet" href="{{ asset('asset/css/components.css') }}">
     <link rel="stylesheet" href="{{ asset('asset/css/github.css')}}">
     {{-- <link rel="stylesheet" href="{{ asset('asset/css/layout.css') }}"> --}}
 
@@ -14,23 +20,6 @@
 </head>
 
 <body>
-    {{-- @include('partials.navbar')
-
-    <div class="layout">
-        <div class="sidebar">
-            @include('partials.sidebar')
-        </div>
-        <div class="main-wrapper">
-            <div class="main-content">
-                <div class="content">
-                    @yield('content')
-                </div>
-            </div>
-            <div class="footer">
-                @include('partials.footer')
-            </div>
-        </div>
-    </div> --}}
     <div class="layout">
         <div class="sidebar">
             @include('partials.sidebar')
@@ -43,12 +32,12 @@
                 @yield('content')
             </div>
 
-            @auth
+            {{-- @auth --}}
 
             <div class="footer">
                 @include('partials.footer')
             </div>
-            @endauth
+            {{-- @endauth --}}
         </div>
     </div>
 

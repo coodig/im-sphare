@@ -1,0 +1,13 @@
+.setting-header{
+    text-align: end;
+}
+.setting-container{
+    display: column;
+    padding: 25px;
+    margin: 25px;
+}
+
+.api-token{
+    display:  flex;
+}
+

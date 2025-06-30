@@ -1,43 +1,43 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="dashboard-container">
+    <div class="dashboard-container">
 
-    <h2>Your GitHub Repositories</h2>
+        <h2>Your Projects</h2>
 
-    <div id="repoContainer">
-        @foreach($repos as $repo)
-        <div class="card">
+        <div id="repoContainer">
+            @foreach($repos as $repo)
+                <div class="card">
 
+                    <h3><strong>{{ ucfirst($repo['name']) }}</strong></h3>
 
-            <strong>{{ ucfirst($repo['name']) }}</strong>
-            {!! $repo['private']
-            ? '<iconify-icon icon="lets-icons:lock-duotone"></iconify-icon>'
-            : 'Public'
-            !!}
-            <br>
+                    {!! $repo['private']
+                ? '<iconify-icon icon="lets-icons:lock-duotone"></iconify-icon>'
+                : 'Public'
+                    !!}
+                    <br>
 
-            <a href="{{$repo['html_url']}}" target="_blank">Visit Repo</a><br>
-            <a href="https://github.com/{{ $repo['owner']['login'] }}/{{
-                        $repo['name']
-                                            }}/archive/refs/heads/{{ $repo['default_branch'] }}.zip" download>
-                ⬇️ Download ZIP
-            </a>
-            <br>
-            🌟 Stars: {{ $repo['stargazers_count'] }}<br>
-            🍴 Forks: {{ $repo['forks_count'] }} <br>
-            👀 Watchers: {{ $repo['watchers_count'] }}<br>
-            📅 Last Push: {{ \Carbon\Carbon::parse($repo['pushed_at'])->diffForHumans() }}
+                    <a href="{{$repo['html_url']}}" target="_blank">Visit Repo</a><br>
+                    <a href="https://github.com/{{ $repo['owner']['login'] }}/{{
+                $repo['name']
+                                                    }}/archive/refs/heads/{{ $repo['default_branch'] }}.zip" download>
+                        ⬇️ Download ZIP
+                    </a>
+                    <br>
+                    {{-- 🌟 Stars: {{ $repo['stargazers_count'] }}<br>
+                    🍴 Forks: {{ $repo['forks_count'] }} <br>
+                    👀 Watchers: {{ $repo['watchers_count'] }}<br> --}}
+                    📅 Last Push: {{ \Carbon\Carbon::parse($repo['pushed_at'])->diffForHumans() }}
 
-            <div class="repo-meta">📅 Created at : {{ \Carbon\Carbon::parse($repo['created_at'])->diffForHumans() }}
-            </div>
+                    <div class="repo-meta">📅 Created at : {{ \Carbon\Carbon::parse($repo['created_at'])->diffForHumans() }}
+                    </div>
 
-            <button><a href="{{ route('repos.show')}}">show details</a></button>
+                    <button><a href="{{ route('repos.show')}}">details</a></button>
 
+                </div>
+            @endforeach
         </div>
-        @endforeach
     </div>
-</div>
 @endsection
 
 
@@ -49,4 +49,3 @@
 {{-- <button onclick="fetchReadme('${repo.owner.login}', '${
                                                                 repo.name
                                                               }', '${repo.__token}')">Show README</button> --}}
-

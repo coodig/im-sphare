@@ -15,6 +15,9 @@
     --muted-text: #7f8c8d;
     --success: #2ecc71;
     --danger: #e74c3c;
+    --warning: #ffc107;
+    --info: #17a2b8;
+
     --main-bg: #f5f6fa;
 
     --btn-primary-bg: #007bff;
@@ -50,9 +53,12 @@ body.dark-theme {
     --muted-text: #a0a0a0;
     --success: #27ae60;
     --danger: #c0392b;
+    --warning: #b1880c;
+    --info: #0d6b7a;
+
     --main-bg: #121212;
 
-     --btn-primary-bg: #3399ff;
+    --btn-primary-bg: #3399ff;
     --btn-primary-text: #ffffff;
     --btn-primary-hover: #1a75ff;
     --btn-primary-disabled: #3a3b3c;

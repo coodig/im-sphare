@@ -1,0 +1,133 @@
+.contact-container {
+    margin: 30px 20px;
+    padding: 20px 10px;
+}
+
+.contact-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 100px;
+    flex-wrap: wrap;
+}
+
+.contact-form {
+    width: 45%;
+    flex: 1 1 45%;
+    background-color: var(--card-bg);
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+.contact-form label{
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: var(--text-color);
+}
+.contact-form h2 {
+    text-align: center;
+    font-size: x-large;
+}
+
+.contact-form-items {
+    padding: 5px 45px;
+    margin-top: 10px;
+    padding-top: 40px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid var(--card-bg);
+    border-radius: 6px;
+    font-size: 15px;
+    transition: border-color 0.3s;
+    outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form button {
+    width: 100%;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+.contact-footer {
+    text-align: center;
+    justify-content: center;
+    font-size: 50px;
+}
+
+.contact-footer p {
+    font-weight: 900;
+    margin-top: 50px;
+}
+
+.map-container {
+    flex: 1 1 45%;
+    width: 45%;
+    border-radius: 20px;
+    padding: 0px 0px;
+
+}
+
+.map-wrapper {
+    height: 620px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.map-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.map-button {
+    text-align: center;
+    margin: 10px;
+}
+
+.view-map-btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 28px;
+    display: inline-block;
+}
+
+.view-map-btn:hover {
+    background-color: #0056b3;
+}
+
+.contact-footer-1{
+    margin: 20px 0px;
+}

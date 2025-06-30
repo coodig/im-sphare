@@ -3,7 +3,6 @@
 use App\Http\Controllers\authentication\ForgotPassController;
 use App\Http\Controllers\authentication\LogInController;
 use App\Http\Controllers\authentication\LogoutController;
-// use App\Http\Controllers\authentication\SignInController;
 use App\Http\Controllers\authentication\SignUpController;
 use Illuminate\Config\Repository;
 use Illuminate\Support\Facades\Route;

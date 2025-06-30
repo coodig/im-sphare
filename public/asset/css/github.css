@@ -9,6 +9,10 @@
     margin-top: 20px;
 }
 
+#repoContainer .card{
+    text-align: center;
+    justify-content: center;
+}
 .repo-name {
     font-size: 1.2rem;
     font-weight: bold;
@@ -44,3 +48,174 @@ button {
 }
 
 /* Repo ended */
+
+/* Repository detail page start*/
+.repository-detail-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.repository_detail_header{
+    text-align: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.repository_title{
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.repository_description{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Repository detail page end*/
+
+.repository_detail_section{
+    flex-wrap: wrap;
+    gap: 10px;
+    display: flex;
+    padding: 10px;
+    margin-top: 20px ;
+}
+
+.div-1 {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    flex: 2;
+    min-width: 70%;
+    line-height: 1.8;
+    padding: 25px 40px;
+    border-radius: 10px;
+}
+
+.div-2 {
+    flex: 1;
+    min-width: calc(30%-10px);
+    padding: 30px 40px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+     border-radius: 10px;
+    list-style: none;
+}
+
+/* Headings */
+.div-1 h1 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.div-1 h2 {
+    font-size: 22px;
+    color: #34495e;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+/* Paragraphs */
+.div-1 p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Lists */
+.div-1 ul {
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.div-1 ul li {
+    margin-bottom: 6px;
+}
+
+/* Code blocks */
+.div-1 pre {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.div-1 code {
+    white-space: pre-wrap;
+    color: #d35400;
+}
+
+/* Links */
+.div-1 a {
+    color: #2980b9;
+    text-decoration: none;
+}
+
+.div-1 a:hover {
+    text-decoration: underline;
+}
+
+/* Horizontal line */
+.div-1 hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+
+/* Section Headings */
+.div-2 h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+/* Language List */
+.language-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+}
+
+.language-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 14px;
+    justify-content: space-between;
+}
+
+.lang-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+/* Stats List */
+.github-stats {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.github-stats li {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+/* Horizontal line */
+.div-2 hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+.percent {
+    color: #555;
+    font-size: 13px;
+}

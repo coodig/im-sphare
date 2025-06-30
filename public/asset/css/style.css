@@ -8,6 +8,11 @@
     padding: 0;
 }
 
+::selection {
+  background-color: var(--accent-color); /* yellow background */
+  color: #000000;           /* black text */
+}
+
 /* :root {
   --primary-color: #00bcd4;
   --accent-color: #ff7043;
@@ -143,6 +148,7 @@ a:hover {
 .sidebar-content a iconify-icon {
     font-size: 25px;
 }
+
 .sidebar-content .sidebar-top,
 .sidebar-content .sidebar-bottom {
     display: flex;
@@ -290,6 +296,7 @@ a:hover {
 
 .search iconify-icon{
     font-size: 25px;
+    /* color: var(--text-color); */
 }
 
 /* Search bar end */
@@ -434,7 +441,6 @@ a:hover {
 }
 
 .card:hover {
-    background-color: var(--accent-color);
     transform: translateY(-5px);
 }
 /* Card started */
@@ -499,9 +505,9 @@ a:hover {
 
 /* brand section ended */
 
-iconify-icon{
+/* iconify-icon{
     font-size: 25px;
-}
+} */
 
 .red {
     color: var(--accent-color);
@@ -557,3 +563,21 @@ iconify-icon{
     transform: rotate(180deg);
     /* transition: transform 0.3s ease; */
 }
+
+.page-header{
+    text-align: center;
+    font-size: 60px;
+    /* font-family: ; */
+    font-weight: 900;
+    margin: 10px 0;
+    /* margin-top: 10px; */
+    width: 100%;
+}
+
+.page-description{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+

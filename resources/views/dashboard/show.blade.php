@@ -3,7 +3,7 @@
 @section('content')
 <div class="dashboard-container">
 
-    <div class="dashboard-header">
+    <div class="page-name">
         <h2>Welcome to IMSPhare Dashboard show page</h2>
         <p>Manage your projects, repositories, and activities.</p>
     </div>

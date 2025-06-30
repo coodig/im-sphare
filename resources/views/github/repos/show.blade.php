@@ -1,82 +1,172 @@
-{{-- @extends('layouts.app')
-
-@section('content')
-<div class="dashboard-container">
-
-    <h2>Your GitHub Repositories</h2>
-
-    <div id="repoContainer">
-        @foreach($repos as $repo)
-        <div class="card">
-            <strong>{{ $repo['name'] }}</strong> ({{ $repo['private'] ? 'Private' : 'Public' }})<br>
-            <a href="{{$repo['html_url']}}" target="_blank">Visit Repo</a><br>
-            <a href="https://github.com/{{ $repo['owner']['login'] }}/{{
-                                    $repo['name']
-                }}/archive/refs/heads/{{ $repo['default_branch'] }}.zip" download>
-                ⬇️ Download ZIP
-            </a>
-
-            🌟 Stars: {{ $repo['stargazers_count'] }}<br>
-            🍴 Forks: {{ $repo['forks_count'] }} <br>
-            👀 Watchers: {{ $repo['watchers_count'] }}<br>
-            📅 Last Push: {{ \Carbon\Carbon::parse($repo['pushed_at'])->diffForHumans() }}
-
-
-
-
-            card.innerHTML = `
-            <div class="repo-link">
-                <a href="${repo.html_url}.git" title="git clone ${repo.clone_url}" onclick="copyToClipboard('git clone ${
-                                          repo.clone_url
-                                        }'); return false;">
-                    📋 Clone Repo
-                </a>
-            </div>
-            <div class="repo-meta">📈 Last Push: ${new Date(
-                repo.pushed_at
-                ).toLocaleDateString()}</div>
-            <div class="repo-meta">📅 Created: ${new Date(
-                repo.created_at
-                ).toLocaleDateString()}</div>
-            <div class="repo-meta">🔁 Default Branch: ${repo.default_branch}</div>
-            <div class="repo-meta">🏷️ License: ${repo.license?.name ?? "None"}</div>
-            <div class="repo-meta">🚧 Open Issues: ${repo.open_issues_count}</div>
-            <div class="repo-meta">👥 Contributors: <span id="contributors-${
-                            repo.name
-                          }">Loading...</span></div>
-            <div class="language-bar" id="bar-${repo.name}"></div>
-            <ul class="language-list" id="list-${repo.name}"></ul>
-            <button onclick="copyToClipboard('git clone ${
-                                    repo.clone_url
-                                  }')">📁 Copy Git Clone Command</button>
-            <button onclick="getLatestReleaseZip('${repo.owner.login}', '${repo.name}', '${
-                                    repo.__token
-                                  }')">📦 Download Release ZIP</button>
-
-            <button onclick="fetchReadme('${repo.owner.login}', '${
-                                    repo.name
-                                  }', '${repo.__token}')">Show README</button>
-            `;
-
-            container.appendChild(card);
-        </div>
-        @endforeach
-    </div>
-</div>
-@endsection --}}
-
+{{--
 @extends('layouts.app')
 
 @section('content')
-    <div class="dashboard-container">
-        <div class="repo-name">
-            <h1>show repo page</h1>
-            {{-- <strong>{{ ucfirst($repo['name']) }}</strong>
-                            {!! $repo['private']
-                        ? '<iconify-icon icon="lets-icons:lock-duotone"></iconify-icon>'
-                        : 'Public'
-                !!}
-                            <br> --}}
-        </div>
+<div class="dashboard-container">
+    <div class="repo-name">
+        <h1>show repo page</h1>
     </div>
+</div>
+@endsection --}}
+@extends('layouts.app')
+
+@section('content')
+
+    {{-- <div class="page about-page"> --}}
+        <div class="repository_detail_container">
+
+            <div class="repository_detail_header">
+                <div class="repository_title">Project Name</div>
+                <div class="repository_description">
+                    We’d love to hear from you! Whether you have a question, collaboration idea or just want to Say Hello —
+                    drop us a message.
+                </div>
+
+            </div>
+
+            <div class="repository_detail_section">
+
+                <div class="div-1">
+                    <h1>My Project Name</h1>
+
+                    <h2>🔍 Description</h2>
+                    <p>This is a dummy project used for showcasing repository details. You can replace this content with
+                        your actual project documentation. The goal of this project is to demonstrate how to display and
+                        manage repository-related information in a user-friendly way.</p>
+
+                    <hr>
+
+                    <h2>🚀 Features</h2>
+                    <ul>
+                        <li>Display repository name, description, and metadata</li>
+                        <li>User-friendly layout with flex-based design</li>
+                        <li>Responsive structure</li>
+                        <li>Dummy data for testing UI integration</li>
+                    </ul>
+
+                    <hr>
+
+                    <h2>📦 Installation</h2>
+                    <pre><code># Clone the repository
+        git clone https://github.com/your-username/your-repo-name.git
+
+        # Navigate to the project folder
+        cd your-repo-name
+
+        # Install dependencies (if applicable)
+        npm install
+        </code></pre>
+
+                    <hr>
+
+                    <h2>🛠️ Usage</h2>
+                    <pre><code># Start development server
+        npm run dev
+
+        # Or build the project for production
+        npm run build
+        </code></pre>
+
+                    <hr>
+
+                    <h2>📁 Project Structure</h2>
+                    <pre><code>.
+        ├── index.html
+        ├── style.css
+        ├── script.js
+        ├── README.md
+        ├── assets/
+        │   └── images/
+        └── data/
+            └── dummy.json
+        </code></pre>
+
+                    <hr>
+
+                    <h2>👨‍💻 Author</h2>
+                    <p><strong>Name:</strong> Adarsh (replace with your name)<br>
+                        <strong>Portfolio:</strong> <a href="#">your-portfolio-link.com</a>
+                    </p>
+
+                    <hr>
+
+                    <h2>📄 License</h2>
+                    <p>This project is licensed under the MIT License.</p>
+
+                    <hr>
+                    <p><em>Feel free to customize this README.md based on your project details.</em></p>
+                </div>
+
+                <div class="div-2">
+                    <h3>📊 Languages</h3>
+                    <ul class="language-list">
+                        <li><span class="lang-color" style="background-color:#f1e05a;"></span> JavaScript <span
+                                class="percent">55%</span></li>
+                        <li><span class="lang-color" style="background-color:#563d7c;"></span> CSS <span
+                                class="percent">30%</span></li>
+                        <li><span class="lang-color" style="background-color:#e34c26;"></span> HTML <span
+                                class="percent">15%</span></li>
+                    </ul>
+
+                    <hr>
+
+                    <h3>📦 Releases</h3>
+                    <p><strong>Latest:</strong> v1.2.0 <br><small>June 10, 2025</small></p>
+
+                    <hr>
+
+                    <h3>⭐ GitHub Stats</h3>
+                    <ul class="github-stats">
+                        <li>🌟 Stars: <strong>120</strong></li>
+                        <li>🍴 Forks: <strong>45</strong></li>
+                        <li>👁️ Watchers: <strong>80</strong></li>
+                    </ul>
+                </div>
+
+                {{-- <h2>Project Detail</h2> --}}
+
+            </div>
+
+            {{-- <div class="detail_section">
+                <h2>readme</h2>
+                <div class="map-container">
+                    <div class="map-wrapper">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6846.140932325604!2d80.87544765608858!3d26.769266762655167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bf9b7ccef66bd%3A0xadd6c2a91587fda3!2sMahindra%20Narain%20Automobiles%20-%20SUV%20%26%20Commercial%20Vehicle%20Showroom!5e1!3m2!1sen!2sin!4v1751170534426!5m2!1sen!2sin"
+                            style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div> --}}
+
+                {{-- <div class="contact-form">
+                    <h2>Contact Form</h2>
+                    <form action="">
+                        <div class="contact-form-items">
+                            <label for="name">Your Name</label>
+                            <input type="text" name="name" id="name" placeholder="Enter your name" required>
+
+                            <label for="email">Your Email</label>
+                            <input type="email" name="email" id="email" placeholder="Enter your email" required>
+
+                            <label for="subject">Your Subject</label>
+                            <input type="text" name="subject" id="subject" placeholder="Subject of your message" required>
+
+                            <label for="message">Your Message</label>
+                            <textarea name="message" id="message" placeholder="Write your message here..."
+                                required></textarea>
+
+                        </div>
+
+                        <span><button type="submit" class="contact-form-items">Send Us</button></span>
+                    </form>
+
+                </div>
+
+                <div class="contact-footer">
+                    <p>We’re here to support your journey. Whether it’s feedback, questions, or collaboration — feel free to
+                        reach out. Let’s grow together.</p>
+                </div>
+            </div> --}}
+
+        </div>
 @endsection
