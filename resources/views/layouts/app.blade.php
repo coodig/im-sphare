@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
     {{-- <link rel="stylesheet" href="{{ asset('asset/css/layout.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('asset/css/theme.css') }}">
+    <link rel="stylesheet" href="{{ asset('asset/css/home.css') }}">
     <link rel="stylesheet" href="{{ asset('asset/css/setting.css') }}">
     <link rel="stylesheet" href="{{ asset('asset/css/contact.css') }}">
     <link rel="stylesheet" href="{{ asset('asset/css/profile.css') }}">

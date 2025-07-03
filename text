@@ -30,3 +30,10 @@ star icon color icon : line-md:star-alt-filled
 star icon gray color :line-md:star-alt-filled
 
 tools icon : jam:tools-f
+
+
+
+
+
+
+php artisan make:migration create_about_table

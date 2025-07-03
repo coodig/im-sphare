@@ -35,8 +35,8 @@ return [
         ],
     ],
 
-    'github' => [
-    'token' => env('GITHUB_TOKEN'),
-],
+    // 'github' => [
+    // 'token' => env('GITHUB_TOKEN'),
+// ],
 
 ];

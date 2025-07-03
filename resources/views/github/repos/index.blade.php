@@ -32,7 +32,8 @@
                     <div class="repo-meta">📅 Created at : {{ \Carbon\Carbon::parse($repo['created_at'])->diffForHumans() }}
                     </div>
 
-                    <button><a href="{{ route('repos.show')}}">details</a></button>
+                    {{-- <button><a href="{{ route('repos.show')}}">details</a></button> --}}
+                    <a href="{{ route('repo.show', ['owner' => $repo['owner']['login'], 'repo' => $repo['name']]) }}">Details</a>
 
                 </div>
             @endforeach

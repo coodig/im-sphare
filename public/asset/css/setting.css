@@ -1,13 +1,374 @@
-.setting-header{
-    text-align: end;
+.settings_container {
+    padding: 20px 10px;
+    /* background: #f4f4f4; */
+    border-radius: 10px;
+    /* max-width: 800px; */
+    margin: auto;
 }
-.setting-container{
-    display: column;
+
+.settings-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.settings-section {
+    background: var(--card-bg);
+    padding: 20px 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    flex: 1 1 50%;
+}
+
+.settings-section h3{
+    font-size: x-large;
+}
+
+.settings-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.settings-form label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.settings-form input,
+.settings-form select {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.settings-form button {
+    align-self: flex-end;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.settings-form button:hover {
+    background-color: #45a049;
+}
+
+.settings-section p {
+    color: #aaa;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+
+/* .danger-zone .btn-logout {
+    background: #ffc107;
+    margin-top: 10px;
+}
+
+.danger-zone .btn-delete-account {
+    background: #dc3545;
+    color: white;
+    margin-top: 10px;
+} */
+
+
+.connected-apps-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.connected-apps-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: #f9f9f9;
+    margin-bottom: 8px;
+    border-radius: 6px;
+}
+
+.btn-connect, .btn-disconnect {
+    background: #007bff;
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-disconnect {
+    background: #dc3545;
+}
+
+/* .api-key-box {
+    background: #272822;
+    color: #00ffae;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-family: monospace;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} */
+
+.btn-generate-key {
+    background: #28a745;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.notification-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 12px 0;
+    /* border-bottom: 1px solid #eee; */
+}
+
+.notification-toggle label {
+    font-weight: 500;
+    /* color: #333; */
+}
+
+.notification-toggle input[type="checkbox"] {
+    appearance: none;
+    width: 45px;
+    height: 22px;
+    background-color: #ccc;
+    border-radius: 50px;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.notification-toggle input[type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 2px;
+    left: 2px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.notification-toggle input[type="checkbox"]:checked {
+    background-color: #4CAF50;
+}
+
+.notification-toggle input[type="checkbox"]:checked::before {
+    transform: translateX(23px);
+}
+
+
+.activity-log-table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 15px;
+    /* background-color: #fff; */
+    /* border: 1px solid #ddd; */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+
+/* Header Styling */
+/* .activity-log-table thead {
+    background-color: #f5f5f5;
+} */
+
+.activity-log-table th,
+.activity-log-table td {
+    padding: 12px 16px;
+    text-align: left;
+    /* border-bottom: 1px solid #ddd; */
+}
+
+/* Zebra-striping for better readability */
+/* .activity-log-table tbody tr:nth-child(even) {
+    background-color: #fafafa;
+} */
+
+/* Hover effect */
+/* .activity-log-table tbody tr:hover {
+    background-color: #f0f9ff;
+} */
+
+/* Responsive tweaks (for small screens) */
+@media (max-width: 600px) {
+    .activity-log-table thead {
+        display: none; /* Hide header on small screens */
+    }
+
+    .activity-log-table,
+    .activity-log-table tbody,
+    .activity-log-table tr,
+    .activity-log-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .activity-log-table tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 10px;
+    }
+
+    .activity-log-table td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    .activity-log-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 16px;
+        width: 45%;
+        padding-right: 10px;
+        font-weight: bold;
+        text-align: left;
+        white-space: nowrap;
+    }
+}
+
+
+.danger-zone {
+    background-color: #1c1c2b; /* same as preferences bg */
+    border-radius: 12px;
     padding: 25px;
-    margin: 25px;
+    /* max-width: 600px; */
+    margin: 30px auto;
+    border: 1px solid #2c2c3b;
 }
 
-.api-token{
-    display:  flex;
+.danger-zone h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #f8d7da;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
+/* Common style for both buttons */
+.danger-zone button {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    margin-top: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Logout */
+.danger-zone .btn-logout {
+    background-color: #ffc107;
+    color: #000;
+}
+
+.danger-zone .btn-logout:hover {
+    background-color: #e0a800;
+    transform: translateY(-1px);
+}
+
+/* Delete Account */
+.danger-zone .btn-delete-account {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.danger-zone .btn-delete-account:hover {
+    background-color: #c82333;
+    transform: translateY(-1px);
+}
+
+
+
+/* === API Key Display Box === */
+.api-key-box {
+    background-color: #2b2b3a;
+    padding: 14px 16px;
+    border-radius: 8px;
+    border: 1px dashed #555;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    overflow-wrap: anywhere;
+}
+
+.api-key-box code {
+    color: #00ffd5;
+    font-family: 'Courier New', monospace;
+    font-size: 15px;
+    /* flex: 1; */
+    padding-right: 15px;
+
+}
+
+/* Copy Button */
+.api-key-box button {
+    flex: 1 1;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.api-key-box button:hover {
+    background-color: #45a049;
+}
+
+/* === Regenerate API Key Button === */
+.btn-generate-key {
+    background-color: #17a2b8;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.btn-generate-key:hover {
+    background-color: #138496;
+    transform: translateY(-1px);
+}
+
+#apiKeyBox{
+    flex: 1 1 85%;
+}
+/*
+.api-key-box button{
+    flex: 1 1 ;
+} */

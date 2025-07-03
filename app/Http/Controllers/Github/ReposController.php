@@ -9,15 +9,30 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 class ReposController extends Controller
 {
-    public function fetchRepos()
+    public function showform(){
+        return view('github.github_token');
+    }
+    public function fetchRepos(Request $request)
     {
-        $token = config('services.github.token');
+        // $token = config('services.github.token');
 
-        $response = Http::withToken($token)
-                        ->get('https://api.github.com/user/repos?per_page=100');
+        $request-> validate([
+            'token'=>'required',
+        ]);
+
+        session(['github_token' => $request->token]); // ✅ Token stored in session
+
+        // $response = Http::withToken($token)
+        //                 ->get('https://api.github.com/user/repos?per_page=100');
+
+        $token = $request->input('token');
+        $response = Http::withToken($token)->get('https://api.github.com/user/repos');
 
         if ($response->successful()) {
             $repos = $response->json();
+
+            // dd($response);
+            // dd($repos);
 
             return view('github.repos.index', compact('repos'));
         }
@@ -25,11 +40,14 @@ class ReposController extends Controller
         return back()->with('error', 'Failed to fetch repositories');
     }
 
-    public function show(){
+    // public function show(){
 
-        return view('github.repos.show');
-           }
+
+    //     return view('github.repos.show');
+    //        }
 }
+
+
 
 
 // public function fetchRepos(Request $request)
