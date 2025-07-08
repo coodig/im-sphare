@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Github;
 
 use App\Http\Controllers\Controller;
+use App\Models\GitHubToken;
 use Illuminate\Auth\Events\Failed;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Redis;
 use Parsedown;
@@ -13,11 +15,14 @@ class ReadmeController extends Controller
 {
     public function repoDetail($owner, $repo, Request $request)
     {
-        $token = session('github_token');
+        // $token = session('github_token');
+        $githubTokenModel = GitHubToken::where('user_id', Auth::id())->first();
 
-        if (!$token) {
+        if (!$githubTokenModel) {
             return redirect()->route('github.form.show')->with('error', 'Please enter your github token');
         }
+
+        $token = $githubTokenModel->github_token;
 
         $repoDetails = Http::withToken($token)
             ->get("https://api.github.com/repos/$owner/$repo")

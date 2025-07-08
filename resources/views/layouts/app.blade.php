@@ -6,7 +6,8 @@
     <title>Dashboard | {{ config('app.name') }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
-    {{-- <link rel="stylesheet" href="{{ asset('asset/css/layout.css') }}"> --}}
+    {{--
+    <link rel="stylesheet" href="{{ asset('asset/css/layout.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('asset/css/theme.css') }}">
     <link rel="stylesheet" href="{{ asset('asset/css/home.css') }}">
     <link rel="stylesheet" href="{{ asset('asset/css/setting.css') }}">
@@ -15,10 +16,14 @@
     <link rel="stylesheet" href="{{ asset('asset/css/about.css') }}">
     <link rel="stylesheet" href="{{ asset('asset/css/components.css') }}">
     <link rel="stylesheet" href="{{ asset('asset/css/github.css')}}">
-    {{-- <link rel="stylesheet" href="{{ asset('asset/css/layout.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('asset/css/dashboard.css')}}">
+    {{--
+    <link rel="stylesheet" href="{{ asset('asset/css/layout.css') }}"> --}}
 
 
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.0/dist/iconify-icon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 
 <body>
@@ -46,5 +51,6 @@
 </body>
 {{-- <a href="{{ asset('assets/js/script.js')}}"></a> --}}
 <script src="{{ asset('asset/js/script.js')}}"></script>
+<script src="{{ asset('asset/js/github.js')}}"></script>
 
 </html>

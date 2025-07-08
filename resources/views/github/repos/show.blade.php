@@ -16,11 +16,10 @@
         <div class="repository_detail_container">
 
             <div class="repository_detail_header">
-                <div class="repository_title">{{ $repoDetails['name'] }}</div>
+                <div class="repository_title">{{ str_replace('-',' ',ucfirst($repoDetails['name'])) }}</div>
                 <div class="repository_description">
-                    {{ $repoDetails['description'] ?? 'No description available' }}
+                    {{ ucfirst($repoDetails['description']) ?? 'No description available' }}
                 </div>
-
 
             </div>
 
