@@ -3,29 +3,28 @@
 namespace App\Http\Controllers\Github;
 
 use App\Http\Controllers\Controller;
+use App\Models\GitHubToken;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\Auth;
 
 class ReposController extends Controller
 {
-    public function showform(){
-        return view('github.github_token');
-    }
+
     public function fetchRepos(Request $request)
     {
-        // $token = config('services.github.token');
+        // $token = GitHubToken::where('user_id', Auth::id())->value('github_token');
+        $githubTokenModel = GitHubToken::where('user_id', Auth::id())->first();
 
-        $request-> validate([
-            'token'=>'required',
-        ]);
+        // if (!$token) {
+        //     return redirect()->route('github.github_token')->with('error', 'github token not found');
+        // }
+        if (!$githubTokenModel) {
+            return back()->with('error', 'GitHub token not found for this user.');
+        }
 
-        session(['github_token' => $request->token]); // ✅ Token stored in session
-
-        // $response = Http::withToken($token)
-        //                 ->get('https://api.github.com/user/repos?per_page=100');
-
-        $token = $request->input('token');
+        $token = $githubTokenModel->github_token;
         $response = Http::withToken($token)->get('https://api.github.com/user/repos');
 
         if ($response->successful()) {
@@ -34,10 +33,13 @@ class ReposController extends Controller
             // dd($response);
             // dd($repos);
 
+            // return view('github.repos.index', compact('repos'));
             return view('github.repos.index', compact('repos'));
         }
 
-        return back()->with('error', 'Failed to fetch repositories');
+
+        // return view('github.repos.index', ['repos' => []])
+        //     ->with('error', 'Failed to fetch repositories from GitHub.');
     }
 
     // public function show(){
@@ -45,6 +47,7 @@ class ReposController extends Controller
 
     //     return view('github.repos.show');
     //        }
+
 }
 
 
@@ -83,3 +86,4 @@ class ReposController extends Controller
 
 //         return view('github.repos.show');
 //            }
+

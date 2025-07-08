@@ -264,11 +264,12 @@ a:hover {
 .search {
   display: flex;
   align-items: center;
-  background-color: #f1f1f1;
+  background-color: var(--input-bg);
   padding: 2px 5px;
-  border-radius: 8px;
+  border-radius: 50px;
   width: 100%;
   max-width: 300px;
+  color: var(--input-text);
 }
 
 .search input {
@@ -291,12 +292,13 @@ a:hover {
 }
 
 .search button:hover {
-  color: #007bff;
+  /* color: #007bff; */
+  color: var(--text-color);
 }
 
 .search iconify-icon{
     font-size: 25px;
-    /* color: var(--text-color); */
+    color: var(--text-color);
 }
 
 /* Search bar end */

@@ -87,7 +87,7 @@ button {
     color: var(--text-color);
     flex: 2;
     min-width: 70%;
-    line-height: 1.8;
+    /* line-height: 1.8; */
     padding: 25px 40px;
     border-radius: 10px;
 }
@@ -105,36 +105,36 @@ button {
 /* Headings */
 .div-1 h1 {
     font-size: 28px;
-    color: #2c3e50;
+    /* color: #2c3e50; */
     margin-bottom: 10px;
 }
 
 .div-1 h2 {
-    font-size: 22px;
-    color: #34495e;
-    margin-top: 25px;
-    margin-bottom: 10px;
+    font-size: 30px;
+    /* color: #34495e; */
+    /* margin-top: 25px; */
+    /* margin-bottom: 10px; */
 }
 
 /* Paragraphs */
-.div-1 p {
-    line-height: 1.6;
-    margin-bottom: 10px;
-}
+/* .div-1 p { */
+    /* line-height: 1.6; */
+    /* margin-bottom: 10px; */
+/* } */
 
 /* Lists */
-.div-1 ul {
+/* .div-1 ul {
     padding-left: 20px;
     margin-bottom: 10px;
-}
+} */
 
-.div-1 ul li {
+/* .div-1 ul li {
     margin-bottom: 6px;
-}
+} */
 
 /* Code blocks */
 .div-1 pre {
-    background-color: #f4f4f4;
+    /* background-color: #f4f4f4; */
     padding: 10px;
     border-radius: 5px;
     overflow-x: auto;
@@ -216,6 +216,18 @@ button {
 }
 
 .percent {
-    color: #555;
+    /* color: #555; */
     font-size: 13px;
+}
+
+.readme-box{
+    white-space: pre-wrap;
+    padding: 15px;
+    border-radius: 6px;
+    font-size: medium;
+}
+
+.readme-box img{
+    width: 400px;
+    height: auto;
 }

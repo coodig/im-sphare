@@ -1,8 +1,11 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700');
 
 .homepage-container {
     /* max-width: 1200px; */
     margin: 0 auto;
     padding: 30px 20px;
+    font-family: "Lobster";
 }
 
 /* ========== Hero Section ========== */
@@ -11,7 +14,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(135deg, #e9f2ff, #f4faff);
+    /* background: linear-gradient(135deg, #e9f2ff, #f4faff); */
     padding: 60px 30px;
     border-radius: 12px;
     margin-bottom: 50px;
@@ -22,20 +25,33 @@
 }
 
 .hero-content h1 {
-    font-size: 2.8rem;
+    font-size: 4.8rem;
     margin-bottom: 10px;
+    font-weight: bolder;
 }
 
 .hero-content .highlight {
     color: #007bff;
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 .tagline {
     font-size: 1.2rem;
-    color: #555;
+    color: var(--text-color);
     margin-bottom: 20px;
+    font-weight: 500;
+    /* font-family: "Merriweather", serif; */
 }
+
+
+/* {
+  font-family: "Merriweather", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+} */
 
 /* .btn-primary {
     background-color: #007bff;
@@ -50,26 +66,48 @@
 .hero-image {
     flex: 1 1 280px;
     text-align: center;
+    transform: translateY(-5px);
 }
 
 .hero-image img {
-    max-width: 220px;
-
-    border-radius: 50%;
+    width: 420px;
+    height: 420px;
+    border-radius: 10%;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
+/* ========== Section Header ========== */
+.section-header{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 1.8rem;
+    justify-content: center;
+}
+
+
+
+
 /* ========== About Section ========== */
 .about-section {
-    text-align: center;
-    margin-bottom: 60px;
+    /* text-align: center; */
+    margin-bottom: 70px;
+}
+
+.section-icon {
+    font-size: 2.5rem;
+}
+
+.about-section h2 {
+    font-size: 50px;
 }
 
 .about-section p {
     max-width: 700px;
-    margin: 0 auto;
-    font-size: 1.1rem;
-    color: #444;
+    margin: 15px auto;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    font-weight: 700;
 }
 
 /* ========== Skills Section ========== */
@@ -78,6 +116,12 @@
     margin-bottom: 60px;
 }
 
+.skills-section h2 {
+    font-size: 50px;
+}
+
+
+
 .skills-list {
     list-style: none;
     padding: 0;
@@ -85,6 +129,8 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
+    margin-top: 20px;
+    font-size: larger;
 }
 
 /* .skills-list li {
@@ -105,21 +151,28 @@
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+    margin-top: 20px;
+}
+
+.projects-section h2 {
+    font-size: 50px;
 }
 
 .project-card {
-    background: #fff;
-    border: 1px solid #ddd;
+    background: var(--card-bg);
+    /* border: 1px solid #ddd; */
     border-radius: 10px;
     padding: 20px;
     flex: 1 1 300px;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.04);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.04);
     transition: transform 0.2s ease;
+    /* width: 300px; */
+    height: 250px;
 }
 
-.project-card:hover {
+/* .project-card:hover {
     transform: translateY(-5px);
-}
+} */
 
 .btn-secondary {
     background: #6c757d;
@@ -136,6 +189,11 @@
     text-align: center;
 }
 
+.github-section h2 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
 .repo-cards {
     display: flex;
     flex-wrap: wrap;
@@ -144,12 +202,12 @@
 }
 
 .repo-card {
-    background-color: #ffffff;
+    background-color: var(--card-bg);
     border: 1px solid #ddd;
     padding: 18px;
     border-radius: 10px;
     flex: 1 1 280px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    /* box-shadow: 0 4px 10px rgba(0,0,0,0.03); */
     text-align: left;
 }
 
@@ -163,6 +221,11 @@
 .contact-section {
     text-align: center;
     margin-bottom: 80px;
+}
+
+.contact-section h2 {
+    font-size: 50px;
+    margin-bottom: 10px;
 }
 
 .contact-form {
@@ -180,6 +243,8 @@
     border: 1px solid #ccc;
     font-size: 1rem;
     width: 100%;
+    /* background-color: var(--input-bg); */
+    /* color: var(--input-text); */
 }
 
 .contact-form textarea {
@@ -201,8 +266,8 @@
 .site-footer {
     text-align: center;
     padding: 30px 20px;
-    background-color: #f1f3f5;
-    color: #555;
+    background-color: var(--card-bg);
+    color: var(--text-color);
     border-top: 1px solid #ddd;
 }
 

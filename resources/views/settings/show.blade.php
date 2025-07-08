@@ -104,7 +104,7 @@
 
         {{-- Connected Apps --}}
         <div class="settings-section">
-            <h3>🔌 Connected Apps</h3>
+            <h3>🔌 Connected APIs</h3>
             <ul class="connected-apps-list">
                 <li>
                     <span>GitHub</span>
@@ -242,17 +242,6 @@
                         <button type="submit" class="btn-delete-account">🗑️ Delete Account</button>
                     </form>
         </div>
-
     </div>
-
-    {{-- Copy API key script --}}
-    <script>
-        function copyAPIKey() {
-            let apiKey = document.getElementById("apiKeyBox").innerText;
-            navigator.clipboard.writeText(apiKey).then(() => {
-                alert("API key copied to clipboard!");
-            });
-        }
-    </script>
 
 @endsection

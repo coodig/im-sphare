@@ -45,3 +45,10 @@ window.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem('sidebar-collapsed', isCollapsed);
   });
 });
+
+ function copyAPIKey() {
+            let apiKey = document.getElementById("apiKeyBox").innerText;
+            navigator.clipboard.writeText(apiKey).then(() => {
+                alert("API key copied to clipboard!");
+            });
+        }

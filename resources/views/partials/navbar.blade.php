@@ -25,6 +25,14 @@
             style="cursor: pointer;"
         ></iconify-icon>
 
+        {{-- Full Screen --}}
+        <iconify-icon id="fullScreenIcon"
+            icon="solar:full-screen-square-bold-duotone"
+            onclick="fullScreen()"
+            role="button"
+            style="cursor: pointer;"
+        ></iconify-icon>
+
         {{-- Auth Buttons --}}
         @guest
             <div class="auth-method">

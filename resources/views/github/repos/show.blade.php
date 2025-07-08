@@ -28,11 +28,11 @@
 
                 <div class="div-1">
 
-                    @if($markdown)
-                        <h2>📘 README</h2>
-                        <div class="readme-box"
-                            style="white-space: pre-wrap; background: #f4f4f4; padding: 15px; border-radius: 6px;">
-                            {{ $markdown }}
+                    <h2>📘 README</h2>
+                    @if($parsedHtml)
+                        <div class="readme-box">
+                             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown.min.css">
+                            {!! $parsedHtml !!}
                         </div>
                     @else
                         <p><i>No README found.</i></p>

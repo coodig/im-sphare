@@ -7,6 +7,7 @@ use App\Http\Controllers\authentication\LogoutController;
 use App\Http\Controllers\authentication\SignInController;
 use App\Http\Controllers\authentication\SignUpController;
 use App\Http\Controllers\Contact\ContactController;
+use App\Http\Controllers\Github\GitHubTokenController;
 use App\Http\Controllers\Github\ReadmeController;
 use App\Http\Controllers\Github\ReposController;
 use App\Http\Controllers\Setting\SettingController;
@@ -34,12 +35,13 @@ Route::post('/forgotpass',[ForgotPassController::class,'fortgotPass'])->name('fo
 // Route::post('/github/repos', [ReposController::class, 'fetchRepos'])->name('repos.index');
 
 // GitHub Token Form
-Route::get('/github-token-form', [ReposController::class, 'showForm'])->name('github.form.show');
+Route::get('/github-token-form', [GitHubTokenController::class, 'showForm'])->name('github.form.show');
+Route::post('/github/token/store', [GitHubTokenController::class, 'store'])->name('github.token.store');
 
 // GitHub Repo List
 // Route::post('/github/repos', [ReposController::class, 'fetchRepos'])->name('repos.index');
-Route::match(['get', 'post'], '/github/repos', [ReposController::class, 'fetchRepos'])->name('repos.index');
-
+// Route::match(['get', 'post'], '/github/repos', [ReposController::class, 'fetchRepos'])->name('repos.index');
+Route::get('/github/repos', [ReposController::class, 'fetchRepos'])->name('repos.index');
 
 // GitHub Repo Details (README)
 Route::get('/github/repos/{owner}/{repo}/details', [ReadmeController::class, 'repoDetail'])->name('repo.show');

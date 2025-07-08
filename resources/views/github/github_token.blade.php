@@ -9,11 +9,10 @@
             <p style="color: red;">{{ session('error') }}</p>
         @endif
 
-        <form action="{{ route('repos.index') }}" method="POST">
+        <form action="{{ route('github.token.store')}}" method="POST">
             @csrf
-            <label for="token">Personal Access Token (PAT)</label>
-            <input type="text" id="token" name="token" required>
-            <button type="submit">Fetch Repos</button>
+            <input type="text" name="token" placeholder="Enter GitHub PAT" required>
+            <button type="submit">Save Token</button>
         </form>
     </div>
 @endsection

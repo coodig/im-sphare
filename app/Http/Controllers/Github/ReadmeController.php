@@ -7,6 +7,7 @@ use Illuminate\Auth\Events\Failed;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Redis;
+use Parsedown;
 
 class ReadmeController extends Controller
 {
@@ -24,25 +25,32 @@ class ReadmeController extends Controller
 
         $readmeResponse = Http::withToken($token)->get("https://api.github.com/repos/$owner/$repo/readme");
 
-        // if($readmeResponse->failed()){
-        //     return back()->with('error','readme not found');
-        // }
-
         $markdown = $readmeResponse->ok()
             ? base64_decode($readmeResponse->json()['content'])
             : null;
 
-        // $readmeData = $readmeResponse->json();
-        // $markdown = base64_decode($readmeData['content']);
+        $branch = $repoDetails['defualt_branch'] ?? 'master';
+
+        if($markdown){
+            $markdown = preg_replace_callback('/!\[([^\]]*)\]\((?!http)([^)]+)\)/', function ($matches) use ($owner, $repo, $branch) {
+                $altText = $matches[1];
+                $relativePath = ltrim($matches[2],'/');
+                $rawUrl = "https://raw.githubusercontent.com/$owner/$repo/$branch/$relativePath";
+                return "![$altText]($rawUrl)";
+            },$markdown);
+            $parsedHtml = Parsedown::instance()->text($markdown);
+        }else{
+            $parsedHtml = null;
+        }
+
         $languages = Http::withToken($token)
             ->get("https://api.github.com/repos/$owner/$repo/languages")
             ->json();
 
-        // Fetch releases
         $release = Http::withToken($token)
             ->get("https://api.github.com/repos/$owner/$repo/releases")
             ->json();
 
-        return view('github.repos.show', compact('repoDetails','markdown', 'languages', 'release'));
+        return view('github.repos.show', compact('repoDetails','parsedHtml', 'languages', 'release'));
     }
 }

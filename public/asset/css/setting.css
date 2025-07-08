@@ -1,8 +1,6 @@
 .settings_container {
     padding: 20px 10px;
-    /* background: #f4f4f4; */
     border-radius: 10px;
-    /* max-width: 800px; */
     margin: auto;
 }
 
@@ -64,19 +62,6 @@
     margin-bottom: 20px;
 }
 
-
-/* .danger-zone .btn-logout {
-    background: #ffc107;
-    margin-top: 10px;
-}
-
-.danger-zone .btn-delete-account {
-    background: #dc3545;
-    color: white;
-    margin-top: 10px;
-} */
-
-
 .connected-apps-list {
     list-style: none;
     padding-left: 0;
@@ -105,17 +90,6 @@
     background: #dc3545;
 }
 
-/* .api-key-box {
-    background: #272822;
-    color: #00ffae;
-    padding: 10px 15px;
-    border-radius: 6px;
-    font-family: monospace;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-} */
-
 .btn-generate-key {
     background: #28a745;
     color: white;
@@ -130,13 +104,11 @@
     align-items: center;
     justify-content: space-between;
     gap: 15px;
-    padding: 12px 0;
-    /* border-bottom: 1px solid #eee; */
+    padding: 10px 0;
 }
 
 .notification-toggle label {
     font-weight: 500;
-    /* color: #333; */
 }
 
 .notification-toggle input[type="checkbox"] {
@@ -177,36 +149,16 @@
     border-collapse: collapse;
     margin-top: 15px;
     font-size: 15px;
-    /* background-color: #fff; */
-    /* border: 1px solid #ddd; */
     border-radius: 8px;
     overflow: hidden;
 }
-
-
-/* Header Styling */
-/* .activity-log-table thead {
-    background-color: #f5f5f5;
-} */
 
 .activity-log-table th,
 .activity-log-table td {
     padding: 12px 16px;
     text-align: left;
-    /* border-bottom: 1px solid #ddd; */
 }
 
-/* Zebra-striping for better readability */
-/* .activity-log-table tbody tr:nth-child(even) {
-    background-color: #fafafa;
-} */
-
-/* Hover effect */
-/* .activity-log-table tbody tr:hover {
-    background-color: #f0f9ff;
-} */
-
-/* Responsive tweaks (for small screens) */
 @media (max-width: 600px) {
     .activity-log-table thead {
         display: none; /* Hide header on small screens */
@@ -250,7 +202,6 @@
     background-color: #1c1c2b; /* same as preferences bg */
     border-radius: 12px;
     padding: 25px;
-    /* max-width: 600px; */
     margin: 30px auto;
     border: 1px solid #2c2c3b;
 }
@@ -265,7 +216,6 @@
     gap: 8px;
 }
 
-/* Common style for both buttons */
 .danger-zone button {
     width: 100%;
     padding: 14px 16px;
@@ -282,7 +232,6 @@
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Logout */
 .danger-zone .btn-logout {
     background-color: #ffc107;
     color: #000;
@@ -293,7 +242,6 @@
     transform: translateY(-1px);
 }
 
-/* Delete Account */
 .danger-zone .btn-delete-account {
     background-color: #dc3545;
     color: #fff;
@@ -306,7 +254,6 @@
 
 
 
-/* === API Key Display Box === */
 .api-key-box {
     background-color: #2b2b3a;
     padding: 14px 16px;
@@ -323,12 +270,10 @@
     color: #00ffd5;
     font-family: 'Courier New', monospace;
     font-size: 15px;
-    /* flex: 1; */
     padding-right: 15px;
 
 }
 
-/* Copy Button */
 .api-key-box button {
     flex: 1 1;
     background-color: #4CAF50;
@@ -345,7 +290,6 @@
     background-color: #45a049;
 }
 
-/* === Regenerate API Key Button === */
 .btn-generate-key {
     background-color: #17a2b8;
     color: white;
@@ -368,7 +312,3 @@
 #apiKeyBox{
     flex: 1 1 85%;
 }
-/*
-.api-key-box button{
-    flex: 1 1 ;
-} */

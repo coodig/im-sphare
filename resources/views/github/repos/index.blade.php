@@ -11,26 +11,26 @@
 
                     <h3><strong>{{ ucfirst($repo['name']) }}</strong></h3>
 
-                    {!! $repo['private']
+                    {{-- {!! $repo['private']
                 ? '<iconify-icon icon="lets-icons:lock-duotone"></iconify-icon>'
                 : 'Public'
-                    !!}
+                    !!} --}}
                     <br>
 
-                    <a href="{{$repo['html_url']}}" target="_blank">Visit Repo</a><br>
-                    <a href="https://github.com/{{ $repo['owner']['login'] }}/{{
+                    {{-- <a href="{{$repo['html_url']}}" target="_blank">Visit Repo</a><br> --}}
+                    {{-- <a href="https://github.com/{{ $repo['owner']['login'] }}/{{
                 $repo['name']
                                                     }}/archive/refs/heads/{{ $repo['default_branch'] }}.zip" download>
                         ⬇️ Download ZIP
-                    </a>
+                    </a> --}}
                     <br>
                     {{-- 🌟 Stars: {{ $repo['stargazers_count'] }}<br>
                     🍴 Forks: {{ $repo['forks_count'] }} <br>
                     👀 Watchers: {{ $repo['watchers_count'] }}<br> --}}
-                    📅 Last Push: {{ \Carbon\Carbon::parse($repo['pushed_at'])->diffForHumans() }}
+                    {{-- 📅 Last Push: {{ \Carbon\Carbon::parse($repo['pushed_at'])->diffForHumans() }}
 
-                    <div class="repo-meta">📅 Created at : {{ \Carbon\Carbon::parse($repo['created_at'])->diffForHumans() }}
-                    </div>
+                    <div class="repo-meta">📅 Created at : {{ \Carbon\Carbon::parse($repo['created_at'])->diffForHumans() }} --}}
+                    {{-- </div> --}}
 
                     {{-- <button><a href="{{ route('repos.show')}}">details</a></button> --}}
                     <a href="{{ route('repo.show', ['owner' => $repo['owner']['login'], 'repo' => $repo['name']]) }}">Details</a>
