@@ -37,6 +37,8 @@
 
             <div class="main-content">
                 @yield('content')
+                @yield('scripts')
+
             </div>
 
             {{-- @auth --}}
@@ -50,6 +52,7 @@
 
 </body>
 {{-- <a href="{{ asset('assets/js/script.js')}}"></a> --}}
+{{-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> --}}
 <script src="{{ asset('asset/js/script.js')}}"></script>
 <script src="{{ asset('asset/js/github.js')}}"></script>
 

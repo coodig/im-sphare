@@ -1,14 +1,20 @@
 .dashboard-container {
    margin: 0 auto;
     padding: 30px 20px;
-    font-family: "Lobster";
+    /* font-family: "Lobster"; */
 }
 
-.dashboard-title {
-    font-size: 28px;
-    margin-bottom: 30px;
+.dashboard-title h2{
+    font-size: 50px;
     font-weight: bold;
 }
+
+
+.dashboard-title {
+    margin-bottom: 30px;
+}
+
+
 
 .dashboard-section {
     background: var(--card-bg);
@@ -45,7 +51,7 @@
 }
 
 .stat-card h5 {
-    color: #888;
+    color: var(--text-color);
     font-size: 16px;
     margin-bottom: 8px;
     font-weight: 500;
@@ -54,7 +60,7 @@
 .big-number {
     font-size: 32px;
     font-weight: bold;
-    color: #2c3e50;
+    color: var(--text-color);
 }
 
 .chart-grid {
@@ -113,5 +119,51 @@
 @media (max-width: 480px) {
     .stats-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+
+/* Chart Containers */
+.repository-insights {
+    margin-top: 40px;
+    padding: 20px;
+    background: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Chart Titles */
+.chart-box h4 {
+    font-size: 18px;
+    color: #fff;
+}
+
+/* Chart.js Canvas Sizing */
+.chart-box canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Custom Chart Colors */
+#starsChart,
+#languageChart {
+    background-color: #1e1e2f;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/* Dark Mode Chart Override */
+.chartjs-render-monitor {
+    background-color: #1e1e2f !important;
+}
+
+/* Improve Mobile Layout */
+@media (max-width: 768px) {
+    .repository-insights {
+        padding: 10px;
+    }
+
+    .chart-box {
+        flex: 1 1 100%;
     }
 }
