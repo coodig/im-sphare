@@ -14,33 +14,42 @@
                     </div>
 
                     <div class="profile-info">
-                        <form action="{{ route('profile.update',['username'=>Auth::user()->username]) }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('profile.update', ['username' => Auth::user()->username]) }}" method="POST"
+                            enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
 
-                            {{-- <input type="text" name="username"
-                                value="{{ old('username', Auth::user()->username) }}" placeholder="Username"
-                                required> --}}
+                            <input type="text" name="name" value="{{ old('name', Auth::user()->profile->name ?? 'not available') }}"
+                                placeholder="Name" required>
 
                             <textarea name="bio" placeholder="Bio"
-                                class="bio">{{ old('bio', Auth::user()->profile->bio ?? 'not available') }}</textarea>
+                                class="bio">{{ old('bio', Auth::user()->profile->bio ?? 'Not Available') }}</textarea>
 
                             <input type="text" name="location"
-                                value="{{ old('location', Auth::user()->profile->location) }}" placeholder="Location">
+                                value="{{ old('location', Auth::user()->profile->location ?? 'Not Available') }}"
+                                placeholder="Location">
 
-                            <input type="date" name="dob" value="{{ old('dob', Auth::user()->profile->dob) }}">
+                            <input type="date" name="dob" value="{{ old('dob', Auth::user()->profile->dob ?? '') }}">
 
                             <select name="gender">
-                                <option value="">Select Gender</option>
-                                <option value="male" {{ old('gender', Auth::user()->profile->gender) == 'male' ? 'selected' : ''
-                                            }}>Male</option>
-                                <option value="female" {{ old('gender', Auth::user()->profile->gender) == 'female' ? 'selected'
-        : '' }}>Female</option>
-                                <option value="other" {{ old('gender', Auth::user()->profile->gender) == 'other' ? 'selected' :
-        '' }}>Other</option>
+                                {{-- <option value="" {{ old('gender', Auth::user()->profile->gender ?? 'Not Available') == 'Not Available' ? 'selected' : '' }}>
+                                    Not Available
+                                </option> --}}
+                                <option value="male" {{ old('gender', optional(Auth::user()->profile)->gender) == 'male' ? 'selected' : '' }}>
+                                    Male
+                                </option>
+                                <option value="female" {{ old('gender', optional(Auth::user()->profile)->gender) == 'female' ? 'selected' : '' }}>
+                                    Female
+                                </option>
+
+                                <option value="other" {{ old('gender', optional(Auth::user()->profile)->gender) == 'other' ? 'selected' : '' }}>
+                                    Other
+                                </option>
+
                             </select>
 
-                            <input type="url" name="website" value="{{ old('website', Auth::user()->profile->website) }}"
+                            <input type="url" name="website"
+                                value="{{ old('website', Auth::user()->profile->website ?? 'Not Available') }}"
                                 placeholder="Website">
 
                             {{-- <input type="file" name="avatar"> --}}

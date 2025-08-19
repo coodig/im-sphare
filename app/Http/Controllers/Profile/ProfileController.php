@@ -30,7 +30,7 @@ class ProfileController extends Controller
         $user = User::where('username', $username)->firstOrFail();
 
         $request->validate([
-            // 'full_name' => 'required',
+            'name' => 'required',
             'bio' => 'required',
             'location' => 'required',
             'gender' => 'required',
@@ -43,6 +43,7 @@ class ProfileController extends Controller
         $user->profile()->updateOrCreate([
             'user_id'=>$user->id
         ],[
+            'name' => $request->name,
             'bio' => $request->bio,
             'location' => $request->location,
             'gender' => $request->gender,

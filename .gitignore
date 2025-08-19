@@ -1,24 +1,69 @@
-*.log
-.DS_Store
+# *.log
+# .DS_Store
+# .env
+# .env.backup
+# .env.production
+# .phpactor.json
+# .phpunit.result.cache
+# /.fleet
+# /.idea
+# /.nova
+# /.phpunit.cache
+# /.vscode
+# /.zed
+# /auth.json
+# /node_modules
+# /public/build
+# /public/hot
+# /public/storage
+# /storage/*.key
+# /storage/pail
+# /vendor
+# Homestead.json
+# Homestead.yaml
+# Thumbs.db
+# .env.*
+
+
+# Environment files
 .env
-.env.backup
-.env.production
-.phpactor.json
-.phpunit.result.cache
-/.fleet
+.env.*        # agar future me .env.local, .env.production banao to safe rahe
+!.env.example
+
+# Logs
+*.log
+
+# IDE / Editor
+.DS_Store
+Thumbs.db
 /.idea
-/.nova
-/.phpunit.cache
 /.vscode
+/.fleet
 /.zed
+/.nova
+
+# PHP / Composer
+/vendor
 /auth.json
+/phpactor.json
+
+# PHPUnit
+.phpunit.result.cache
+/.phpunit.cache
+
+# Node / Frontend
 /node_modules
 /public/build
 /public/hot
+
+# Laravel storage
 /public/storage
 /storage/*.key
 /storage/pail
-/vendor
+/storage/framework/cache
+/storage/framework/sessions
+/storage/framework/views
+
+# Homestead
 Homestead.json
 Homestead.yaml
-Thumbs.db
