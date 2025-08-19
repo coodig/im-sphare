@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
-        'name',
+        'username',
         'email',
         'password',
     ];
@@ -44,5 +44,41 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function githubToken()
+    {
+        return $this->hasMany(GitHubToken::class);
+    }
+
+    public function profile()
+    {
+        return $this->hasOne(Profile::class);
+    }
+
+
+    public function contact()
+    {
+        return $this->hasOne(UserContact::class);
+    }
+
+    public function socialMediaLink()
+    {
+        return $this->hasmany(SocialMediaLink::class);
+    }
+
+    public function userabout()
+    {
+        return $this->hasOne(UserAbout::class);
+    }
+
+    public function skills()
+    {
+        return $this->hasMany(Skill::class);
+    }
+
+    public function repos()
+    {
+        return $this->hasMany(GithubRepo::class);
     }
 }

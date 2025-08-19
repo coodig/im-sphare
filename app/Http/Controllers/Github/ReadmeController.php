@@ -13,9 +13,10 @@ use Parsedown;
 
 class ReadmeController extends Controller
 {
-    public function repoDetail($owner, $repo, Request $request)
+    public function repoDetail($username,$owner, $repo, Request $request)
     {
         // $token = session('github_token');
+        // $owner = Auth::user()->github_username;
         $githubTokenModel = GitHubToken::where('user_id', Auth::id())->first();
 
         if (!$githubTokenModel) {
@@ -34,7 +35,7 @@ class ReadmeController extends Controller
             ? base64_decode($readmeResponse->json()['content'])
             : null;
 
-        $branch = $repoDetails['defualt_branch'] ?? 'master';
+        $branch = $repoDetails['default_branch'] ?? 'master';
 
         if($markdown){
             $markdown = preg_replace_callback('/!\[([^\]]*)\]\((?!http)([^)]+)\)/', function ($matches) use ($owner, $repo, $branch) {

@@ -5,45 +5,31 @@
     {{-- <div class="page about-page"> --}}
         <div class="about-container">
 
+            <a class="about-user-edit" id="about-user-edit"
+                href="{{ route('about_me.edit', ['username' => Auth::user()->username]) }}">
+                Edit
+            </a>
+
+
             <div class="page-header">
-                <div class="page-title">About</div>
-                <div class="page-description">A simple and smart way to showcase your skills and achievements.</div>
+                <div class="page-title">{{ ucfirst(Auth::user()->userabout->title ?? 'About') }}</div>
+                <div class="page-description">{{ucfirst(Auth::user()->userabout->description ?? 'not available')}}</div>
             </div>
 
             <div class="about-content">
                 <div class="about-text">
                     <p>
-                        Welcome to <strong>IMSphare</strong>, A platform built to empower individuals from all
-                        backgrounds to build, manage, and share professional portfolios with ease.
-                        Whether you're a developer, designer, writer, student, or freelancer, our goal is to give you
-                        complete creative control without needing to write a single line of code.
+                        {{ ucfirst(Auth::user()->userabout->content ?? 'not available')}}
                     </p>
-
-                    <ul class="about-features">
-                        <li><iconify-icon icon="streamline-sharp:slide-show-play-solid" class="feature-icon"></iconify-icon>
-                            <span>Showcase your skills, experiences, and projects effectively.</span>
-                        </li>
-                        <li><iconify-icon icon="gis:globe-users" class="feature-icon"></iconify-icon>
-                            <span>Empower users from all backgrounds developers, designers, writers, and more.</span>
-                        </li>
-                        <li><iconify-icon icon="vaadin:tools" class="feature-icon"></iconify-icon>
-                            <span>Simple interface with powerful tools for creative freedom.</span>
-                        </li>
-                        <li><iconify-icon icon="streamline-flex:decent-work-and-economic-growth-remix" class="feature-icon"></iconify-icon>
-                            <span>Built for both personal branding and professional growth.</span>
-                        </li>
-
-                        {{-- <li>🧠 <span>Empower users from all backgrounds — developers, designers, writers, and more.</span></li>
-                        <li>⚡ <span>Simple interface with powerful tools for creative freedom.</span></li>
-                        <li>🛠️ <span>Built for both personal branding and professional growth.</span></li> --}}
-                    </ul>
                 </div>
                 <div class="about-img">
-                    <img src="{{ asset('asset/img/about.jpg')}}" alt="this image">
+                    {{-- <img src="{{asset('storage/'.Auth::user()->userabout->image)}}" alt="this image"> --}}
+                    {{-- @dd(Auth::user()->userabout->image) --}}
+                    <img src="{{Storage::url(Auth::user()->userabout->image ?? 'no image')}}" alt="this image">
                 </div>
-                <div class="about-footer">
+                {{-- <div class="about-footer">
                     <p>Join us today and start building your standout online presence!</p>
-                </div>
+                </div> --}}
             </div>
 
             {{--

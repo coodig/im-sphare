@@ -5,9 +5,11 @@
     <div class="repository_detail_container">
 
         <div class="repository_detail_header">
-            <div class="repository_title">{{ ucwords(preg_replace('/[_.-]/', ' ', $repoDetails['name'])) }}</div>
+            <div class="repository_title">
+                {{ ucwords(preg_replace('/[_.-]/', ' ', $repoDetails['name'] ?? 'Untitled Projects')) }}
+            </div>
             <div class="repository_description">
-                {{ ucfirst($repoDetails['description']) ?? 'No description available' }}
+                {{ ucfirst($repoDetails['description'] ?? 'No description available') }}
             </div>
 
         </div>
@@ -16,7 +18,7 @@
 
             <div class="div-1">
 
-                <h2>📘 README</h2>
+                <h2>README</h2>
                 @if($parsedHtml)
                     <div class="readme-box">
                         <link rel="stylesheet"
@@ -31,26 +33,41 @@
 
             <div class="div-2">
 
-                <h3>📊 Languages</h3>
+                <h3>Languages</h3>
                 <ul class="language-list">
-                    @foreach($languages as $lang => $bytes)
-                        <li>
-                            <span class="lang-color" style="background-color:#ccc;"></span>
-                            {{ $lang }}
-                            <span class="percent">
-                                {{-- optional: calculate % --}}
-                                {{ round(($bytes / array_sum($languages)) * 100) }}%
-                            </span>
-                        </li>
-                    @endforeach
+                    @if (empty($languages))
+                        <li>Languages not available</li>
+                    @else
+                        @foreach($languages as $lang => $bytes)
+                            <li>
+                                <span class="lang-color" style="background-color:#ccc;"></span>
+                                {{ $lang }}
+                                <span class="percent">
+                                    {{-- optional: calculate % --}}
+                                    {{-- {{ round(((float)($bytes / (float)array_sum($languages)) )* 100) }}% --}}
+                                    {{ round(((float) $bytes / (float) array_sum($languages)) * 100) }}%
+
+                                </span>
+                            </li>
+                        @endforeach
+                    @endif
+
                 </ul>
 
                 <hr>
 
 
-                <h3>📦 Releases</h3>
-                @if(count($release) > 0)
-                    <p><strong>Latest:</strong> {{ $release[0]['tag_name'] ?? 'v1.0' }} <br>
+                <h3>Releases</h3>
+                {{-- @if(count($release) > 0)
+                <p><strong>Latest:</strong> {{ $release[0]['tag_name'] ?? 'v1.0' }} <br>
+                    <small>{{ \Carbon\Carbon::parse($release[0]['published_at'])->toFormattedDateString() }}</small>
+                </p>
+                @else
+                <p>No releases yet.</p>
+                @endif --}}
+                @if(!empty($release) && isset($release[0]['published_at']))
+                    <p>
+                        <strong>Latest:</strong> {{ $release[0]['tag_name'] ?? 'v1.0' }} <br>
                         <small>{{ \Carbon\Carbon::parse($release[0]['published_at'])->toFormattedDateString() }}</small>
                     </p>
                 @else
@@ -59,11 +76,11 @@
 
                 <hr>
 
-                <h3>⭐ GitHub Stats</h3>
+                <h3>GitHub Stats</h3>
                 <ul class="github-stats">
-                    <li>🌟 Stars: <strong>{{ $repoDetails['stargazers_count'] }}</strong></li>
-                    <li>🍴 Forks: <strong>{{ $repoDetails['forks_count'] }}</strong></li>
-                    <li>👁️ Watchers: <strong>{{ $repoDetails['watchers_count'] }}</strong></li>
+                    <li>Stars: <strong>{{ $repoDetails['stargazers_count'] ?? 'No Stars' }}</strong></li>
+                    <li>Forks: <strong>{{ $repoDetails['forks_count'] ?? 'No Forks'}}</strong></li>
+                    <li>Watchers: <strong>{{ $repoDetails['watchers_count'] ?? 'No Watchers'}}</strong></li>
                 </ul>
 
                 <hr>
@@ -71,8 +88,9 @@
                 <div class="github-important-links">
                     <h3> Important Links</h3>
                     <ul class="github-important-links-list">
-                        <li><a href="{{ $repoDetails['html_url']}}" class="btn-primary">Get Source Code</a></li>
-                        <li><a href="{{ $repoDetails['html_url'] }}/archive/refs/heads/{{ $repoDetails['default_branch'] }}.zip" class="btn-secondary">Download Zip</a></li>
+                        {{-- <li><a href="{{ $savedRepos['html_url']}}" class="btn-primary">Get Source Code</a></li> --}}
+                        {{-- <li><a href="{{ $repoDetails['html_url'] }}/archive/refs/heads/{{ $repoDetails['default_branch'] }}.zip" --}}
+                                {{-- class="btn-secondary">Download Zip</a></li> --}}
                     </ul>
                 </div>
             </div>

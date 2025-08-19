@@ -3,23 +3,22 @@
 namespace App\Http\Controllers\Github;
 
 use App\Http\Controllers\Controller;
+use App\Models\GithubRepo;
 use App\Models\GitHubToken;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Pagination\Paginator;
+
 use Illuminate\Support\Facades\Auth;
 
 class ReposController extends Controller
 {
 
-    public function fetchRepos(Request $request)
+    public function fetchRepos($username, Request $request)
     {
-        // $token = GitHubToken::where('user_id', Auth::id())->value('github_token');
         $githubTokenModel = GitHubToken::where('user_id', Auth::id())->first();
 
-        // if (!$token) {
-        //     return redirect()->route('github.github_token')->with('error', 'github token not found');
-        // }
         if (!$githubTokenModel) {
             return back()->with('error', 'GitHub token not found for this user.');
         }
@@ -30,60 +29,77 @@ class ReposController extends Controller
         if ($response->successful()) {
             $repos = $response->json();
 
-            // dd($response);
+            foreach ($repos as $repo) {
+                GithubRepo::updateOrCreate(
+                    [
+                        // 'full_name'=>$repo['full_name'],
+                        'repo_id' => $repo['id'],
+                        'user_id' => Auth::id(),
+
+                    ],
+                    [
+                        'name' => $repo['name'],
+                        //         'name' => $repo['name'],
+                        'full_name' => $repo['full_name'],
+                        'description' => $repo['description'] ?? null,
+                        'html_url' => $repo['html_url'],
+                        'clone_url' => $repo['clone_url'],
+                        'default_branch' => $repo['default_branch'] ?? 'main',
+                        'forks' => $repo['forks_count'] ?? 0,
+                        'watchers' => $repo['watchers_count'] ?? 0,
+                        'pushed_at' => $repo['pushed_at'],
+                        'created_at_github' => $repo['created_at'],
+                        'is_private' => $repo['private'] ? 1 : 0,
+                    ]
+                );
+            }
+
+            // $savedRepos = GithubRepo::where('user_id', Auth::user()->id)->latest('pushed_at');
+
             // dd($repos);
 
-            // return view('github.repos.index', compact('repos'));
-            return view('github.repos.index', compact('repos'));
+            // Set the page number, defaulting to 1 if not provided in the request
+            // $page = $request->input('page', 1);
+
+            // // Example: fetch commits for the first repo in the list
+
+            // if (!empty($repos)) {
+            //     $firstRepo = $repos[0];
+            //     $owner = $firstRepo['owner']['login'];
+            //     $repoName = $firstRepo['name'];
+            //     $commitResponse = Http::withToken($token)->get("https://api.github.com/repos/$owner/$repoName/commits", ['per_page' => 100, 'page' => $page]);
+            //     $commits = $commitResponse->json();
+            //     dd($commits);
+            // }
+
+            // $page = $request->input('page', 1);
+
+            // $allCommits = [];
+
+            // if (!empty($repos)) {
+                // foreach ($repos as $repo) {
+                    // $owner = $repo['owner']['login'];
+                    // $repoName = $repo['name'];
+
+                    // $commitResponse = Http::withToken($token)->get("https://api.github.com/repos/$owner/$repoName/commits", [
+                        // 'per_page' => 200,
+                        // 'page' => $page
+                    // ]);
+
+                    // $commits = $commitResponse->json('message');
+                    // if ($commitResponse->successful()) {
+//
+                        // Repo name ke saath commits store karna accha hoga
+                        // $allCommits[$repoName] = $commits;
+                    // }
+                // }
+
+                // dd($commits); // sabhi repos ke commits ek array me aa jayenge
+            // }
+
+
+            $savedRepos = GithubRepo::where('user_id', Auth::id())->latest('pushed_at')->orderBy('id')->simplePaginate(10);
+            return view('github.repos.index', compact('savedRepos'));
         }
-
-
-        // return view('github.repos.index', ['repos' => []])
-        //     ->with('error', 'Failed to fetch repositories from GitHub.');
     }
-
-    // public function show(){
-
-
-    //     return view('github.repos.show');
-    //        }
-
 }
-
-
-
-
-// public function fetchRepos(Request $request)
-// {
-//     $token = config('services.github.token');
-
-//     $response = Http::withToken($token)
-//                     ->get('https://api.github.com/user/repos?per_page=100');
-
-//     if ($response->successful()) {
-//         $repos = collect($response->json());
-
-        // Manual pagination
-        // $perPage = 10;
-        // $currentPage = LengthAwarePaginator::resolveCurrentPage();
-        // $currentItems = $repos->slice(($currentPage - 1) * $perPage, $perPage)->values();
-
-        // $paginatedRepos = new LengthAwarePaginator(
-        //     $currentItems,
-        //     $repos->count(),
-        //     $perPage,
-        //     $currentPage,
-        //     ['path' => $request->url(), 'query' => $request->query()]
-        // );
-
-//         return view('github.repos.index', ['repos' => $paginatedRepos]);
-//     }
-
-//     return back()->with('error', 'Failed to fetch repositories');
-// }
-
-// public function show(){
-
-//         return view('github.repos.show');
-//            }
-

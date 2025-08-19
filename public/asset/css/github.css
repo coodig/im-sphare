@@ -100,6 +100,7 @@ button {
     color: var(--text-color);
     border-radius: 10px;
     list-style: none;
+    height: fit-content;
 }
 
 /* Headings */
@@ -119,8 +120,8 @@ button {
 
 /* Code blocks */
 /* .div-1 pre { */
-    /* background-color: #f4f4f4; */
-    /* padding: 10px;
+/* background-color: #f4f4f4; */
+/* padding: 10px;
     border-radius: 5px;
     overflow-x: auto;
     font-family: 'Courier New', Courier, monospace;
@@ -254,9 +255,17 @@ button {
     color: var(--text-color);
 }
 
-.readme-box h1 { font-size: 26px; }
-.readme-box h2 { font-size: 22px; }
-.readme-box h3 { font-size: 18px; }
+.readme-box h1 {
+    font-size: 26px;
+}
+
+.readme-box h2 {
+    font-size: 22px;
+}
+
+.readme-box h3 {
+    font-size: 18px;
+}
 
 .readme-box p {
     margin: 10px 0;
@@ -368,4 +377,40 @@ button {
 .btn-secondary:hover {
     background-color: #f6f8fa;
     border-color: #999;
+}
+
+
+.github-token-form {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+.github-token-form h3 {
+    font-size: x-large;
+}
+
+.github-token-form input {
+    background: #2B2B3A;
+    width: 100%;
+    border-radius: 10px;
+    padding: 17px 10px;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.github-token-form button{
+    font-size: large;
+    padding: 5px 0;
+}
+
+.github-token-form iconify-icon{
+    font-size: x-large;
+}
+
+.github-token-form span{
+    justify-content: center;
+    text-align: center;
 }

@@ -1,11 +1,11 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700');
+/* @import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700'); */
 
 .homepage-container {
     /* max-width: 1200px; */
     margin: 0 auto;
     padding: 30px 20px;
-    font-family: "Lobster";
+    /* font-family: "Lobster"; */
 }
 
 /* ========== Hero Section ========== */

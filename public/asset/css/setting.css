@@ -36,8 +36,9 @@
 .settings-form select {
     padding: 10px;
     margin-top: 5px;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     border-radius: 5px;
+    width: 200px;
 }
 
 .settings-form button {
@@ -72,7 +73,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 15px;
-    background: #f9f9f9;
+    /* background: var(--card-bg); */
     margin-bottom: 8px;
     border-radius: 6px;
 }
@@ -84,6 +85,7 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    width: 10%;
 }
 
 .btn-disconnect {
@@ -255,7 +257,7 @@
 
 
 .api-key-box {
-    background-color: #2b2b3a;
+    background-color: var(--input-bg);
     padding: 14px 16px;
     border-radius: 8px;
     border: 1px dashed #555;
@@ -264,10 +266,12 @@
     justify-content: space-between;
     gap: 15px;
     overflow-wrap: anywhere;
+    margin-top: 10px;
+
 }
 
 .api-key-box code {
-    color: #00ffd5;
+    color: var(--color-amber-500);
     font-family: 'Courier New', monospace;
     font-size: 15px;
     padding-right: 15px;
@@ -312,3 +316,41 @@
 #apiKeyBox{
     flex: 1 1 85%;
 }
+
+
+.form_element{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+}
+
+h3{
+    margin-bottom: 30px;
+}
+
+
+.activity-log-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.activity-log-table th {
+    text-align: left;
+    padding: 8px;
+    /* border-bottom: 2px solid #ddd;  */
+}
+
+/* .activity-log-table td {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+} */
+
+
+#theme{
+        padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+}
+

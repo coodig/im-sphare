@@ -12,15 +12,16 @@ public function logIn(Request $request)
 {
     $credentials = $request->validate([
         'email' => 'required|email',
-        'password' => 'required',
+        'password' => 'required|string|min:5',
     ]);
 
     if (Auth::attempt($credentials)) {
-        return redirect()->intended('dashboard')->with('success', 'Logged in successfully!');
+        return redirect()->intended('/')->with(['success'=>'Logged in successfully!','user'=>Auth::user()->username]);
     }
 
     return back()->withErrors([
-        'email' => 'Invalid credentials.',
+        'email' => 'Invalid Email',
+        'password'=> 'Invalid Password',
     ]);
 }
 

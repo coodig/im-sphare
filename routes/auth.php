@@ -15,11 +15,11 @@ Route::get('/lio', function () {
 
 
 
-Route::get('/pages/signup',[SignUpController::class,'show'])->name('signup.show');
+Route::get('/signup',[SignUpController::class,'show'])->name('signup.show');
 Route::post('/signup',[SignUpController::class,'signUp'])->name('signup');
 
 
-Route::get('/pages/login',[LogInController::class,'show'])->name('login.show');
+Route::get('/login',[LogInController::class,'show'])->name('login.show');
 Route::post('/login',[LogInController::class,'logIn'])->name('login');
 
 Route::post('/logout',[LogoutController::class,'logout'])->name('logout');
