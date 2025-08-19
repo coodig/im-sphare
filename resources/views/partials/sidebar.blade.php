@@ -24,7 +24,7 @@
 
             <a href="{{ route('repos.index', ['username' => Auth::user()->username]) }}"><iconify-icon
                     icon="solar:folder-with-files-bold-duotone"></iconify-icon>
-                <span class="sidebar-text">Projects</span></a>
+                <span class="sidebar-text">Project</span></a>
         @endauth
 
         {{-- <a href="{{ route('contact.show',['username'=>Auth::user()->username]) }}"><iconify-icon
