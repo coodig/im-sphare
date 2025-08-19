@@ -21,7 +21,7 @@ class SignUpController extends Controller
         ]);
 
         $user = User::create([
-            'username' => $request->username,
+            'username' => trim($request->username),
             'email' => $request->email,
             'password' => Hash::make($request->password)
         ]);
@@ -30,10 +30,10 @@ class SignUpController extends Controller
         Auth::login($user);
 
         // dd($user);
-        return redirect()->route('dashboard.show')->with('success', 'User registered successfully!');
+        return redirect()->route('dashboard.show',['username'=>Auth::user()->username])->with('success', 'User registered successfully!');
     }
 
      public function show(){
         return view('authentication.signup');
     }
-};
+}

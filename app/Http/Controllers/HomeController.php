@@ -15,7 +15,7 @@ use PhpParser\Node\Expr\FuncCall;
 class HomeController extends Controller
 {
 
-    public function index()
+    public function index($username)
     {
         $user = Auth::user();
         $hasGitHubToken = false;
@@ -33,6 +33,6 @@ class HomeController extends Controller
         // $socialMediaLink = SocialMediaLink::where('user_id',Auth::id())->firstOrFail();
         // dd($socialMediaLink,$user_about,$hasGitHubToken);
         // return view('home',compact('hasGitHubToken','user_about','socialMediaLink','links'));
-        return view('home', compact('hasGitHubToken', 'user_about'));
+        return view('home', compact('hasGitHubToken', 'user_about','username'));
     }
 }

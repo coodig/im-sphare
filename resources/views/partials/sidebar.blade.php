@@ -3,13 +3,13 @@
         <button id="toggleSidebar" class="collapse-toggle">
             <iconify-icon icon="line-md:menu-fold-left"></iconify-icon>
         </button>
-        <a href="/"><iconify-icon icon="solar:home-2-bold-duotone"></iconify-icon>
+        <a href="{{route('home',['username'=>Auth::user()->username])}}"><iconify-icon icon="solar:home-2-bold-duotone"></iconify-icon>
             <span class="sidebar-text">Home</span></a>
 
         @auth
             <a href="{{ route('dashboard.show', ['username' => Auth::user()->username]) }}"><iconify-icon
                     icon="duo-icons:dashboard"></iconify-icon>
-                {{-- <span class="sidebar-text">Dashboard</span></a> --}}
+                <span class="sidebar-text">Dashboard</span></a>
         @endauth
 
         @auth

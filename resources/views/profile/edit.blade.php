@@ -19,22 +19,22 @@
                             @csrf
                             @method('PUT')
 
-                            <input type="text" name="name" value="{{ old('name', Auth::user()->profile->name ?? 'not available') }}"
-                                placeholder="Name" required>
+                            <input type="text" name="name" value="{{ old('name', Auth::user()->profile->name ?? '') }}"
+                                placeholder="Name">
 
                             <textarea name="bio" placeholder="Bio"
-                                class="bio">{{ old('bio', Auth::user()->profile->bio ?? 'Not Available') }}</textarea>
+                                class="bio">{{ old('bio', Auth::user()->profile->bio ?? '') }}</textarea>
 
                             <input type="text" name="location"
-                                value="{{ old('location', Auth::user()->profile->location ?? 'Not Available') }}"
-                                placeholder="Location">
+                                value="{{ old('location', Auth::user()->profile->location ?? '') }}" placeholder="Location">
 
                             <input type="date" name="dob" value="{{ old('dob', Auth::user()->profile->dob ?? '') }}">
 
                             <select name="gender">
-                                {{-- <option value="" {{ old('gender', Auth::user()->profile->gender ?? 'Not Available') == 'Not Available' ? 'selected' : '' }}>
+                                <option value="" {{ old('gender', Auth::user()->profile->gender ?? 'Not Available') ==
+        'Not Available' ? 'selected' : '' }}>
                                     Not Available
-                                </option> --}}
+                                </option>
                                 <option value="male" {{ old('gender', optional(Auth::user()->profile)->gender) == 'male' ? 'selected' : '' }}>
                                     Male
                                 </option>
@@ -49,8 +49,8 @@
                             </select>
 
                             <input type="url" name="website"
-                                value="{{ old('website', Auth::user()->profile->website ?? 'Not Available') }}"
-                                placeholder="Website">
+                                value="{{ old('website', Auth::user()->profile->website ?? '') }}"
+                                placeholder="Your Website URL">
 
                             {{-- <input type="file" name="avatar"> --}}
 

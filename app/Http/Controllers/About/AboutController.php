@@ -13,10 +13,11 @@ use PDO;
 class AboutController extends Controller
 {
 
-    public function show(){
+    public function show($username){
+        $user = Auth::user();
         $user_about = UserAbout::where('user_id',Auth::id())->firstOrFail();
         // dd($user_about);
-        return view('about.show',compact('user_about'));
+        return view('about.show',compact('user_about','user'));
     }
 
     public function edit($username){

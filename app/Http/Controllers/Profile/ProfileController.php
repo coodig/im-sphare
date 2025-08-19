@@ -22,7 +22,8 @@ class ProfileController extends Controller
     public function edit($username)
     {
         $user = Auth::user()->username;
-        return view('profile.edit', compact('user'));
+        $profile = Auth::user()->profile;
+        return view('profile.edit', compact('user','profile'));
     }
 
     public function update($username,Request $request)
@@ -30,12 +31,12 @@ class ProfileController extends Controller
         $user = User::where('username', $username)->firstOrFail();
 
         $request->validate([
-            'name' => 'required',
-            'bio' => 'required',
-            'location' => 'required',
-            'gender' => 'required',
-            'dob' => 'required',
-            'website' => 'required',
+            'name' => 'nullable|string|max:255',
+            'bio' => 'nullable|string',
+            'location' => 'nullable|string',
+            'gender' => 'nullable|in:male,female,other',
+            'dob' => 'nullable|date',
+            'website' => 'nullable|string',
 
 
         ]);
