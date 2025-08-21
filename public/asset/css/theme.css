@@ -121,6 +121,7 @@
     --icon-hover: cadetblue;
     --icon-gap: 8px;
     --footer-bottom: #DDEFFD;
+    --landing-opacity: 10%;
 }
 
 /* ===== DARK THEME ===== */
@@ -161,4 +162,6 @@ body.dark-theme {
     --footer-bottom: #263238;
     --icon-color: #c8d3f5;
     --icon-hover: #91d7e3;
+
+    --landing-opacity:20%
 }

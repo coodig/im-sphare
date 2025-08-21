@@ -88,29 +88,29 @@
 
                 <section id="imsphare-features">
                     <h2>Why Choose IMSphare?</h2>
-                    <div id="imsphare-features-image">
-                        <img src="{{asset('asset/img/l_2.svg')}}" alt="">
+                    <div class="imsphare-features-wrapper">
+                        <div id="imsphare-features-grid">
+                            <div class="imsphare-feature">
+                                <iconify-icon icon="noto:artist-palette" class="icon"></iconify-icon>
+                                Easy Portfolio Builder
+                            </div>
+                            <div class="imsphare-feature">
+                                <iconify-icon icon="noto:high-voltage" class="icon"></iconify-icon>
+                                Fast & Responsive
+                            </div>
+                            <div class="imsphare-feature">
+                                <iconify-icon icon="noto:bar-chart" class="icon"></iconify-icon>
+                                Analytics & Insights
+                            </div>
+                            <div class="imsphare-feature">
+                                <iconify-icon icon="noto:locked" class="icon"></iconify-icon>
+                                Secure & Reliable
+                            </div>
+                        </div>
+                        <div id="imsphare-features-image">
+                            <img src="{{asset('asset/img/l_2.svg')}}" alt="">
+                        </div>
                     </div>
-                    <div id="imsphare-features-grid">
-                        <div class="imsphare-feature">
-                            <iconify-icon icon="noto:artist-palette" class="icon"></iconify-icon>
-                            Easy Portfolio Builder
-                        </div>
-                        <div class="imsphare-feature">
-                            <iconify-icon icon="noto:high-voltage" class="icon"></iconify-icon>
-                            Fast & Responsive
-                        </div>
-                        <div class="imsphare-feature">
-                            <iconify-icon icon="noto:bar-chart" class="icon"></iconify-icon>
-                            Analytics & Insights
-                        </div>
-                        <div class="imsphare-feature">
-                            <iconify-icon icon="noto:locked" class="icon"></iconify-icon>
-                            Secure & Reliable
-                        </div>
-                    </div>
-
-
                 </section>
 
                 <section id="imsphare-how">
@@ -190,7 +190,7 @@
                             </div>
                             <div class="testimonial-text">
                                 <p>"This portfolio platform has helped me showcase my work in a professional way.
-        A big thanks to the developer for making it so easy to use!"</p>
+                                    A big thanks to the developer for making it so easy to use!"</p>
                                 <strong>{{ucwords('Shubham Kumar')}}</strong>
                             </div>
                         </div>
@@ -202,7 +202,7 @@
                             </div>
                             <div class="testimonial-text">
                                 <p>"Imsphare is a great initiative for students and professionals.
-        The developer behind this platform has done an amazing job!"</p>
+                                    The developer behind this platform has done an amazing job!"</p>
                                 <strong>{{ucwords('Adarsh Vishwakarama')}}</strong>
                             </div>
                         </div>
@@ -211,21 +211,41 @@
                 </section>
 
 
-                <section id="imsphare-cta">
+                {{-- <section id="imsphare-cta">
                     <div class="imsphare-join-us-content">
 
                         <h2>Connect with us for better experience!</h2>
-                        <div class="imsphare-join-us-media">
-                            <img src="{{asset('asset/img/l_7.svg')}}">
+                        <div class="imsphare-join-us-wrapper">
+
+                            <div class="imsphare-join-us-image">
+                                <img src="{{asset('asset/img/l_7.svg')}}">
+                            </div>
+                            <div class="imsphare-btn-cta">
+                                <a href="https://github.com/coodig" target="_blank">Join Our
+                                    Team</a>
+                            </div>
                         </div>
-                        <a href="https://github.com/coodig" id="imsphare-btn-cta" target="_blank">Join Our Team</a>
                     </div>
+                </section> --}}
+
+                <section id="imsphare-cta">
+                        <h2>Connect with us for better experience!</h2>
+                        <div class="imsphare-cta-contaier">
+
+                            <div class="imsphare-cta-wrapper">
+                                <img src="{{asset('asset/img/l_7.svg')}}" alt="Join Us">
+                                <a href="https://github.com/coodig" target="_blank" class="imsphare-cta-btn">
+                                    Join Our Team
+                                </a>
+                            </div>
+                        </div>
                 </section>
+
 
 
             </div>
 
-            <footer class="imsphare-footer">
+            <div class="imsphare-footer">
                 <div class="footer-container">
                     <!-- Left: Links -->
                     <div class="footer-section">
@@ -233,17 +253,16 @@
                         <a href="{{ route('privacy.show') }}" class="footer-link">Privacy Policy</a>
                         <a href="{{ route('terms.show')}}" class="footer-link">Terms & Conditions</a>
                         <a href="{{ route('about_us.show')}}" class="footer-link">About Us</a>
-                        {{-- <a href="{{ route('contact.show') }}" class="footer-link">Contact</a> --}}
                     </div>
 
                     <!-- Middle: Social Media -->
                     <div class="footer-section">
                         <h3>Follow Us</h3>
-                        {{-- <a href="https://facebook.com" target="_blank" class="footer-link">Facebook</a> --}}
-                        {{-- <a href="https://twitter.com" target="_blank" class="footer-link">Twitter</a> --}}
+
                         <a href="https://github.com/adarshsharma1350" target="_blank" class="footer-link">Github</a>
-                        <a href="www.linkedin.com/in/adarsh-vishwakarama-9a9a15210" target="_blank" class="footer-link">LinkedIn</a>
-                        {{-- <a href="https://instagram.com" target="_blank" class="footer-link">Instagram</a> --}}
+                        <a href="www.linkedin.com/in/adarsh-vishwakarama-9a9a15210" target="_blank"
+                            class="footer-link">LinkedIn</a>
+
                     </div>
 
                     <!-- Right: Tech Support -->
@@ -253,16 +272,16 @@
                         <p>Phone: +91 88814 23949</a></p>
                         <p>Location: UP, India</p>
                     </div>
-                    </div>
                 </div>
+            </div>
 
-                <div class="footer-bottom">
-                    <p>&copy; {{ date('Y') }} <a href="{{ url('/') }}" class="footer-bottom-link">IMSPhare</a>&nbsp;All
-                        rights
-                        reserved.</p>
-                    <p>Illustrations by <a href="https://storyset.com/" target="_blank"
-                            class="footer-bottom-link">Storyset</a></p>
-                </div>
+            <div class="footer-bottom">
+                <p>&copy; {{ date('Y') }} <a href="{{ url('/') }}" class="footer-bottom-link">IMSPhare</a>&nbsp;All
+                    rights
+                    reserved.</p>
+                <p>Illustrations by <a href="https://storyset.com/" target="_blank"
+                        class="footer-bottom-link">Storyset</a></p>
+            </div>
 
             </footer>
 
