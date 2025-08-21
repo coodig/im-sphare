@@ -38,12 +38,16 @@
             </div>
 
             <div class="auth__form-group auth__form-group--submit">
-                <button type="submit" class="auth__btn auth__btn--primary">Register</button>
+                <button type="submit" class="btn btn-primary">Register</button>
             </div>
+
+           <a href="{{ url('auth/google') }}" class="btn btn-danger">
+    <i class="fab fa-google"></i> Sign Up with Google
+</a>
 
             <div class="auth__link-group">
                 {{-- <a href="{{ route('password.request') }}" class="auth__link">Forgot Password?</a> --}}
-                <a href="{{ route('login.show') }}" class="auth__link">Already have an account? Login</a>
+                <a href="{{ route('login.show') }}">Have an account? <span class="auth__link">Login</span></a>
             </div>
         </form>
     </div>

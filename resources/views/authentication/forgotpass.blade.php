@@ -25,7 +25,7 @@
             </div>
 
             <div class="auth__form-group auth__form-group--submit">
-                <button type="submit" class="auth__btn auth__btn--primary">Send Reset Link</button>
+                <button type="submit" class="btn btn-primary">Send Reset Link</button>
             </div>
 
             <div class="auth__link-group">

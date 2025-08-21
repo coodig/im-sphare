@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\authentication\ForgotPassController;
+use App\Http\Controllers\Authentication\GoogleController;
 use App\Http\Controllers\authentication\LogInController;
 use App\Http\Controllers\authentication\LogoutController;
 use App\Http\Controllers\authentication\ResetPasswordController;
@@ -24,3 +25,7 @@ Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showRese
 Route::post('/reset-password', [ResetPasswordController::class, 'resetPassword'])->name('password.update');
 
 Route::post('/logout',[LogoutController::class,'logout'])->name('logout');
+
+
+Route::get('auth/google',[GoogleController::class,'redirectToGoogle']);
+Route::get('auth/google/callback',[GoogleController::class,'handleGoogleCallback']);

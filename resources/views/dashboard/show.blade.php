@@ -4,7 +4,14 @@
     <div class="dashboard-container">
 
         <div class="dashboard-title">
-            <h2>Welcome, {{ ucwords(Auth::user()->profile->name ?? Auth::user()->username) }} <iconify-icon icon="noto:waving-hand"></iconify-icon></h2>
+            {{-- <h2>Welcome, {{ ucwords((Auth::user()->profile->name) ?? (str_replace(['_','@','-'],'',Auth::user()->username) }} <iconify-icon icon="noto:waving-hand"></iconify-icon></h2> --}}
+
+            <h2>
+    Welcome,
+    {{ ucwords(Auth::user()->profile->name ?? str_replace(['_', '@', '-'], ' ', Auth::user()->username)) }}
+    <iconify-icon icon="noto:waving-hand"></iconify-icon>
+</h2>
+
 
             <p>It's a dashboard for your activity and all records.</p>
         </div>

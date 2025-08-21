@@ -13,7 +13,7 @@
     <div class="auth-container">
         <div class="auth-box">
             <div class="logo-section">
-                <img src="{{ asset('asset/logo.png') }}" alt="Logo" class="logo">
+                {{-- <img src="{{ asset('asset/logo.png') }}" alt="Logo" class="logo"> --}}
                 <h2 class="brand-title"><a href="{{route('landing.show')}}">IMSPhare</a></h2>
             </div>
             @yield('content')

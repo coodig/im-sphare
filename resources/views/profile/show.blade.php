@@ -13,7 +13,8 @@
 
                     <!-- Pencil edit icon -->
                     {{-- <label for="avatarUpload" class="edit-icon"
-                        style="position:absolute; bottom:5px; right:5px; background:#fff; border-radius:50%; padding:5px; cursor:pointer; box-shadow:0 0 4px rgba(0,0,0,0.3);"> --}}
+                        style="position:absolute; bottom:5px; right:5px; background:#fff; border-radius:50%; padding:5px; cursor:pointer; box-shadow:0 0 4px rgba(0,0,0,0.3);">
+                        --}}
                         {{-- <iconify-icon icon="ph:pencil-simple-bold" width="20" height="20"></iconify-icon>
                     </label> --}}
 
@@ -46,10 +47,18 @@
                         {{ optional(Auth::user())->username ? optional(Auth::user())->username : 'not available' }}
                     </p>
 
+                    {{-- <p class="username">
+                        <iconify-icon icon="fa-solid:user"></iconify-icon>&nbsp;
+                        {{ optional(Auth::user())->username
+        ? str_replace(['_', '@', '-'], ' ', optional(Auth::user())->username)
+        : 'not available' }}
+                    </p> --}}
+
+
                     <p class="email"><iconify-icon
                             icon="material-symbols-light:stacked-email"></iconify-icon>&nbsp;{{ Auth::user()->email}}</p>
-                    {{-- <p class="email"><iconify-icon
-                            icon="line-md:email-alt-twotone"></iconify-icon>&nbsp;{{ Auth::user()->email}}</p> --}}
+                    {{-- <p class="email"><iconify-icon icon="line-md:email-alt-twotone"></iconify-icon>&nbsp;{{
+                        Auth::user()->email}}</p> --}}
 
                     <p class="bio"><iconify-icon
                             icon="streamline-plump-color:description-flat"></iconify-icon>&nbsp;{{ ucfirst(Auth::user()->profile->bio ?? 'not available')}}

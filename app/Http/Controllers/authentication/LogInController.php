@@ -12,7 +12,7 @@ class LogInController extends Controller
     public function logIn(Request $request)
     {
         $credentials = $request->validate([
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users,email',
             'password' => 'required|string|min:5',
         ]);
 

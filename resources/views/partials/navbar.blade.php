@@ -42,7 +42,11 @@
         @endguest
 
         @auth
-            <span class="welcome user-name">Welcome,&nbsp;{{ ucwords(Auth::user()->profile->name ?? Auth::user()->username)}}</span>
+            <span class="welcome user-name">
+    Welcome,&nbsp;
+    {{ ucwords(Auth::user()->profile->name ?? str_replace(['_', '@', '-'], ' ', Auth::user()->username)) }}
+</span>
+
             <a href="{{ route('profile.show', ['username' => Auth::user()->username])}}">
                     <div class="profile-icon">
                         <div class="outer">

@@ -27,7 +27,7 @@
         </div>
 
         <div class="auth__form-group auth__form-group--submit">
-            <button type="submit" class="auth__btn auth__btn--primary">Reset Password</button>
+            <button type="submit" class="btn btn-primary">Reset Password</button>
         </div>
     </form>
 </div>

@@ -51,8 +51,6 @@
 
 /* Search bar end */
 
-
-
 /* Auth Layout Official Started */
 .auth-layout {
   background: #f0f4f8;
@@ -88,13 +86,12 @@
     max-width: 500px;
     margin: 50px auto;
     /* padding: 30px 40px; */
-    background: #ffffff;
+    /* background: #ffffff; */
     /* border: 1px solid #e0e0e0; */
     border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05); */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
 .auth__title {
     font-size: 25px;
     font-weight: 600;
@@ -165,6 +162,8 @@
 .auth__link {
     color: #007bff;
     text-decoration: none;
+    font-size: large;
+    font-weight: 600;
 }
 
 .auth__link:hover {
@@ -174,18 +173,43 @@
 
 @media (max-width: 500px) {
     .auth {
-        margin: 20px;
-        padding: 20px;
+        /* margin: 20px; */
+        /* padding: 20px; */
+        /* background: none; */
+
     }
 
     .auth__title {
         font-size: 20px;
     }
 
-    .auth__btn {
+    /* .auth__btn {
         font-size: 15px;
+    } */
+
+    .auth__form{
+        line-height: 5px;
+        width: 100%;
     }
+
+    .auth__link-group{
+        margin-top: 5px;
+    }
+
+    .auth__link{
+        /* margin-top: 5px; */
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    /* .auth__link:hover{
+        color: red;
+    } */
+
+
 }
+
+
 
 
 
