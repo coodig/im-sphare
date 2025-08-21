@@ -6,8 +6,7 @@
     <title>Dashboard | {{ config('app.name') }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
-    {{--
-    <link rel="stylesheet" href="{{ asset('asset/css/layout.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('asset/css/landing.css') }}">
     <link rel="stylesheet" href="{{ asset('asset/css/theme.css') }}">
     <link rel="stylesheet" href="{{ asset('asset/css/home.css') }}">
     <link rel="stylesheet" href="{{ asset('asset/css/setting.css') }}">

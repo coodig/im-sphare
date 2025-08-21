@@ -69,7 +69,7 @@ a:hover {
     bottom: 0;
     z-index: 1000;
     border-right: 1px solid var(--border-color);
-    width: 240px;
+    /* width: 240px; */
     transition: width 0.3s ease;
 }
 

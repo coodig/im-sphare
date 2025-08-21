@@ -14,7 +14,7 @@
         <div class="auth-box">
             <div class="logo-section">
                 <img src="{{ asset('asset/logo.png') }}" alt="Logo" class="logo">
-                <h2 class="brand-title">IMSPhare</h2>
+                <h2 class="brand-title"><a href="{{route('landing.show')}}">IMSPhare</a></h2>
             </div>
             @yield('content')
         </div>

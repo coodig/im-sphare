@@ -12,8 +12,8 @@
                     <img src="{{ asset('asset/img/about.jpg') }}" alt="User Picture" id="profileImage">
 
                     <!-- Pencil edit icon -->
-                    <label for="avatarUpload" class="edit-icon"
-                        style="position:absolute; bottom:5px; right:5px; background:#fff; border-radius:50%; padding:5px; cursor:pointer; box-shadow:0 0 4px rgba(0,0,0,0.3);">
+                    {{-- <label for="avatarUpload" class="edit-icon"
+                        style="position:absolute; bottom:5px; right:5px; background:#fff; border-radius:50%; padding:5px; cursor:pointer; box-shadow:0 0 4px rgba(0,0,0,0.3);"> --}}
                         {{-- <iconify-icon icon="ph:pencil-simple-bold" width="20" height="20"></iconify-icon>
                     </label> --}}
 
@@ -21,7 +21,7 @@
                     <!-- Hidden file input -->
                     <input type="file" name="avatar" id="avatarUpload" class="avatar-input" style="display:none;"
                         accept="image/*" onchange="previewImage(event)">
-                    <button>update</button>
+                    <a href=""><iconify-icon icon="tabler:edit"></iconify-icon></a>
                 </div>
 
                 <script>

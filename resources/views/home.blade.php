@@ -9,7 +9,7 @@
             <div class="hero-content">
                 @auth
                     <h1>Hi, I'm <span class="highlight">{{ ucwords(Auth::user()->profile->name ?? Auth::user()->username)}}</span></h1>
-                    {{-- <p class="tagline">{{ ucfirst(Auth::user()->profile->bio)}}</p> --}}
+                    <p class="tagline">{{ ucfirst(Auth::user()->profile->bio)}}</p>
                     <a href="https://github.com/coodig" target="_blank" class="btn-primary"><iconify-icon icon="streamline-freehand:collaboration-team-chat"></iconify-icon>Let's Collaborate</a>
 
                     @if (!$hasGitHubToken)
@@ -27,12 +27,6 @@
                 <div class="hero-image">
                     <img src="{{ asset('asset/img/logo.png')}}">
                 </div>
-                {{-- @endauth --}}
-                {{-- @guest --}}
-                    {{-- <div class="hero-image"> --}}
-                    {{-- <img src="{{ asset('asset/img/logo.png') }}" alt= "Image"> --}}
-                {{-- </div> --}}
-                {{-- @endguest --}}
             </section>
 
             {{-- 2. About Section --}}
@@ -44,7 +38,6 @@
 
             @if($user_about)
                 <div class="page-header">
-                    {{-- <h3>{{ ucfirst($user_about->title) }}</h3> --}}
                     <p>{{ ucfirst($user_about->description) }}</p>
                 </div>
 
@@ -61,9 +54,8 @@
             @endif
         </section>
 
-
         {{-- 3. Skills Section --}}
-        <section class="skills-section" id="skills">
+        {{-- <section class="skills-section" id="skills">
             <div class="section-header">
                 <iconify-icon icon="fluent-emoji-flat:brain" class="section-icon"></iconify-icon>
                 <h2>&nbsp;Skills</h2>
@@ -76,62 +68,6 @@
                 <li>React</li>
                 <li>MySQL</li>
             </ul>
-        </section>
-
-
-        {{-- 4. Projects Section --}}
-        {{-- <section class="projects-section" id="projects">
-            <div class="section-header">
-                <iconify-icon icon="fluent-emoji-flat:rocket" class="section-icon"></iconify-icon>
-                <h2 class="section-title">&nbsp;Projects</h2>
-            </div> --}}
-            {{-- <div class="project-cards">
-                <div class="project-card">
-                    @foreach ($repos as $repo)
-
-                    <h3>{{$repo->name}}</h3>
-                    <p>{{$repo->description ?? 'not available'}}</p>
-                    <a href="{{$repo->html_url}}" class="btn-secondary">Visit Source Code</a>
-
-                    @endforeach
-                </div>
-
-            </div> --}}
-            {{-- <div class="show-all">
-                <a href="{{ route('repos.index',['username'=>Auth::user()->username]) }}" class="profile-info-update-btn" style="margin-top: 5px">Show All</a>
-            </div>
-             <div class="mt-10">
-                <div class="card-grid">
-                    @foreach ($repos as $repo)
-                    <div class="card">
-                        <h5>{{ucfirst($repo->name)}}</h5>
-                        <p>{{ucfirst($repo->description ?? 'not available')}}</p>
-                        {{-- <small>Last updated: 2 days ago</small> --}}
-                        {{-- <small><a href="{{$repo->html_url}}" target="_blank">Show</a></small>
-                    </div>
-                    @endforeach
-                </div>
-            </div>
-        </section> --}}
-
-        {{-- 5. GitHub Repos --}}
-        {{-- <section class="github-section">
-            <div class="section-header">
-                <iconify-icon icon="fluent-emoji-flat:package" class="section-icon"></iconify-icon>
-                <h2 class="section-title">&nbsp;GitHub Repositories</h2>
-            </div>
-            <div class="repo-cards">
-                <div class="repo-card">
-                    <h4>repo name</h4>
-                    <p>description</p>
-                    <a href="#" target="_blank">Visit Repo</a>
-                </div>
-                <div class="repo-card">
-                    <h4>repo name</h4>
-                    <p>description</p>
-                    <a href="#" target="_blank">Visit Repo</a>
-                </div>
-            </div>
         </section> --}}
 
         {{-- 6. Contact Section --}}
@@ -173,13 +109,7 @@
 
                 </div>
             </div>
-            {{-- <form action="#" method="POST" class="contact-form">
-                @csrf
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Write your message..." required></textarea>
-                <button type="submit">Send Message</button>
-            </form> --}}
+
         </section>
 
         {{-- 7. Footer --}}
