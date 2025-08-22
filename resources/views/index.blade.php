@@ -74,8 +74,6 @@
                 <section id="imsphare-hero">
 
                     <div id="imsphare-hero-image" class="vector-image">
-                        {{-- <img src="https://tse1.mm.bing.net/th/id/OIP.xKiE_jUn8tPueoLWXsyCPgHaEo?pid=Api"
-                            alt="IMSphare Portfolio"> --}}
                         <img src="{{asset('asset/img/l_1.svg')}}">
 
                     </div>
@@ -87,7 +85,7 @@
                 </section>
 
                 <section id="imsphare-features">
-                    <h2>Why Choose IMSphare?</h2>
+                    <h2>Why IMSphare?</h2>
                     <div class="imsphare-features-wrapper">
                         <div id="imsphare-features-grid">
                             <div class="imsphare-feature">
@@ -145,35 +143,7 @@
                                 </div>
                             </div>
                         </div>
-                        {{-- <div class="imsphare-step">
 
-
-                            <div class="step-image">
-                                <img src="{{ asset('asset/img/l_3.svg') }}" alt="Sign Up Step">
-                            </div>
-                            <div class="step-text">
-                                <p>1. Sign Up</p>
-                            </div>
-                        </div> --}}
-
-                        {{-- <div class="imsphare-step">
-                            <div class="step-image">
-                                <img src="{{ asset('asset/img/l_4.svg') }}" alt="Sign Up Step">
-                            </div>
-                            <div class="step-text">
-                                <p>2. Customize Portfolio</p>
-                            </div>
-                        </div> --}}
-
-
-                        {{-- <div class="imsphare-step">
-                            <div class="step-image">
-                                <img src="{{ asset('asset/img/l_5.svg') }}" alt="Sign Up Step">
-                            </div>
-                            <div class="step-text">
-                                <p>3. Share & Grow</p>
-                            </div>
-                        </div> --}}
                     </div>
                 </section>
 
@@ -210,35 +180,17 @@
 
                 </section>
 
+                <section id="imsphare-cta">
+                    <h2>Connect with us for better experience!</h2>
+                    <div class="imsphare-cta-contaier">
 
-                {{-- <section id="imsphare-cta">
-                    <div class="imsphare-join-us-content">
-
-                        <h2>Connect with us for better experience!</h2>
-                        <div class="imsphare-join-us-wrapper">
-
-                            <div class="imsphare-join-us-image">
-                                <img src="{{asset('asset/img/l_7.svg')}}">
-                            </div>
-                            <div class="imsphare-btn-cta">
-                                <a href="https://github.com/coodig" target="_blank">Join Our
-                                    Team</a>
-                            </div>
+                        <div class="imsphare-cta-wrapper">
+                            <img src="{{asset('asset/img/l_7.svg')}}" alt="Join Us">
+                            <a href="https://github.com/coodig" target="_blank" class="imsphare-cta-btn">
+                                Join Our Team
+                            </a>
                         </div>
                     </div>
-                </section> --}}
-
-                <section id="imsphare-cta">
-                        <h2>Connect with us for better experience!</h2>
-                        <div class="imsphare-cta-contaier">
-
-                            <div class="imsphare-cta-wrapper">
-                                <img src="{{asset('asset/img/l_7.svg')}}" alt="Join Us">
-                                <a href="https://github.com/coodig" target="_blank" class="imsphare-cta-btn">
-                                    Join Our Team
-                                </a>
-                            </div>
-                        </div>
                 </section>
 
 

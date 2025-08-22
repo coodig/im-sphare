@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\authentication\ForgotPassController;
-use App\Http\Controllers\Authentication\GoogleController;
+use App\Http\Controllers\authentication\GoogleController;
 use App\Http\Controllers\authentication\LogInController;
 use App\Http\Controllers\authentication\LogoutController;
 use App\Http\Controllers\authentication\ResetPasswordController;

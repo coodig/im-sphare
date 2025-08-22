@@ -1,5 +1,10 @@
 <nav class="custom-navbar">
+
     <div class="navbar-left">
+
+        <button id="toggleSidebar" class="collapse-toggle">
+            <iconify-icon icon="hugeicons:sidebar-left-01"></iconify-icon>
+        </button>
         {{-- Brand --}}
         <div class="brand">
             {{-- <img src="{{ asset('asset/iocns/light-logo.png') }}" alt="Logo" class="logo"> --}}

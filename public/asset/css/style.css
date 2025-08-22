@@ -61,6 +61,7 @@ a:hover {
 .sidebar {
     width: 240px;
     background-color: var(--sidebar-bg);
+    /* opacity: 10%; */
     height: 100vh;
     overflow-y: auto;
     position: fixed;
@@ -68,7 +69,7 @@ a:hover {
     top: 0;
     bottom: 0;
     z-index: 1000;
-    border-right: 1px solid var(--border-color);
+    /* border-right: 1px solid var(--border-color); */
     /* width: 240px; */
     transition: width 0.3s ease;
 }
@@ -160,7 +161,7 @@ a:hover {
     left: 240px;
     right: 0;
     z-index: 1001;
-    border-bottom: 1px solid var(--border-color);
+    /* border-bottom: 1px solid var(--border-color); */
     width: calc(100% - 240px);
     transition: all 0.3s ease;
 }
@@ -205,18 +206,7 @@ a:hover {
     color: red;
 }
 
-.footer-content {
-    background-color: var(--sidebar-bg);
-    height: 40px;
-    align-items: center;
-    justify-items: center;
-    padding-top: 10px;
-    text-align: center;
-}
 
-.footer-content.a {
-    font-size: 25px;
-}
 
 /* Footer ended */
 
@@ -231,7 +221,7 @@ a:hover {
 .card {
     background: var(--card-bg);
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
     padding: 15px;
     flex: 1 1 250px;
     transition: transform 0.2s ease;

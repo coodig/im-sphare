@@ -7,9 +7,9 @@
         <h2 class="settings-title"><iconify-icon icon="mdi:account-cog"></iconify-icon>Account Settings</h2>
 
         {{-- Basic Info --}}
+        <h3>Peronal Info</h3>
         <div class="settings-section">
             <div>
-                <h3>Basic Information</h3>
                 <span><a href="{{route('settings.edit', ['username' => Auth::user()->username])}}">Edit</a></span>
             </div>
 
@@ -142,7 +142,7 @@
                 {{-- @method('PUT') --}}
 
                 <div class="form_element">
-                    <label for="theme">Choose Theme</label>
+                    <label for="theme">Theme</label>
                     <select id="theme" name="theme" onchange="toggleTheme(this.value)">
                         <option value="light" selected>Light</option>
                         <option value="dark">Dark</option>
@@ -261,14 +261,13 @@
         {{-- @endauth --}}
 
         {{-- Public API Key --}}
-        @auth
+        {{-- @auth
             <div class="settings-section">
                 <h3>Git Hub PAT Token</h3>
-                {{-- <p>Your API key allows others to access your public data via secure endpoints.</p> --}}
 
                 @foreach ($pat_token as $token)
                     <div class="api-key-box">
-                        <code {{-- id="apiKeyBox">{{$pat_token->github_token}}</code> --}}
+                        <code
                         id="apiKeyBox">{{$token->github_token}}</code>
                         <button type="button" onclick="copyAPIKey()"><iconify-icon
                                 icon="solar:copy-bold-duotone"></iconify-icon></button>
@@ -280,7 +279,7 @@
                     <button type="submit" class="btn-generate-key">Regenerate API Key</button>
                 </form>
             </div>
-        @endauth
+        @endauth --}}
 
         {{-- Danger Zone --}}
         <div class="settings-section danger-zone">

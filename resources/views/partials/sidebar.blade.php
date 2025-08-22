@@ -1,8 +1,8 @@
 <div class="sidebar-content">
     <div class="sidebar-top">
-        <button id="toggleSidebar" class="collapse-toggle">
+        {{-- <button id="toggleSidebar" class="collapse-toggle">
             <iconify-icon icon="line-md:menu-fold-left"></iconify-icon>
-        </button>
+        </button> --}}
         @auth
 
             <a href="{{route('home', ['username' => Auth::user()->username])}}"><iconify-icon
