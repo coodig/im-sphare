@@ -81,4 +81,12 @@ class User extends Authenticatable
     {
         return $this->hasMany(GithubRepo::class);
     }
+
+    public function maintenance()
+{
+    return $this->hasMany(Maintenance::class);
 }
+
+}
+
+

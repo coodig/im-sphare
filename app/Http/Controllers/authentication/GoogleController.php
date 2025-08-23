@@ -125,6 +125,9 @@ public function handleGoogleCallback()
     // Login karao
     Auth::login($user);
 
+    if($user -> role === 'superadmin'){
+        return redirect()->route('superadmin.maintenance.show');
+    }
     // Redirect to dashboard
     return redirect()->route('dashboard.show', [
         'username' => $user->username
