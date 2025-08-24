@@ -130,17 +130,17 @@
 
 }
 
-.bio{
+.bio {
     padding-top: 10px;
     font-size: medium;
 }
 
-h3{
+h3 {
     margin-top: 30px;
 }
 
 
-.profile-info-update-btn{
+.profile-info-update-btn {
     background-color: var(--btn-secondary-bg);
     color: var(--btn-secondary-text);
     border: var(--btn-secondary-border) solid 3px;
@@ -173,7 +173,7 @@ textarea.bio:focus {
     border-color: #007BFF;
     outline: none;
     box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
-    background-color:var(--input-bg);
+    background-color: var(--input-bg);
     color: var(--text-color);
 }
 
@@ -191,45 +191,47 @@ textarea.bio {
 
 /* Social Links - clean & modern */
 .section-title {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  color: var(--text-color); /* dark slate */
-  font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    /* dark slate */
+    font-weight: 700;
 
 }
 
 /* Wrapper */
 .social-links {
-  margin-top: 0.75rem;
-  margin-bottom: 1.5rem;
+    margin-top: 0.75rem;
+    margin-bottom: 1.5rem;
 }
 
 /* List */
 .social-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 0.66rem; /* space between items */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.66rem;
+    /* space between items */
 }
 
 /* Each item */
 .social-item {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  padding: 0.6rem 0.9rem;
-  border-radius: 10px;
-  background: var(--bg-color);
-  /* border: 1px solid #ececec; */
-  transition: transform 150ms ease, box-shadow 150ms ease;
-  justify-content: space-between;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.6rem 0.9rem;
+    border-radius: 10px;
+    background: var(--bg-color);
+    /* border: 1px solid #ececec; */
+    transition: transform 150ms ease, box-shadow 150ms ease;
+    justify-content: space-between;
 }
 
 /* Hover effect */
 .social-item:hover {
-  transform: translateY(-3px);
-  /* box-shadow: 0 8px 20px rgba(31,41,55,0.06); */
+    transform: translateY(-3px);
+    /* box-shadow: 0 8px 20px rgba(31,41,55,0.06); */
 }
 
 /* Left primary link (icon + platform name) */
@@ -247,70 +249,77 @@ textarea.bio {
 /* .primary-link  */
 .social-icon,
 .social-icon {
-  font-size: 1.05rem;    /* icon size */
-  /* color: #0b5ed7; */
-  display: inline-block;
+    font-size: 1.05rem;
+    /* icon size */
+    /* color: #0b5ed7; */
+    display: inline-block;
 }
 
 /* Platform name */
 .platform-name {
-  display: inline-block;
-  line-height: 1;
+    display: inline-block;
+    line-height: 1;
 }
 
 /* Right side URL (muted) */
 .url {
-  margin-left: auto;           /* push to right */
-  color: #6b7280;
-  font-size: 0.92rem;
-  text-decoration: none;
-  word-break: break-all;       /* long urls wrap */
+    margin-left: auto;
+    /* push to right */
+    color: #6b7280;
+    font-size: 0.92rem;
+    text-decoration: none;
+    word-break: break-all;
+    /* long urls wrap */
 }
 
 /* URL hover */
 .url:hover {
-  text-decoration: underline;
-  color: #0b5ed7;
+    text-decoration: underline;
+    color: #0b5ed7;
 }
 
 /* No links message */
 .no-links {
-  color: #6b7280;
-  margin: 0.25rem 0;
+    color: #6b7280;
+    margin: 0.25rem 0;
 }
 
 /* Small screens: stack nicely */
 @media (max-width: 600px) {
-  .social-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.45rem;
-    padding: 0.7rem;
-  }
+    /* body {
+        background: linear-gradient(0deg, #010101, #447288);
+    } */
 
-  .url {
-    margin-left: 0;
-    font-size: 0.9rem;
-  }
 
-  .primary-link {
-    font-size: 1rem;
-  }
+    .social-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.45rem;
+        padding: 0.7rem;
+    }
 
-  .profile-picture img {
-    width: 75px;
-    height: 75px;
-    border-radius: 100%;
-    border: 5px solid skyblue;
+    .url {
+        margin-left: 0;
+        font-size: 0.9rem;
+    }
+
+    .primary-link {
+        font-size: 1rem;
+    }
+
+    .profile-picture img {
+        width: 75px;
+        height: 75px;
+        border-radius: 100%;
+        border: 5px solid black;
+    }
+
+    .profile-header {
+        display: flex;
+        gap: 0px;
+        align-items: center;
+        margin-bottom: 25px;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
 }
-
-.profile-header {
-    display: flex;
-    gap: 0px;
-    align-items: center;
-    margin-bottom: 25px;
-    flex-wrap: wrap;
-    flex-direction: column;
-}
-}
-

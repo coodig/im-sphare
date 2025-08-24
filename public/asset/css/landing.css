@@ -99,21 +99,21 @@ body {
     font-weight: 500;
 }
 
-.menu-toggle {
+/* .menu-toggle {
     display: none;
     flex-direction: column;
     justify-content: space-between;
     width: 25px;
     height: 18px;
     cursor: pointer;
-}
+} */
 
-.menu-toggle span {
+/* .menu-toggle span {
     display: block;
     height: 3px;
     background-color: var(--secondary-color);
     border-radius: 2px;
-}
+} */
 
 .profile-icon .outer {
     width: 35px;
@@ -702,6 +702,9 @@ iconify-icon {
 
 @media screen and (max-width: 600px) {
 
+    a{
+        text-decoration: none !important;
+    }
 
     #imsphare-hero h1 {
         font-size: 2rem;
@@ -716,16 +719,6 @@ iconify-icon {
 
     }
 
-    .navbar-right .auth-method {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 10px;
-        padding: 10px;
-        border-radius: 8px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    }
 
     .menu-toggle {
         display: flex;
@@ -748,16 +741,57 @@ iconify-icon {
         line-height: 2.5;
     }
 
-    .navbar {
-        background-color: var(--sidebar-bg);
-        padding: 5px 5px;
-        font-size: small;
-        height: 60px;
+
+    .navbar-right .auth-method {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+    }
+
+    .navbar-right .welcome.user-name{
+        display: none;
+    }
+
+    /* s */
+
+    .navbar-right iconify-icon{
+        font-size: 1.2rem;
+        gap: 10px;
     }
 
     .navbar-right {
-        font-size: medium;
+        gap: 10px;
     }
+
+    .navbar {
+        background-color: var(--sidebar-bg);
+        padding: 0px 0px;
+        height: 60px;
+    }
+
+    .navbar-left .brand-name {
+        font-weight: 700;
+        font-size: 1.2rem;
+    }
+
+    .navbar-left .logo {
+        width: 1.6rem;
+        height: 1.6rem;
+    }
+
+    .navbar-left .brand {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+
 
 
     #imsphare-steps {
@@ -801,88 +835,101 @@ iconify-icon {
     }
 
     #imsphare-testimonials {
-    padding: 25px 5%;
-    text-align: center;
-    /* padding: 50px 20px; */
-    background-color: #0b1524;
-}
+        padding: 25px 5%;
+        text-align: center;
+        /* padding: 50px 20px; */
+        background-color: #0b1524;
+    }
 
-#imsphare-testimonials h2 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    /* margin-top: 25px; */
-    margin-bottom: 1rem;
-    color: #fff;
-    /* color: var(--text-color); */
-}
+    #imsphare-testimonials h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        /* margin-top: 25px; */
+        margin-bottom: 1rem;
+        color: #fff;
+        /* color: var(--text-color); */
+    }
 
-.imsphare-testimonials-content {
-    background: #081830;
-    padding: 10px 15px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    flex: 1 1 300px;
-    /* max-width: 350px; */
-    /* min-height: 300px; */
-    display: flex
-;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: left;
-    color: #fff;
-    transition: transform 0.3s ease-in-out;
-}
+    .imsphare-testimonials-content {
+        background: #081830;
+        padding: 10px 15px;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        flex: 1 1 300px;
+        /* max-width: 350px; */
+        /* min-height: 300px; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: left;
+        color: #fff;
+        transition: transform 0.3s ease-in-out;
+    }
 
-.testimonial-avatar img {
-    width: 75px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid black;
-    flex-shrink: 0;
-}
+    .testimonial-avatar img {
+        width: 75px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid black;
+        flex-shrink: 0;
+    }
 
-.imsphare-testimonial p {
-    /* font-style: italic; */
-    margin-bottom: 10px;
-}
+    .imsphare-testimonial p {
+        /* font-style: italic; */
+        margin-bottom: 10px;
+    }
 
-#imsphare-cta {
-    background: #00c6d7;
-    padding: 25px 5%;
-    text-align: center;
-    color: black;
-}
+    #imsphare-cta {
+        background: #00c6d7;
+        padding: 25px 5%;
+        text-align: center;
+        color: black;
+    }
 
-#imsphare-cta h2 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-}
+    #imsphare-cta h2 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
 
-.imsphare-cta-btn {
-    display: inline-block;
-    padding: 5px 15px;
-    margin: 25px 26px;
-    background: black;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: 0.3s;
-}
+    .imsphare-cta-btn {
+        display: inline-block;
+        padding: 5px 15px;
+        margin: 25px 26px;
+        background: black;
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: 0.3s;
+    }
 
-.footer-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    margin-bottom: 1rem;
-}
+    .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
 
-.footer-bottom {
-    background-color: var(--footer-bottom);
-    padding: 0.5rem 0;
-    font-size: 0.9rem;
-    text-align: center;
-    color: var(--text-color);
-}
+    .footer-bottom {
+        background-color: var(--footer-bottom);
+        padding: 0.5rem 0;
+        font-size: 0.9rem;
+        text-align: center;
+        color: var(--text-color);
+    }
+
+
+
+
+    .brand a {
+        text-decoration: none;
+        color: var(--text-color);
+        padding-top: 5px;
+    }
+
+
+
+
+
 }

@@ -41,11 +41,11 @@
                     <iconify-icon id="fullScreenIcon" icon="solar:full-screen-square-bold-duotone"
                         onclick="fullScreen()" role="button" style="cursor: pointer;"></iconify-icon>
 
-                    <div class="menu-toggle" id="menuToggle">
+                    {{-- <div class="menu-toggle" id="menuToggle">
                         <span></span>
                         <span></span>
                         <span></span>
-                    </div>
+                    </div> --}}
 
                     @guest
                         <div class="auth-method">

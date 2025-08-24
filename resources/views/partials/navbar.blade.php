@@ -1,10 +1,12 @@
 <nav class="custom-navbar">
 
     <div class="navbar-left">
+        <div class="sidebar-toggle">
+            <button id="toggleSidebar" class="collapse-toggle">
+                <iconify-icon icon="bi:layout-text-sidebar-reverse"></iconify-icon>
+            </button>
+        </div>
 
-        <button id="toggleSidebar" class="collapse-toggle">
-            <iconify-icon icon="hugeicons:sidebar-left-01"></iconify-icon>
-        </button>
         {{-- Brand --}}
         <div class="brand">
             {{-- <img src="{{ asset('asset/iocns/light-logo.png') }}" alt="Logo" class="logo"> --}}
