@@ -32,6 +32,9 @@
                 <a href="{{ url('auth/google') }}" class="btn btn-danger auth__link-group">
                     <i class="fab fa-google"></i><span>Google</span>
                 </a>
+                <a href="{{ url('auth/github') }}" class="btn btn-dark auth__link-group">
+                    <i class="fab fa-google"></i><span>Github</span>
+                </a>
 
                 <div class="auth__link-group">
                     <span>Don't have an account?<a href="{{ route('signup.show') }}" class="auth__link"> Register</a></span>

@@ -27,7 +27,7 @@
 
                 <div class="navbar-left">
                     <div class="brand">
-                        <a href="{{route('landing.show')}}"><img src="{{ asset('asset/icons/dark-logo.png') }}"
+                        <a href="{{route('landing.show')}}"><img src="{{ asset('asset/icons/imsphare-icon.png') }}"
                                 alt="Logo" class="logo" dark-theme></a>
                         <span class="brand-name"><a href="{{route('landing.show')}}">IMSPhare</a></span>
                     </div>

@@ -1,7 +1,19 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&display=swap'); */
 /* @import url('"https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&amp;family=Roboto:wght@500;700;900&amp;display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap'); */
 
+@font-face {
+    font-family: "ArialRoundedMTBold";
+    src: url("/fonts/ArialRoundedMTBold.woff2") format("woff2"),
+         url("/fonts/ArialRoundedMTBold.woff") format("woff"),
+         url("/fonts/ArialRoundedMTBold.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* body {
+    font-family: "ArialRoundedMTBold", sans-serif;
+} */
 :root {
     --sidebar-width: 200px;
 }
@@ -24,7 +36,8 @@ body {
     height: 100%;
     background-color: var(--bg-color);
     color: var(--text-color);
-    font-family: "Lexend Deca", sans-serif;
+    /* font-family: "Lexend Deca", sans-serif; */
+    font-family: "ArialRoundedMTBold", sans-serif;
     font-style: normal;
 }
 
@@ -38,6 +51,7 @@ body {
     font-size: 1.4rem;
     font-weight: bold;
     color: var(--text-color);
+    font-family: Arial Rounded MT Bold,Helvetica Rounded,Arial,sans-serif;
 }
 
 
@@ -68,7 +82,8 @@ a:hover {
     left: 0;
     top: 0;
     bottom: 0;
-    z-index: 1000;
+    padding-top: 65px;
+    /* z-index: 1000; */
     /* border-right: 1px solid var(--border-color); */
     /* width: 240px; */
     transition: width 0.3s ease;
@@ -155,26 +170,27 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1rem;
+    /* padding: 0 1rem; */
     position: fixed;
     top: 0;
-    left: 240px;
+    /* left: 240px; */
     right: 0;
     z-index: 1001;
     /* border-bottom: 1px solid var(--border-color); */
-    width: calc(100% - 240px);
+    width:100%;
     transition: all 0.3s ease;
 }
 
 .custom-navbar.collapsed {
-    left: 70px;
-    width: calc(100% - 70px);
+    /* left: 70px; */
+    width: 100%;
 }
 
 .navbar-left {
     display: flex;
     align-items: center;
-    gap: 70px;
+    gap: 10px;
+    padding: 25px 15px;
 }
 
 

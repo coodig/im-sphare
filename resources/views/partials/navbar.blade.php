@@ -10,7 +10,7 @@
         {{-- Brand --}}
         <div class="brand">
             {{-- <img src="{{ asset('asset/iocns/light-logo.png') }}" alt="Logo" class="logo"> --}}
-            <a href="{{route('landing.show')}}"><img src="{{ asset('asset/icons/dark-logo.png') }}" alt="Logo" class="logo" dark-theme>
+            <a href="{{route('landing.show')}}"><img src="{{ asset('asset/icons/imsphare-icon.png') }}" alt="Logo" class="logo" dark-theme>
             <span class="brand-name">IMSPhare</span></a>
         </div>
 

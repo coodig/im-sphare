@@ -159,6 +159,7 @@
     font-size: 15px;
 }
 
+
 .auth__link {
     color: #007bff;
     text-decoration: none;
@@ -168,6 +169,22 @@
 
 .auth__link:hover {
     text-decoration: underline;
+}
+
+@media screen and (max-width: 900px) {
+
+    .brand a {
+        text-decoration: none;
+        color: var(--text-color);
+        display: flex;
+        gap: 5px;
+    }
+
+    .navbar-left .logo {
+    width: 35px;
+    height: 35px;
+    padding-bottom: 2px;
+}
 }
 
 
@@ -209,6 +226,7 @@
 
 
 }
+
 
 
 
@@ -266,7 +284,7 @@
         right: 0;
         z-index: 100;
         border-bottom: 1px solid var(--border-color);
-        width: calc(100% - 240px);
+        width: 100%;
         transition: all 0.3s ease;
     }
 
@@ -480,12 +498,12 @@
         font-size: 0.8rem;
     }
 
-    .sidebar-toggle button{
+    .sidebar-toggle button {
         margin-right: 5px;
         padding-right: 5px;
     }
 
-        button {
+    button {
         /* background: var(--btn-primary-bg); */
         border: none;
         padding: 0px 0px;
@@ -498,7 +516,7 @@
         background: transparent;
     }
 
-    .sidebar-toggle iconfy-icon{
+    .sidebar-toggle iconfy-icon {
         color: white !important;
     }
 

@@ -9,7 +9,7 @@
             <div class="hero-content">
                 @auth
                     <h1>Hi, I'm <span class="highlight">{{ ucwords(Auth::user()->profile->name ?? Auth::user()->username)}}</span></h1>
-                    <p class="tagline">{{ ucfirst(Auth::user()->profile->bio)}}</p>
+                    <p class="tagline">{{ ucfirst(Auth::user()->profile->bio ?? '')}}</p>
                     <a href="https://github.com/coodig" target="_blank" class="btn-primary"><iconify-icon icon="streamline-freehand:collaboration-team-chat"></iconify-icon>Let's Collaborate</a>
 
                     @if (!$hasGitHubToken)

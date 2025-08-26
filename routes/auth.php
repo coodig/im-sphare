@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\authentication\ForgotPassController;
+use App\Http\Controllers\authentication\GithubController;
 use App\Http\Controllers\authentication\GoogleController;
 use App\Http\Controllers\authentication\LogInController;
 use App\Http\Controllers\authentication\LogoutController;
@@ -29,3 +30,8 @@ Route::post('/logout',[LogoutController::class,'logout'])->name('logout');
 
 Route::get('auth/google',[GoogleController::class,'redirectToGoogle']);
 Route::get('auth/google/callback',[GoogleController::class,'handleGoogleCallback']);
+
+Route::get('auth/github',[GithubController::class,'redirectToGithub']);
+Route::get('auth/github/callback',[GithubController::class,'handleGithubCallback']);
+
+

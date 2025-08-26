@@ -44,6 +44,9 @@
            <a href="{{ url('auth/google') }}" class="btn btn-danger">
     <i class="fab fa-google"></i> Sign Up with Google
 </a>
+<a href="{{ url('auth/github') }}" class="btn btn-dark auth__link-group">
+                    <i class="fab fa-google"></i><span>Github</span>
+                </a>
 
             <div class="auth__link-group">
                 {{-- <a href="{{ route('password.request') }}" class="auth__link">Forgot Password?</a> --}}
