@@ -10,17 +10,12 @@
     <link rel="stylesheet" href="{{ asset('asset/css/landing.css') }}">
 
     <link rel="stylesheet" href="{{ asset('asset/css/theme.css') }}">
-    {{--
-    <link rel="stylesheet" href="{{ asset('asset/css/layout.css') }}"> --}}
-
 
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.0/dist/iconify-icon.min.js"></script>
 
 </head>
 
 <body>
-    {{-- <div class="layout"> --}}
-
         <div class="main-wrapper">
 
             <div class="navbar">
@@ -41,16 +36,10 @@
                     <iconify-icon id="fullScreenIcon" icon="solar:full-screen-square-bold-duotone"
                         onclick="fullScreen()" role="button" style="cursor: pointer;"></iconify-icon>
 
-                    {{-- <div class="menu-toggle" id="menuToggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div> --}}
-
                     @guest
                         <div class="auth-method">
                             <a href="{{ route('signup.show') }}" class="signup">SignUp</a>
-                            &nbsp;/&nbsp;
+                            &nbsp;&nbsp;
                             <a href="{{ route('login.show') }}" class="login" id="auth-login-btn">LogIn</a>
                         </div>
                     @endguest

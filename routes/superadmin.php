@@ -2,7 +2,7 @@
 
 // use App\Http\Controllers\SuperAdmin\DashboardController;
 use App\Http\Controllers\SuperAdmin\MaintenanceController;
-use App\Http\Controllers\Superadmin\SuperadminDashboardController;
+use App\Http\Controllers\SuperAdmin\SuperadminDashboardController;
 use App\Http\Controllers\SuperAdmin\UsersController;
 use Illuminate\Support\Facades\Route;
 

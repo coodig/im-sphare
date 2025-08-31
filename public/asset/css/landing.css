@@ -86,6 +86,10 @@ body {
     text-decoration: none;
     color: var(--text-color);
     font-weight: 500;
+    border: var(--text-color) solid 2px;
+    padding: 5px 8px;
+    border-radius: 15rem;
+
 }
 
 .navbar-right .auth-method a.signup a.login {
@@ -743,23 +747,9 @@ iconify-icon {
     }
 
 
-    .navbar-right .auth-method {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 10px;
-        padding: 10px;
-        border-radius: 8px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        text-decoration: none;
-    }
-
     .navbar-right .welcome.user-name {
         display: none;
     }
-
-    /* s */
 
     .navbar-right iconify-icon {
         font-size: 1.2rem;
@@ -814,6 +804,10 @@ iconify-icon {
     margin-bottom: 30px;
     margin-bottom: 20px;
     } */
+    .auth-method .signup{
+        display: none;
+    }
+
 
     #imsphare-how {
         padding: 25px 0%;
@@ -823,7 +817,6 @@ iconify-icon {
 
     #imsphare-how h2 {
         font-size: 1.5rem;
-        /* font-weight: bold; */
     }
 
     .step-text {

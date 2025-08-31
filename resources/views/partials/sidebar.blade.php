@@ -26,10 +26,10 @@
             <span class="sidebar-text">About</span></a> --}}
 
 
-            <a href="{{ route('about_me.show', ['username' => Auth::user()->username]) }}">
+            {{-- <a href="{{ route('about_me.show', ['username' => Auth::user()->username]) }}">
                 <iconify-icon icon="solar:info-circle-bold-duotone"></iconify-icon>
                 <span class="sidebar-text">About</span>
-            </a>
+            </a> --}}
         @endauth
     </div>
 

@@ -10,10 +10,10 @@
                 @auth
                     <h1>Hi, I'm <span class="highlight">{{ ucwords(Auth::user()->profile->name ?? Auth::user()->username)}}</span></h1>
                     <p class="tagline">{{ ucfirst(Auth::user()->profile->bio ?? '')}}</p>
-                    <a href="https://github.com/coodig" target="_blank" class="btn-primary"><iconify-icon icon="streamline-freehand:collaboration-team-chat"></iconify-icon>Let's Collaborate</a>
+                    <a href="https://github.com/coodig" target="_blank" class="btn btn-primary"><iconify-icon icon="streamline-freehand:collaboration-team-chat"></iconify-icon>Let's Collaborate</a>
 
                     @if (!$hasGitHubToken)
-                    <a href="{{ route('github.form.show',['username',Auth::user()->username]) }}" class="btn-primary"><iconify-icon icon="fluent-emoji:key"></iconify-icon>Add GitHub Token</a>
+                    <a href="{{ route('github.form.show',['username',Auth::user()->username]) }}" class="btn btn-dark"><iconify-icon icon="fluent-emoji:key"></iconify-icon>Add GitHub Token</a>
                     @endif
                     @endauth
 
