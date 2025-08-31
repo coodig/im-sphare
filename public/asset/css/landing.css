@@ -799,15 +799,15 @@ iconify-icon {
         width: 100%;
     }
 
-    /* #impshare-hero p{
-            font-size: 1rem;
-    margin-bottom: 30px;
-    margin-bottom: 20px;
-    } */
-    .auth-method .signup{
+    .auth-method .signup {
         display: none;
     }
 
+    .auth-method {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
 
     #imsphare-how {
         padding: 25px 0%;
