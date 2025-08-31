@@ -10,9 +10,8 @@ class UsersController extends Controller {
 
     public function index(){
 
-        $user = User::all();
-        return view('superadmin.users.index',compact('user'));
-
+        $users = User::all();
+        return view('superadmin.users.index',compact('users'));
 
            }
 }

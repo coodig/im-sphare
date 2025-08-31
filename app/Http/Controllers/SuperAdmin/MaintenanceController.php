@@ -18,7 +18,7 @@ class MaintenanceController extends Controller
 
     public function show()
     {
-        $logs = Maintenance::with('user:id,username')->latest()->limit(20)->get();
+        $logs = Maintenance::with('user:id,username')->latest()->simplePaginate(10);
 
         $laravelLogPath = storage_path('logs/laravel.log');
         $logPreview = File::exists($laravelLogPath) ? $this->tailFile($laravelLogPath, 60) : '(no laravel.log file found)';

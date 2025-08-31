@@ -69,45 +69,6 @@ function copyAPIKey() {
     });
 }
 
-// function fullScreen() {
-//     const icon = document.getElementById("fullScreenIcon");
-
-//     if (!document.fullscreenElement) {
-//         document.documentElement
-//             .requestFullscreen()
-//             .then(() => {
-//                 icon.setAttribute(
-//                     "icon",
-//                     "solar:minimize-square-2-bold-duotone"
-//                 );
-//                 localStorage.setItem("isFullscreen", "true");
-//             })
-//             .catch((err) => {
-//                 console.error(
-//                     `Error attempting to enable full-screen mode: ${err.message}`
-//                 );
-//             });
-//     } else {
-//         document.exitFullscreen().then(() => {
-//             icon.setAttribute("icon", "solar:full-screen-square-bold-duotone");
-//             localStorage.setItem("isFullscreen", "false");
-//         });
-//     }
-// }
-
-// window.addEventListener("load", () => {
-//     const icon = document.getElementById("fullScreenIcon");
-
-//     if (
-//         localStorage.getItem("isFullscreen") === "true" &&
-//         !document.fullscreenElement
-//     ) {
-//         document.documentElement.requestFullscreen().then(() => {
-//             icon.setAttribute("icon", "solar:minimize-square-2-bold-duotone");
-//         });
-//     }
-// });
-
 function fullScreen() {
     const icon = document.getElementById("fullScreenIcon");
 

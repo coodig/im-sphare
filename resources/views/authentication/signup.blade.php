@@ -48,6 +48,13 @@
                     <i class="fab fa-google"></i><span>Github</span>
                 </a>
 
+                {{-- <a href="{{ url('auth/github') }}" class="btn btn-primary auth__link-group">
+                    <i class="fab fa-google"></i><span>Facebook</span>
+                </a>
+                <a href="{{ url('auth/github') }}" class="btn btn-primary auth__link-group">
+                    <i class="fab fa-google"></i><span>Linkedin</span>
+                </a> --}}
+
             <div class="auth__link-group">
                 {{-- <a href="{{ route('password.request') }}" class="auth__link">Forgot Password?</a> --}}
                 <a href="{{ route('login.show') }}">Have an account? <span class="auth__link">Login</span></a>

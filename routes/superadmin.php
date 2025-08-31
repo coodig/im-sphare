@@ -1,6 +1,9 @@
 <?php
 
+// use App\Http\Controllers\SuperAdmin\DashboardController;
 use App\Http\Controllers\SuperAdmin\MaintenanceController;
+use App\Http\Controllers\Superadmin\SuperadminDashboardController;
+use App\Http\Controllers\SuperAdmin\UsersController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth','isSuperAdmin'])->prefix('superadmin')->name('superadmin.')->group(function(){
@@ -17,5 +20,10 @@ Route::middleware(['auth','isSuperAdmin'])->prefix('superadmin')->name('superadm
 
     Route::delete('/maintenance/laravel-log', [MaintenanceController::class, 'purgeLaravelLog'])
         ->name('maintenance.purge.laravel_log');
+
+
+
+    Route::get('/dashboard',[SuperadminDashboardController::class,'show'])->name('dashboard');
+    Route::get('/users-list',[UsersController::class,'index'])->name('users');
 });
 

@@ -29,12 +29,27 @@
                 <div class="auth__form-group auth__form-group--submit">
                     <button type="submit" class="btn btn-primary">Login</button>
                 </div>
+                <span>Or Login with</span>
                 <a href="{{ url('auth/google') }}" class="btn btn-danger auth__link-group">
-                    <i class="fab fa-google"></i><span>Google</span>
+                    <iconify-icon
+                    icon="uim:google"></iconify-icon>
+                    <span>Google</span>
                 </a>
                 <a href="{{ url('auth/github') }}" class="btn btn-dark auth__link-group">
-                    <i class="fab fa-google"></i><span>Github</span>
+                    <iconify-icon
+                    icon="line-md:github-twotone"></iconify-icon>
+                    <span>Github</span>
                 </a>
+                {{-- <a href="{{ url('auth/github') }}" class="btn btn-primary auth__link-group"> --}}
+                    {{-- <iconify-icon --}}
+                    {{-- icon="line-md:facebook"></iconify-icon> --}}
+                    {{-- <span>Facebook</span> --}}
+                {{-- </a> --}}
+                {{-- <a href="{{ url('auth/github') }}" class="btn btn-primary auth__link-group"> --}}
+                    {{-- <iconify-icon --}}
+                    {{-- icon="streamline-logos:linkedin-logo-solid"></iconify-icon> --}}
+                    {{-- <span>Linkedin</span> --}}
+                {{-- </a> --}}
 
                 <div class="auth__link-group">
                     <span>Don't have an account?<a href="{{ route('signup.show') }}" class="auth__link"> Register</a></span>

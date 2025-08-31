@@ -37,7 +37,7 @@ Route::get('/u/{username}/projects/{owner}/{repo}/details', [ReadmeController::c
 Route::prefix('/u/{username}')->group(function () {
 
     Route::get('/home', [HomeController::class, 'index'])->name('home');
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.show');
+    Route::get('/dashboard', [DashboardController::class, 'userDashboard'])->name('dashboard.show');
 
     Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
     Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
