@@ -33,13 +33,12 @@ class ReposController extends Controller
                 GithubRepo::updateOrCreate(
                     [
                         // 'full_name'=>$repo['full_name'],
-                        'repo_id' => $repo['id'],
+                        // 'repo_id' => $repo['id'],
                         'user_id' => Auth::id(),
 
                     ],
                     [
                         'name' => $repo['name'],
-                        //         'name' => $repo['name'],
                         'full_name' => $repo['full_name'],
                         'description' => $repo['description'] ?? null,
                         'html_url' => $repo['html_url'],

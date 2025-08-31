@@ -57,7 +57,9 @@
             <a href="{{ route('profile.show', ['username' => Auth::user()->username])}}">
                     <div class="profile-icon">
                         <div class="outer">
-                            <div class="inner"></div>
+                            <div class="inner">
+                                {{-- <img src="{{asset('asset/js/about.jpg')}}" alt=""> --}}
+                            </div>
                         </div>
                     </div>
                 </a>

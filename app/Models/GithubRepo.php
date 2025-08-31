@@ -12,7 +12,6 @@ class GithubRepo extends Model
     protected $fillable = [
         'github_id',
         'user_id',
-        'repo_id',
         'name',
         'full_name',
         'description',

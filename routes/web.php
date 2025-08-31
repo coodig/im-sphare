@@ -1,12 +1,6 @@
 <?php
 
 use App\Http\Controllers\About\AboutController;
-use App\Http\Controllers\authentication\ForgotPassController;
-use App\Http\Controllers\authentication\LogInController;
-use App\Http\Controllers\authentication\LogoutController;
-use App\Http\Controllers\authentication\ResetPasswordController;
-use App\Http\Controllers\authentication\SignInController;
-use App\Http\Controllers\authentication\SignUpController;
 use App\Http\Controllers\Contact\ContactController;
 use App\Http\Controllers\DashboardController;
 // use App\Http\Controllers\SuperAdmin\UsersController;

@@ -1,7 +1,7 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&display=swap'); */
 /* @import url('"https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&amp;family=Roboto:wght@500;700;900&amp;display=swap'); */
-/* @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap'); */
-
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+/*
 @font-face {
     font-family: "ArialRoundedMTBold";
     src: url("/fonts/ArialRoundedMTBold.woff2") format("woff2"),
@@ -9,7 +9,7 @@
          url("/fonts/ArialRoundedMTBold.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
-}
+} */
 
 /* body {
     font-family: "ArialRoundedMTBold", sans-serif;
@@ -39,7 +39,7 @@ body {
     background-color: #c3e7f4;
 
     color: var(--text-color);
-    /* font-family: "Lexend Deca", sans-serif; */
+    font-family: "Lexend Deca", sans-serif;
     font-family: "ArialRoundedMTBold", sans-serif;
     font-style: normal;
 }
@@ -59,7 +59,6 @@ body {
 
 
 a {
-    /* color: var(--btn-primary-text); */
     color: var(--btn-secondary-text);
     text-decoration: none;
 }
@@ -78,7 +77,6 @@ a:hover {
 .sidebar {
     width: 240px;
     background-color: var(--sidebar-bg);
-    /* opacity: 10%; */
     height: 100vh;
     overflow-y: auto;
     position: fixed;
@@ -86,9 +84,6 @@ a:hover {
     top: 0;
     bottom: 0;
     padding-top: 65px;
-    /* z-index: 1000; */
-    /* border-right: 1px solid var(--border-color); */
-    /* width: 240px; */
     transition: width 0.3s ease;
 }
 
@@ -176,16 +171,13 @@ a:hover {
     /* padding: 0 1rem; */
     position: fixed;
     top: 0;
-    /* left: 240px; */
     right: 0;
     z-index: 1001;
-    /* border-bottom: 1px solid var(--border-color); */
     width:100%;
     transition: all 0.3s ease;
 }
 
 .custom-navbar.collapsed {
-    /* left: 70px; */
     width: 100%;
 }
 
@@ -240,7 +232,6 @@ a:hover {
 .card {
     background: var(--card-bg);
     border-radius: 10px;
-    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
     padding: 15px;
     flex: 1 1 250px;
     transition: transform 0.2s ease;
@@ -303,13 +294,6 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.inner {
-    width: 30px;
-    height: 30px;
-    background-color: var(--accent-color);
-    border-radius: 50%;
 }
 
 /* Profile icon ended */
