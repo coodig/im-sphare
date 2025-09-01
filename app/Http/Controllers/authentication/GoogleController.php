@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Authentication;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Mail\WelcomeMail;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Mail;
 
 class GoogleController extends Controller
 {
@@ -53,82 +55,81 @@ class GoogleController extends Controller
     //     ]);
     // }
 
-//     public function handleGoogleCallback()
-// {
-//     $googleUser = Socialite::driver('google')->user();
+    //     public function handleGoogleCallback()
+    // {
+    //     $googleUser = Socialite::driver('google')->user();
 
-//     // Check if user already exists by email
-//     $user = User::where('email', $googleUser->getEmail())->first();
+    //     // Check if user already exists by email
+    //     $user = User::where('email', $googleUser->getEmail())->first();
 
-//     if($user){
-//         Auth::login($user);
-//     }else{
-//     // if (!$user) {
-//         // Agar naya user hai to username generate karo
-//         $baseUsername = Str::slug($googleUser->getName(), '_');
-//         $username = $baseUsername;
-//         $count = 1;
+    //     if($user){
+    //         Auth::login($user);
+    //     }else{
+    //     // if (!$user) {
+    //         // Agar naya user hai to username generate karo
+    //         $baseUsername = Str::slug($googleUser->getName(), '_');
+    //         $username = $baseUsername;
+    //         $count = 1;
 
-//         while (User::where('username', $username)->exists()) {
-//             $username = $baseUsername . $count;
-//             $count++;
-//         }
+    //         while (User::where('username', $username)->exists()) {
+    //             $username = $baseUsername . $count;
+    //             $count++;
+    //         }
 
-//         // User create karo
-//         $user = User::create([
-//             'username' => $username,
-//             'email'    => $googleUser->getEmail(),
-//             'password' => bcrypt(Str::random(24)), // Random password
-//         ]);
-//         Auth::login($user);
-//     }
+    //         // User create karo
+    //         $user = User::create([
+    //             'username' => $username,
+    //             'email'    => $googleUser->getEmail(),
+    //             'password' => bcrypt(Str::random(24)), // Random password
+    //         ]);
+    //         Auth::login($user);
+    //     }
 
-//     // Login the user
+    //     // Login the user
 
-//     // Redirect to dashboard with username
-//     return redirect()->route('dashboard.show', [
-//         'username' => $user->username
-//     ]);
-// }
+    //     // Redirect to dashboard with username
+    //     return redirect()->route('dashboard.show', [
+    //         'username' => $user->username
+    //     ]);
+    // }
 
-public function handleGoogleCallback()
-{
-    $googleUser = Socialite::driver('google')->user();
+    public function handleGoogleCallback()
+    {
+        $googleUser = Socialite::driver('google')->user();
 
-    // Check if user already exists by email
-    $user = User::where('email', $googleUser->getEmail())->first();
+        // Check if user already exists by email
+        $user = User::where('email', $googleUser->getEmail())->first();
 
-    if (!$user) {
-        // Agar naya user hai to username generate karo
-        $baseUsername = Str::slug($googleUser->getName(), '-');
-        $username = $baseUsername;
-        $count = 1;
+        if (!$user) {
+            // Agar naya user hai to username generate karo
+            $baseUsername = Str::slug($googleUser->getName(), '-');
+            $username = $baseUsername;
+            $count = 1;
 
-        while (User::where('username', $username)->exists()) {
-            $username = $baseUsername . $count;
-            $count++;
+            while (User::where('username', $username)->exists()) {
+                $username = $baseUsername . $count;
+                $count++;
+            }
+
+            // Naya user create karo
+            $user = User::create([
+                'username' => $username,
+                'email'    => $googleUser->getEmail(),
+                'password' => bcrypt(Str::random(24)), // Random password
+                'name'     => $googleUser->getName(),  // Optional: agar tumhare table me hai
+            ]);
         }
 
-        // Naya user create karo
-        $user = User::create([
-            'username' => $username,
-            'email'    => $googleUser->getEmail(),
-            'password' => bcrypt(Str::random(24)), // Random password
-            'name'     => $googleUser->getName(),  // Optional: agar tumhare table me hai
+        // Login karao
+        Mail::to($user->email)->send(new WelcomeMail($user));
+        Auth::login($user);
+
+        if ($user->role === 'superadmin') {
+            return redirect()->route('superadmin.maintenance.show');
+        }
+        // Redirect to dashboard
+        return redirect()->route('dashboard.show', [
+            'username' => $user->username
         ]);
     }
-
-    // Login karao
-    Auth::login($user);
-
-    if($user -> role === 'superadmin'){
-        return redirect()->route('superadmin.maintenance.show');
-    }
-    // Redirect to dashboard
-    return redirect()->route('dashboard.show', [
-        'username' => $user->username
-    ]);
-}
-
-
 }

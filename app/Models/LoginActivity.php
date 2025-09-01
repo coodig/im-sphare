@@ -8,10 +8,13 @@ class LoginActivity extends Model
 {
     protected $fillable = [
         'user_id',
-        'location',
-        'operating_system',
-        'status',
-        'login_time',
+        'ip_address',
+        'browser',
+        'device',
+        // 'location',
+        // 'operating_system',
+        // 'status',
+        'logged_in_at',
 
     ];
 }

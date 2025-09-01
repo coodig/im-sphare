@@ -41,12 +41,12 @@
             </div>
 
             <div class="about-img">
-                <img src="{{ asset('asset/img/about.jpg') }}" alt="Terms Image">
+                <img src="{{ asset('asset/img/terms.svg') }}" alt="Terms Image">
             </div>
 
-            <div class="about-footer">
+            {{-- <div class="about-footer">
                 <p>By using IMSphare, you acknowledge that you have read and agree to these terms. Thank you for trusting us!</p>
-            </div>
+            </div> --}}
         </div>
 
     </div>

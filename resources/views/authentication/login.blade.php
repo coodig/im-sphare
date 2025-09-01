@@ -40,16 +40,6 @@
                     icon="line-md:github-twotone"></iconify-icon>
                     <span>Github</span>
                 </a>
-                {{-- <a href="{{ url('auth/github') }}" class="btn btn-primary auth__link-group"> --}}
-                    {{-- <iconify-icon --}}
-                    {{-- icon="line-md:facebook"></iconify-icon> --}}
-                    {{-- <span>Facebook</span> --}}
-                {{-- </a> --}}
-                {{-- <a href="{{ url('auth/github') }}" class="btn btn-primary auth__link-group"> --}}
-                    {{-- <iconify-icon --}}
-                    {{-- icon="streamline-logos:linkedin-logo-solid"></iconify-icon> --}}
-                    {{-- <span>Linkedin</span> --}}
-                {{-- </a> --}}
 
                 <div class="auth__link-group">
                     <span>Don't have an account?<a href="{{ route('signup.show') }}" class="auth__link"> Register</a></span>

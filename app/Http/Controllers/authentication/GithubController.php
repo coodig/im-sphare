@@ -8,6 +8,8 @@ use Exception;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\WelcomeMail;
 
 class GithubController extends Controller
 {
@@ -46,6 +48,7 @@ class GithubController extends Controller
                 ]);
             }
 
+            Mail::to($user->email)->send(new WelcomeMail($user));
             Auth::login($user);
 
 

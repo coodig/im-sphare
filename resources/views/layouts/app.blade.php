@@ -42,7 +42,7 @@
             {{-- @auth --}}
 
             <div class="footer">
-                @include('partials.footer')
+                {{-- @include('partials.footer') --}}
             </div>
             {{-- @endauth --}}
         </div>

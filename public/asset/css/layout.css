@@ -171,6 +171,11 @@
     text-decoration: underline;
 }
 
+
+#toggleSidebar{
+        background-color: transparent !important;
+    }
+
 @media screen and (max-width: 900px) {
 
     .brand a {
@@ -416,12 +421,12 @@
         /* background: var(--btn-primary-bg); */
         border: none;
         padding: 0px 0px;
-        color: var(--btn-primary-text);
+        /* color: var(--btn-primary-text); */
         /* border-radius: 4px; */
         cursor: pointer;
         /* margin-top: 8px; */
         width: 100%;
-        color: black;
+        /* color: black; */
         background: transparent;
     }
 
@@ -501,8 +506,12 @@
     .sidebar-toggle button {
         margin-right: 5px;
         padding-right: 5px;
+        /* background-color: none; */
     }
 
+    /* #toggleSidebar{
+        background-color: red !important;
+    } */
     button {
         /* background: var(--btn-primary-bg); */
         border: none;

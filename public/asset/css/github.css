@@ -36,10 +36,9 @@
 }
 
 button {
-    background: var(--btn-primary-bg);
     border: none;
     padding: 6px 10px;
-    color: var(--btn-primary-text);
+    color: var(--text-color);
     border-radius: 4px;
     cursor: pointer;
     margin-top: 8px;

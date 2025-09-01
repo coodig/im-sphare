@@ -39,11 +39,11 @@
                     </ul>
                 </div>
                 <div class="about-img">
-                    <img src="{{ asset('asset/img/about.jpg')}}" alt="this image">
+                    <img src="{{ asset('asset/img/about_us2.svg')}}" alt="About Image">
                 </div>
-                <div class="about-footer">
+                {{-- <div class="about-footer">
                     <p>Join us today and start building your standout online presence!</p>
-                </div>
+                </div> --}}
             </div>
 
             {{--

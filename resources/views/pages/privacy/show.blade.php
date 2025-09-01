@@ -37,12 +37,12 @@
             </div>
 
             <div class="about-img">
-                <img src="{{ asset('asset/img/about.jpg') }}" alt="Privacy Image">
+                <img src="{{ asset('asset/img/privacy_policy.svg') }}" alt="Privacy Image">
             </div>
 
-            <div class="about-footer">
+            {{-- <div class="about-footer">
                 <p>By using IMSphare, you agree to the terms of this privacy policy. We are committed to maintaining your trust.</p>
-            </div>
+            </div> --}}
         </div>
 
     </div>

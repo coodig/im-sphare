@@ -73,3 +73,20 @@ Route::prefix('super-admin')->name('superadmin.')->group(function () {
     Route::get('dashboard', [SuperAdminDashboardController::class, 'index'])->name('dashboard');
     Route::resource('users',SuperAdminUsersController::class);
 });
+
+
+
+
+
+// Error page testing routes
+Route::prefix('test-error')->group(function () {
+    Route::get('/401', fn() => abort(401));
+    Route::get('/402', fn() => abort(402));
+    Route::get('/403', fn() => abort(403));
+    Route::get('/404', fn() => abort(404));
+    Route::get('/419', fn() => abort(419));
+    Route::get('/429', fn() => abort(429));
+    Route::get('/500', fn() => abort(500));
+    Route::get('/503', fn() => abort(503));
+    Route::get('/welcome-mail', fn() => abort(503));
+});

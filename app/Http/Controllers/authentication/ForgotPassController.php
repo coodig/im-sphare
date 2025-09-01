@@ -22,6 +22,8 @@ class ForgotPassController extends Controller
 
     public function sendPasswordResetLink(Request $request)
     {
+
+        $user = User::where('email', $request->email)->first();
         $request->validate(['email' => 'required|exists:users,email|email']);
 
         $forgetPassResetToken = Str::random(64);
@@ -34,13 +36,22 @@ class ForgotPassController extends Controller
             ]
         );
 
-        $resetPasswordLink = url('/reset-password/'.$forgetPassResetToken.'?email='.urlencode($request->email));
+        $resetPasswordLink = url('/reset-password/' . $forgetPassResetToken . '?email=' . urlencode($request->email));
 
-        Mail::raw("Click this link to reset your password : $resetPasswordLink",function($message) use ($request){
+        // Mail::raw("Click this link to reset your password : $resetPasswordLink", function ($message) use ($request) {
 
-            $message->to($request->email)->subject('Password Reset Request');
+        //     $message->to($request->email)->subject('Password Reset Request');
+        // });
+
+        Mail::send('emails.reset-password-mail', [
+            'resetPasswordLink' => $resetPasswordLink,
+            'user' => $user,
+        ], function ($message) use ($request) {
+            $message->to($request->email)
+                ->subject('Password Reset Request');
         });
 
-        return redirect()->back()->with('status','We have emailed your password reset link');
+        // dd($user);
+        return redirect()->back()->with('status', 'We have emailed your password reset link');
     }
 }
