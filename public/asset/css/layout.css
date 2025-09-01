@@ -244,7 +244,7 @@
 
     .main-content {
         flex: 1;
-        padding: 50px 5%;
+        padding: 70px 1%;
         overflow-y: auto;
         height: 100%;
     }
@@ -294,8 +294,9 @@
     }
 
     .sidebar {
-        z-index: 0;
+        z-index: 1000;
         position: absolute;
+        /* position: relative; */
         padding-top: 50px;
         transition: 0.5ms ease-in-out;
 
@@ -345,6 +346,7 @@
     .custom-navbar {
         left: 0 !important;
         width: 100% !important;
+        z-index: 2000;
     }
 
     .footer {
@@ -529,4 +531,22 @@
         color: white !important;
     }
 
+   .page-name{
+        margin-bottom: 10px;
+    }
+
+ /*
+    #profile-banner{
+        width: 100%;
+        height: 80px;
+    }
+    .user_profile_section{
+        padding: 5px;
+        margin:0px;
+    }
+
+    .profile-image{
+        width: 50px;
+        height: 50px;
+    } */
 }

@@ -122,7 +122,32 @@
     --icon-gap: 8px;
     --footer-bottom: #DDEFFD;
     --landing-opacity: 10%;
+
+    /* Primary */
+    --btn-primary: #2563EB;
+    --btn-primary-hover: #1D4ED8;
+
+    /* Success */
+    --btn-success: #16A34A;
+    --btn-success-hover: #15803D;
+
+    /* Danger */
+    --btn-danger: #DC2626;
+    --btn-danger-hover: #B91C1C;
+
+    /* Warning */
+    --btn-warning: #D97706;
+    --btn-warning-hover: #B45309;
+
+    /* Info */
+    --btn-info: #0D9488;
+    --btn-info-hover: #0F766E;
+
+    /* Outline */
+    --btn-outline-border: #6B7280;
+    --btn-outline-text: #374151;
 }
+
 
 /* ===== DARK THEME ===== */
 body.dark-theme {
@@ -163,5 +188,25 @@ body.dark-theme {
     --icon-color: #c8d3f5;
     --icon-hover: #91d7e3;
 
-    --landing-opacity:20%
+    --landing-opacity: 20%;
+
+
+
+    --btn-primary: #3B82F6;
+    --btn-primary-hover: #60A5FA;
+
+    --btn-success: #22C55E;
+    --btn-success-hover: #4ADE80;
+
+    --btn-danger: #EF4444;
+    --btn-danger-hover: #F87171;
+
+    --btn-warning: #F59E0B;
+    --btn-warning-hover: #FBBF24;
+
+    --btn-info: #14B8A6;
+    --btn-info-hover: #2DD4BF;
+
+    --btn-outline-border: #9CA3AF;
+    --btn-outline-text: #E5E7EB;
 }

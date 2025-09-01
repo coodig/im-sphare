@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
         <div class="sidebar-toogle px-3"><img src="{{asset('asset/icons/bars.svg')}}"></div>
-        <a class="navbar-brand" href="#">IMSphare</a>
+        <a class="navbar-brand" href="https://imsphare.oranbyte.com" target="_blank">IMSphare</a>
 
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
