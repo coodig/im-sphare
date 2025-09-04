@@ -4,6 +4,7 @@ use App\Http\Controllers\About\AboutController;
 use App\Http\Controllers\Contact\ContactController;
 use App\Http\Controllers\DashboardController;
 // use App\Http\Controllers\SuperAdmin\UsersController;
+use App\Http\Controllers\Follower\FollowerController;
 use App\Http\Controllers\Github\GitHubTokenController;
 use App\Http\Controllers\Github\ReadmeController;
 use App\Http\Controllers\Github\ReposController;
@@ -52,6 +53,11 @@ Route::prefix('/u/{username}')->group(function () {
     Route::get('/contact', [ContactController::class, 'show'])->name('contact.show');
     Route::get('/contact-me/edit', [ContactController::class, 'edit'])->name('contact_me.edit');
     // Route::post('/contact-me/update',[ContactController::class,'update'])->name('contact_me.update')
+
+
+    Route::get('/followers',[FollowerController::class,'followers'])->name('followers');
+
+    Route::post('/toogle-follow',[FollowerController::class,'toogleFollow'])->name('tooglefollow');
 });
 
 Route::prefix('/pages')->group(function () {

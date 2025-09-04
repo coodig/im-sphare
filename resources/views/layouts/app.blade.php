@@ -16,7 +16,9 @@
     <link rel="stylesheet" href="{{ asset('asset/css/components.css') }}">
     <link rel="stylesheet" href="{{ asset('asset/css/github.css')}}">
     <link rel="stylesheet" href="{{ asset('asset/css/dashboard.css')}}">
+    <link rel="stylesheet" href="{{ asset('asset/css/follower.css')}}">
     <link rel="stylesheet" href="{{ asset('asset/css/layout.css') }}">
+    <link rel="stylesheet" href="{{ asset('asset/css/card.css') }}">
 
 
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.0/dist/iconify-icon.min.js"></script>
@@ -50,7 +52,8 @@
 
 </body>
 {{-- <a href="{{ asset('assets/js/script.js')}}"></a> --}}
-{{-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> --}}
+{{--
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> --}}
 <script src="{{ asset('asset/js/script.js')}}"></script>
 <script src="{{ asset('asset/js/github.js')}}"></script>
 

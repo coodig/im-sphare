@@ -3,20 +3,18 @@
 namespace App\Http\Controllers\Github;
 
 use App\Http\Controllers\Controller;
+use App\Models\GithubReadmeImage;
 use App\Models\GitHubToken;
-use Illuminate\Auth\Events\Failed;
+use App\Models\GithubRepo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Redis;
 use Parsedown;
 
 class ReadmeController extends Controller
 {
-    public function repoDetail($username,$owner, $repo, Request $request)
+    public function repoDetail($username, $owner, $repo, Request $request)
     {
-        // $token = session('github_token');
-        // $owner = Auth::user()->github_username;
         $githubTokenModel = GitHubToken::where('user_id', Auth::id())->first();
 
         if (!$githubTokenModel) {
@@ -25,9 +23,13 @@ class ReadmeController extends Controller
 
         $token = $githubTokenModel->github_token;
 
+        // Repo details from GitHub API
         $repoDetails = Http::withToken($token)
             ->get("https://api.github.com/repos/$owner/$repo")
             ->json();
+
+        // Local DB repo_id
+        $repoModel = GithubRepo::where('full_name', $repoDetails['full_name'])->first();
 
         $readmeResponse = Http::withToken($token)->get("https://api.github.com/repos/$owner/$repo/readme");
 
@@ -37,26 +39,72 @@ class ReadmeController extends Controller
 
         $branch = $repoDetails['default_branch'] ?? 'master';
 
-        if($markdown){
-            $markdown = preg_replace_callback('/!\[([^\]]*)\]\((?!http)([^)]+)\)/', function ($matches) use ($owner, $repo, $branch) {
-                $altText = $matches[1];
-                $relativePath = ltrim($matches[2],'/');
-                $rawUrl = "https://raw.githubusercontent.com/$owner/$repo/$branch/$relativePath";
-                return "![$altText]($rawUrl)";
-            },$markdown);
+        $parsedHtml = null;
+
+        if ($markdown) {
+            // Handle Markdown style images ![alt](path)
+            $markdown = preg_replace_callback('/!\[([^\]]*)\]\((?!http)([^)]+)\)/',
+                function ($matches) use ($owner, $repo, $branch, $repoModel) {
+                    $altText = $matches[1];
+                    $relativePath = ltrim($matches[2], '/');
+                    $rawUrl = "https://raw.githubusercontent.com/$owner/$repo/$branch/$relativePath";
+
+                    // if ($repoModel) {
+                        GithubReadmeImage::updateOrCreate(
+                            [
+                                'repo_id' => $repoModel->id,
+                                'img_url' => $rawUrl
+                            ],
+                            [
+                                'alt_text' => $altText,
+                                // 'original_path' => $relativePath
+                            ]
+                        );
+                    // }
+
+                    return "![$altText]($rawUrl)";
+                },
+                $markdown
+            );
+
+            // Handle <img src="..."> style images
+            $markdown = preg_replace_callback(
+                '/<img[^>]+src=["\'](?!http)([^"\']+)["\'][^>]*>/i',
+                function ($matches) use ($owner, $repo, $branch, $repoModel) {
+                    $relativePath = ltrim($matches[1], '/');
+                    $rawUrl = "https://raw.githubusercontent.com/$owner/$repo/$branch/$relativePath";
+
+                    // if ($repoModel) {
+                        GithubReadmeImage::updateOrCreate(
+                            [
+                                'repo_id' => $repoModel->id,
+                                'img_url' => $rawUrl
+                            ],
+                            [
+                                'alt_text' => null,
+                                // 'original_path' => $relativePath
+                            ]
+                        );
+                    // }
+
+                    return str_replace($matches[1], $rawUrl, $matches[0]);
+                },
+                $markdown
+            );
+
             $parsedHtml = Parsedown::instance()->text($markdown);
-        }else{
-            $parsedHtml = null;
         }
 
         $languages = Http::withToken($token)
             ->get("https://api.github.com/repos/$owner/$repo/languages")
-            ->json();
+            ->json() ?? [];
 
         $release = Http::withToken($token)
             ->get("https://api.github.com/repos/$owner/$repo/releases")
-            ->json();
+            ->json() ?? [];
 
-        return view('github.repos.show', compact('repoDetails','parsedHtml', 'languages', 'release'));
+
+// dd($repoModel);
+        return view('github.repos.show', compact('repoDetails', 'parsedHtml', 'languages', 'release'));
     }
 }

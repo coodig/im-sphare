@@ -753,11 +753,11 @@ iconify-icon {
 
     .navbar-right iconify-icon {
         font-size: 1.2rem;
-        gap: 10px;
+        gap: 15px;
     }
 
     .navbar-right {
-        gap: 10px;
+        gap: 15px;
     }
 
     .navbar {
@@ -781,9 +781,6 @@ iconify-icon {
         align-items: center;
         gap: 5px;
     }
-
-
-
 
     #imsphare-steps {
         flex-direction: column;

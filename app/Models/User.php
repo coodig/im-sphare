@@ -83,10 +83,19 @@ class User extends Authenticatable
     }
 
     public function maintenance()
-{
-    return $this->hasMany(Maintenance::class);
+    {
+        return $this->hasMany(Maintenance::class);
+    }
+
+    public function followers()
+    {
+
+        return $this->belongsToMany(User::class, 'followers', 'user_id', 'follower_id')->withPivot(['status','is_favorite','notifications_enabled','muted','remarks','blocked_at','unfollowed_at'])->withTimestamps();
+    }
+
+    public function following()
+    {
+
+        return $this->belongsToMany(User::class, 'followers', 'follower_id', 'user_id')->withPivot(['status','is_favorite','notifications_enabled','muted','remarks','blocked_at','unfollowed_at'])->withTimestamps();
+    }
 }
-
-}
-
-

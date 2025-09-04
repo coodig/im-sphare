@@ -1,0 +1,135 @@
+.page-content {
+    padding: 5px 10px;
+    justify-content: flex-start;
+}
+
+.follower-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    /* justify-content: flex-start; */
+    justify-content: space-evenly;
+    /* align-items: flex-start; */
+    align-items: self-start;
+
+}
+
+
+.follower-card {
+    background: var(--sidebar-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 325px;
+    height: auto;
+    object-fit: cover;
+}
+
+
+.follower-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.follower-card-stats {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.follower-card-stats span {
+    overflow-wrap: normal;
+}
+
+.username {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+#btn-toogle-follow {
+    background-color: var(--primary-color);
+    color: black;
+    padding: 5px 1%;
+    width: 100%;
+    border: 1px solid var(--text-color);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.view-follower-btn {
+    width: 100%;
+    margin: 5px 0px 0px 0px;
+    border-radius: 5px;
+    padding: 3px 0px;
+    opacity: 1;
+    border: 1px solid var(--text-color);
+}
+
+ .follower-card-actions-btn {
+        display: flex;
+        padding: 10px;
+        flex-direction: column;
+        gap: 5px;
+        font-size: 1.1rem;
+        width: 100%;
+        padding: 5px 0px;
+        border-radius: 5px;
+        margin: 0.5rem 0px;
+    }
+
+@media (max-width: 600px) {
+    .follower-list {
+
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .follower-card {
+        max-width: 100%;
+        /* mobile full width */
+        height: auto;
+
+    }
+
+    .follower-card-img {
+        height: auto;
+        width: fit-content;
+    }
+
+    .follower-card-img alt {
+        justify-content: center;
+    }
+
+    .follower-card-actions-btn {
+        display: flex;
+        padding: 10px;
+        flex-direction: column;
+        gap: 5px;
+        font-size: 1.1rem;
+        width: 100%;
+        padding: 5px 0px;
+        border-radius: 5px;
+    }
+
+    #btn-toogle-follow {
+        background-color: var(--primary-color);
+        color: black;
+        border: 1px solid var(--text-color);
+        font-weight: 600;
+    }
+
+    .view-follower-btn {
+        margin: 5px 0px 0px 0px;
+        border: 1px solid var(--text-color);
+    }
+
+}

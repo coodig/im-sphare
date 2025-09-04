@@ -7,66 +7,61 @@
 
         <div id="repoContainer">
             @foreach($savedRepos as $repo)
-                    <div class="card">
+                <div class="card">
 
-                        <h3><strong>{{ ucfirst($repo['name']) }}</strong></h3>
+                    {{-- <div class="card-img"> --}}
+                        {{-- @if ($repo->repo_id->isNotEmpty()) --}}
 
-                        {{-- {!! $repo['private']
-                        ? '<iconify-icon icon="lets-icons:lock-duotone"></iconify-icon>'
-                        : 'Public'
-                        !!} --}}
-                        <br>
+                        {{-- <img src="{{asset('asset/img/about.jpg')}}" alt=""> --}}
+                        {{-- <img src="{{ $repo->readme_image->first()->img_url}}" alt=""> --}}
+                        {{-- @endif --}}
+                        {{-- </div> --}}
+                    <div class="card-title">
+                        {{  ucwords(preg_replace('/[-._]/', ' ', $repo->name)) }}
+                    </div>
 
-                        {{-- <a href="{{$repo['html_url']}}" target="_blank">Visit Repo</a><br> --}}
-                        {{-- <a href="https://github.com/{{ $repo['owner']['login'] }}/{{
-                            $repo['name']
-                                                                }}/archive/refs/heads/{{ $repo['default_branch'] }}.zip" download>
-                            ⬇️ Download ZIP
-                        </a> --}}
-                        <br>
-                        {{-- 🌟 Stars: {{ $repo['stargazers_count'] }}<br>
-                        🍴 Forks: {{ $repo['forks_count'] }} <br>
-                        👀 Watchers: {{ $repo['watchers_count'] }}<br> --}}
-                        {{-- 📅 Last Push: {{ \Carbon\Carbon::parse($repo['pushed_at'])->diffForHumans() }}
-
-                        <div class="repo-meta">📅 Created at : {{ \Carbon\Carbon::parse($repo['created_at'])->diffForHumans() }}
-                            --}}
-                            {{-- </div> --}}
-
-                        {{-- <button><a href="{{ route('repos.show')}}">details</a></button> --}}
-                        {{-- <a
-                            href="{{ route('repo.show', ['repo' => $repo['name'],'username'=>Auth::user()->profile->username]) }}">Details</a>
-                        --}}
-                        {{-- <a
-                            href="{{ route('repo.show', ['owner' => $repo['owner']['login'], 'repo' => $repo['name'],'username'=>Auth::user()->username]) }}">Details</a>
-                        --}}
-
-                        <a href="{{ route('repo.show', [
-                    'username' => Auth::user()->username,
-                    'owner' => $repo['owner']['login'] ?? 'unknown',
-                    'repo' => $repo['name'] ?? 'unknown'
-                ]) }}">
-                            Details
-                        </a>
+                    <div class="card-description">
+                        @if(!empty($repo->description))
+                            {{ ucfirst($repo->description) }}
+                        @else
+                            <span class="text-danger">No description</span>
+                        @endif
+                    </div>
 
 
+                    <div class="card-stats">
+
+                        <div class="card-stat-item">
+                            <span class="card-meta">
+                                <p class="card-meta-title">Pushed at :</p>&nbsp;
+                                <p class="repo-meta">
+                                    {{ \Carbon\Carbon::parse($repo['pushed_at'])->diffForHumans() }}
+                                </p>
+                            </span>
+                        </div>
+
+                        <div class="card-stat-item">
+                            <span class="card-meta">
+                                <p class="card-meta-title">Created at :</p>&nbsp;
+                                <p class="repo-meta">
+                                    {{ \Carbon\Carbon::parse($repo['created_at'])->diffForHumans() }}
+                                </p>
+                            </span>
+                        </div>
 
                     </div>
-                    @endforeach
+
+
+                    <div class="card-btn">
+                        <a href="{{ route('repo.show', ['username' => Auth::user()->username, 'owner' => $repo->owner, 'repo' => $repo->name,]) }}"
+                            class="txt-black">Visit
+                            Project</a>
+                    </div>
                 </div>
-                {{-- Pagination --}}
-                <div class="paginate" style="align-content: center; text-align: center;" >
-                    {{ $savedRepos->links() }}
-                </div>
+            @endforeach
+        </div>
+        <div class="paginate" style="align-content: center; text-align: center; margin-top: 1rem;">
+            {{ $savedRepos->links() }}
+        </div>
     </div>
 @endsection
-
-
-
-{{-- <strong>{{ ucfirst($repo['name']) }}</strong>({{ $repo['private'] ? '<iconify-icon
-    icon="solar:lock-bold-duotone"></iconify-icon>' : 'Public' }})<br> --}}
-
-
-{{-- <button onclick="fetchReadme('${repo.owner.login}', '${
-                                                                repo.name
-                                                              }', '${repo.__token}')">Show README</button> --}}

@@ -18,7 +18,7 @@
 
             <div class="div-1">
 
-                <h2>README</h2>
+                <h2 class="card-title ">README</h2>
                 @if($parsedHtml)
                     <div class="readme-box">
                         <link rel="stylesheet"
@@ -89,8 +89,8 @@
                     <h3> Important Links</h3>
                     <ul class="github-important-links-list">
                         {{-- <li><a href="{{ $savedRepos['html_url']}}" class="btn-primary">Get Source Code</a></li> --}}
-                        {{-- <li><a href="{{ $repoDetails['html_url'] }}/archive/refs/heads/{{ $repoDetails['default_branch'] }}.zip" --}}
-                                {{-- class="btn-secondary">Download Zip</a></li> --}}
+                        <li><a href="{{ $repoDetails['html_url'] }}/archive/refs/heads/{{ $repoDetails['default_branch'] }}.zip"
+                                class="btn-secondary">Download Zip</a></li>
                     </ul>
                 </div>
             </div>

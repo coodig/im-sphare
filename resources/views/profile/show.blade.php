@@ -2,78 +2,98 @@
 
 @section('content')
 
-    <div class="profile_detail_container">
 
+    {{-- <div class="profile_container" style="display: flex; gap:20px;"> --}}
 
-        <div class="user_profile_section">
-            <h2 class="page-name">Profile</h2>
-            <div class="profile-banner" id="profile-banner">
-                <img src="{{asset('asset/js/about.jpg')}}" alt="">
+        {{-- <div class="profile_sidebar">
+            <div class="sidebar-profile text-center">
+                <img src="{{asset('asset/js/about.jpg')}}" alt="Profile Pic"
+                    style="width:100px; height:100px; border-radius:50%; object-fit:cover;">
+                <h3 style="margin-top:10px;">{{ ucwords(optional(Auth::user()->profile)->name) ?? 'Guest' }}</h3>
+                <p>{{ "@" . Auth::user()->username ?? '' }}</p>
+            </div>
 
-                <div class="profile-image" id="profile-image">
+            <hr>
+
+            <ul class="sidebar-menu" style="list-style:none; padding:0;">
+                <li style="margin:10px 0;"><a href="#">👤 About</a></li>
+                <li style="margin:10px 0;"><a href="#">📂 Projects</a></li>
+                <li style="margin:10px 0;"><a href="#">👥 Followers</a></li>
+                <li style="margin:10px 0;"><a href="#">⚙ Settings</a></li>
+            </ul>
+        </div> --}}
+        <div class="profile_detail_container">
+
+            <div class="user_profile_section">
+                <h2 class="page-name">Profile</h2>
+                <div class="profile-banner" id="profile-banner">
                     <img src="{{asset('asset/js/about.jpg')}}" alt="">
-                </div>
-            </div>
 
-            <div class="name" id="name">
-                <p>{{ ucwords(Auth::user()->profile->name) ?? ''}}</p>
-            </div>
-            <div class="username" id="username">
-                <p>{{"@ " . Auth::user()->username ?? ''}}</p>
-            </div>
+                    <div class="profile-image" id="profile-image">
+                        <img src="{{asset('asset/js/about.jpg')}}" alt="">
+                    </div>
+                </div>
+
+                <div class="name" id="name">
+                    <p>{{ ucwords(optional(Auth::user()->profile)->name) ?? '' }}</p>
+
+                </div>
+                <div class="username" id="username">
+                    <p>{{"@ " . Auth::user()->username ?? ''}}</p>
+                </div>
 
 
-            <div class="profile-stats">
-                <div class="stat-item" id="projects">
-                    <span class="stat-count">25</span>
-                    <span class="stat-label">Projects</span>
+                <div class="profile-stats">
+                    <div class="stat-item" id="projects">
+                        <span class="stat-count">25</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat-item" id="followers">
+                        <a href="{{route('followers',['username'=>Auth::user()->username])}}">
+                            <span class="stat-count">120</span>
+                            <span class="stat-label">Followers</span>
+                        </a>
+                    </div>
+                    <div class="stat-item" id="following">
+                        <span class="stat-count">80</span>
+                        <span class="stat-label">Following</span>
+                    </div>
                 </div>
-                <div class="stat-item" id="followers">
-                    <span class="stat-count">120</span>
-                    <span class="stat-label">Followers</span>
-                </div>
-                <div class="stat-item" id="following">
-                    <span class="stat-count">80</span>
-                    <span class="stat-label">Following</span>
-                </div>
-            </div>
 
-            <p class="email"></iconify-icon>&nbsp;{{
+                <p class="email"></iconify-icon>&nbsp;{{
         Auth::user()->email}}
-            </p>
+                </p>
 
-            <div class="bio" id="bio">
-                <p>{{ucfirst(Auth::user()->profile->bio) ?? ''}}</p>
+                <div class="bio" id="bio">
+                    <p>{{ucfirst(optional(Auth::user()->profile)->bio) ?? ''}}</p>
+                </div>
+                <div class="bio" id="bio">
+                    <p>{{ucfirst(optional(Auth::user()->profile)->gender) ?? ''}}</p>
+                </div>
+                <div class="bio" id="bio">
+                    <p>{{ucfirst(optional(Auth::user()->profile)->location) ?? ''}}</p>
+                </div>
+                <div class="bio" id="bio">
+                    <p>{{ucfirst(optional(Auth::user()->profile)->dob) ?? ''}}</p>
+                </div>
+
+                <div class="profile-actions">
+                    <a class="btn-edit" id="edit-profile" href={{route('profile.edit', ['username' => Auth::user()->username])}}><button>
+
+                            Edit profile
+                        </button></a>
+                    <a class="btn-edit" id="edit-profile" href={{route('profile.edit', ['username' => Auth::user()->username])}}><button>
+
+                            Edit profile
+                        </button></a>
+                    {{-- <button class="btn-share" id="share-profile">Share profile</button> --}}
+                </div>
+
+
+
             </div>
-            <div class="bio" id="bio">
-                <p>{{ucfirst(Auth::user()->profile->gender) ?? ''}}</p>
-            </div>
-            <div class="bio" id="bio">
-                <p>{{ucfirst(Auth::user()->profile->location) ?? ''}}</p>
-            </div>
-            <div class="bio" id="bio">
-                <p>{{ucfirst(Auth::user()->profile->dob) ?? ''}}</p>
-            </div>
-
-            <div class="profile-actions">
-                 <a class="btn-edit" id="edit-profile"
-                        href={{route('profile.edit', ['username' => Auth::user()->username])}}><button>
-
-                   Edit profile
-                </button></a>
-                 <a class="btn-edit" id="edit-profile"
-                        href={{route('profile.edit', ['username' => Auth::user()->username])}}><button>
-
-                   Edit profile
-                </button></a>
-                {{-- <button class="btn-share" id="share-profile">Share profile</button> --}}
-            </div>
-
-
-
         </div>
-    </div>
-
+    {{-- </div> --}}
 @endsection
 
 

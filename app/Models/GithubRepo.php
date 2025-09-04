@@ -13,6 +13,7 @@ class GithubRepo extends Model
         'github_id',
         'user_id',
         'name',
+        'owner',
         'full_name',
         'description',
         'html_url',
@@ -59,5 +60,11 @@ class GithubRepo extends Model
     public function getFormattedCreatedAtAttribute()
     {
         return \Carbon\Carbon::parse($this->created_at_git)->format('d M, Y');
+    }
+
+    public function readme_image()
+    {
+
+        return $this->hasMany(GithubReadmeImage::class);
     }
 }

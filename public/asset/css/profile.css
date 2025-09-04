@@ -1,3 +1,8 @@
+.profile-container{
+    display: flex;
+    gap: 20px;
+}
+
 .user_profile_section {
     width: 90%;
     margin: 0 auto;
@@ -11,6 +16,9 @@
     margin-bottom: 30px;
     flex-wrap: wrap;
     flex-direction: column;
+}
+.profile-sidebar{
+padding: 10px 5%;
 }
 
 .page-name {

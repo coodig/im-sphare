@@ -1,0 +1,112 @@
+.card-title{
+    text-align: center;
+    font-weight: 600;
+    font-size: 35px;
+}
+
+.card-description{
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 10px;
+
+}
+
+.card-img img{
+    width: 100%;
+    /* height: 100%; */
+}
+.card {
+    text-align: center;
+    justify-content: center;
+}
+
+.card-stat-item{
+    margin-bottom:10px;
+
+}
+
+.card-meta{
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    display: flex;
+
+}
+
+.repo-meta{
+    font-weight: 400;
+}
+
+.card-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    transition: all 0.3s ease;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 15px;
+    flex: 1 2 200px;
+    transition: transform 0.2s ease;
+    border: 1px solid var(--border-color);
+    min-width: 200px;
+    max-width: 100%;
+}
+
+/* .card:hover {
+    transform: translateY(-5px);
+} */
+.card-btn{
+    background-color: skyblue;
+    color: black;
+    border-radius: 5px;
+    padding: 3px 0px;
+    margin-bottom: 0px;
+    /* margin-top: 5px; */
+}
+
+.txt-black{
+    color: black;
+}
+
+.not-available{
+    color: red;
+    font-weight: bold;
+}
+
+.text-danger{
+    color: red;
+}
+
+
+@media (max-width: 600px) {
+    .card {
+        flex: 1 1 100%;
+    }
+
+.card-title{
+    /* text-align: center; */
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+.card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 15px;
+    flex: 1 2 200px;
+    transition: transform 0.2s ease;
+    border: 1px solid var(--border-color);
+    min-width: 200px;
+    max-width: 50%;
+}
+
+.card-stat-item p{
+    margin-bottom:0px;
+
+    font-size: 0.8rem;
+
+}
+}
