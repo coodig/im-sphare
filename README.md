@@ -17,22 +17,41 @@ This is a modern Portfolio Website Builder that allows users to create and share
 🔐 User Authentication (Register, Login, Logout)  
 📧 Welcome & Password Reset Email  
 
-<div style="display: flex;flex-direction: column; grid-gap: 10px;">
+<!-- <div style="display: flex;flex-direction: column; grid-gap: 10px;">
    <div style="display: flex; grid-gap: 10px;">
         <img src="public/asset/readme/welcome-mail.png" alt="screenshots" width="49%" style="border: 2px solid lightblue"/>
         <img src="public/asset/readme/reset-pass-mail.png" alt="screenshots" width="49%" style="border: 2px solid lightblue"/>
     </div>
+</div> -->
+
+<div style="display:flex; gap:10px">
+    <img src="public/asset/readme/welcome-mail.png" width="220px"/>
+    <img src="public/asset/readme/reset-pass-mail.png" width="220px"/>
 </div>
 <hr>
 
 📂 Projects 
 
-<div style="display: flex;flex-direction: column; grid-gap: 10px;">
+<!-- <div style="display: flex;flex-direction: column; grid-gap: 10px;">
    <div style="display: flex; grid-gap: 10px;">
         <img src="public/asset/readme/readme-1.png" alt="screenshots" width="49%" style="border: 2px solid lightblue"/>
         <img src="public/asset/readme/readme-2.png" alt="screenshots" width="49%" style="border: 2px solid lightblue"/>
     </div>
+</div> -->
+
+<!-- <p align="center">
+  <a href="readme-images/welcome-mail.png">
+    <img src="readme-images/welcome-mail.png" width="45%"/>
+  </a>
+  <a href="readme-images/reset-pass-mail.png">
+    <img src="readme-images/reset-pass-mail.png" width="45%"/>
+  </a>
+</p> -->
+<div style="display:flex; gap:10px">
+    <img src="public/asset/readme/readme-1.png" width="200px"/>
+    <img src="public/asset/readme/readme-2.png" width="200px"/>
 </div>
+
 <hr>
 
 👤 User Profile with Social Links  
