@@ -17,14 +17,14 @@ This is a modern Portfolio Website Builder that allows users to create and share
 🔐 User Authentication (Register, Login, Logout)  
 📧 Welcome & Password Reset Email  
 
-  ![Welcome Mail](public/asset/readme/welcome-mail.png)
-  ![Welcome Mail](public/asset/readme/reset-pass-mail.png)
+  ![Welcome Mail](readme-asset/welcome-mail.png)
+  ![Welcome Mail](readme-asset/reset-pass-mail.png)
 <hr>
 
 📂 Projects 
 
-![space sphare](public/asset/readme/readme-1.png)
-![space sphare](public/asset/readme/readme-2.png)
+![space sphare](readme-asset/readme-1.png)
+![space sphare](readme-asset/readme-2.png)
 
 <hr>
 
