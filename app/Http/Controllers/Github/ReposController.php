@@ -54,8 +54,8 @@ class ReposController extends Controller
 
             $savedRepos = GithubRepo::where('user_id', Auth::id())
             ->latest('pushed_at')->orderBy('id')->simplePaginate(10);
-            dd($savedRepos);
-            // return view('github.repos.index', compact('savedRepos'));
+            // dd($savedRepos);
+            return view('github.repos.index', compact('savedRepos'));
         }
     }
 }
