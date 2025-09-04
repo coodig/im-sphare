@@ -1,6 +1,9 @@
-
 # 🌐 IMSphare 
 
+
+<!-- ![License](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)  
+![Laravel](https://img.shields.io/badge/Laravel-12-red.svg)  
+![React](https://img.shields.io/badge/React-18-blue.svg)   -->
 
 ## 📖 About the Project
 
@@ -19,11 +22,20 @@ This is a modern Portfolio Website Builder that allows users to create and share
         <img src="public/asset/readme/welcome-mail.png" alt="screenshots" width="49%" style="border: 2px solid lightblue"/>
         <img src="public/asset/readme/reset-pass-mail.png" alt="screenshots" width="49%" style="border: 2px solid lightblue"/>
     </div>
+</div>
+<hr>
+
+📂 Projects 
+
+<div style="display: flex;flex-direction: column; grid-gap: 10px;">
+   <div style="display: flex; grid-gap: 10px;">
+        <img src="public/asset/readme/readme-1.png" alt="screenshots" width="49%" style="border: 2px solid lightblue"/>
+        <img src="public/asset/readme/readme-2.png" alt="screenshots" width="49%" style="border: 2px solid lightblue"/>
     </div>
+</div>
 <hr>
 
 👤 User Profile with Social Links  
-📂 CRUD operations (Projects, Skills, FAQ, etc.)  
 📱 Fully Responsive Design  
 ⚡ Fast & SEO optimized  
 🌙 Dark/Light Mode Support  
@@ -41,11 +53,11 @@ This is a modern Portfolio Website Builder that allows users to create and share
 
 ## 🛠️ Tech Stack
 
-Frontend: HTML, CSS, JavaScript, Bootstrap/Tailwind
+Frontend : HTML, CSS, JavaScript, Bootstrap/Tailwind
 
-Backend: Laravel
+Backend : Laravel
 
-Database: MySQL
+Database : MySQL
 
 Authentication: Custom Auth / Google / Github
 
@@ -54,7 +66,7 @@ Deployment: Hostinger
 ## ⚙️ Installation
 ### Clone repository
 
-  git clone sh ```https://github.com/coodig/im-sphare.git```
+  git clone ```https://github.com/coodig/im-sphare.git```
 
 ### Go to project directory
 
@@ -64,7 +76,7 @@ cd imsphare
 
 ### Install dependencies
 
-```sh
+```sh 
 composer install
 npm install
 ```
@@ -95,15 +107,22 @@ php artisan serve
 ## 🚀 Deployment
 
 - Push code to GitHub/GitLab.
-- Configure hosting (Hostinger / DigitalOcean / AWS).
+- Configure hosting (Hostinger).
 - Setup .env for production database + mail configuration.
 - Run migrations and seeders.
 
 ## 📜 License
+This project is licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/).  
+You may use, share, and adapt the code for personal and educational purposes, but **commercial use is strictly prohibited**.  
 
-### This project is licensed under the MIT License.
+See the [LICENSE](LICENSE) file for details.
 
-🤝 Contributing
+
+
+## 🤝 Contributing
+Contributions are welcome!  
+If you have suggestions for improvements, feel free to fork the repo and submit a pull request.  
+Pull requests are welcome, and please open an issue first to discuss major changes.
 
 - Fork the repository
 - Create a feature branch (git checkout -b feature-name)
@@ -113,11 +132,12 @@ php artisan serve
 
 ## 👨‍💻 Author
 
-## Sphare Co.
+**Adarsh Vishwakarma**  
 
-- 🌐 Portfolio: yourwebsite.com
-- 💼 LinkedIn: Your LinkedIn
-- 🐦 Twitter: @yourhandle
+- 🌐 Portfolio: [imsphare.oranbyte.com](https://imsphare.oranbyte.com)  
+<!-- - 💼 LinkedIn: [Your LinkedIn Profile](https://linkedin.com/in/yourusername)  
+- 🐦 Twitter: [@yourhandle](https://twitter.com/yourhandle)   -->
+- 📧 Email: adarshsharama1350@gamil.com
 
 
 <h2 style="color:red">Currently in Under Development Stage...</h2>
