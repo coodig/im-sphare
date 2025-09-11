@@ -25,5 +25,7 @@ Route::middleware(['auth','isSuperAdmin'])->prefix('superadmin')->name('superadm
 
     Route::get('/dashboard',[SuperadminDashboardController::class,'show'])->name('dashboard');
     Route::get('/users-list',[UsersController::class,'index'])->name('users');
+
+    Route::post('/delete/{id}',[UsersController::class,'delete'])->name('delete.user');
 });
 

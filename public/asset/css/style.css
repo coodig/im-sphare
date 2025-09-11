@@ -1,19 +1,6 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&display=swap'); */
-/* @import url('"https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&amp;family=Roboto:wght@500;700;900&amp;display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
-/*
-@font-face {
-    font-family: "ArialRoundedMTBold";
-    src: url("/fonts/ArialRoundedMTBold.woff2") format("woff2"),
-         url("/fonts/ArialRoundedMTBold.woff") format("woff"),
-         url("/fonts/ArialRoundedMTBold.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-} */
+/* @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&display=swap');
 
-/* body {
-    font-family: "ArialRoundedMTBold", sans-serif;
-} */
 :root {
     --sidebar-width: 200px;
 }
@@ -25,7 +12,6 @@
 }
 
 ::selection {
-    /* background-color: var(--accent-color); */
     background-color: #E7F6F2;
     color: #000000;
 }
@@ -35,14 +21,22 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
-    /* background-color: var(--bg-color); */
     background-color: #c3e7f4;
-
     color: var(--text-color);
-    font-family: "Lexend Deca", sans-serif;
-    font-family: "ArialRoundedMTBold", sans-serif;
+    /* font-family: "Lexend Deca", sans-serif; */
+    /* font-family: "ArialRoundedMTBold", sans-serif;
+    font-style: normal; */
+    font-family: "Libertinus Sans";
+    font-weight: 400;
     font-style: normal;
 }
+
+
+.container {
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
 
 .logo {
     height: 40px;
@@ -54,9 +48,8 @@ body {
     font-size: 1.4rem;
     font-weight: bold;
     color: var(--text-color);
-    font-family: Arial Rounded MT Bold,Helvetica Rounded,Arial,sans-serif;
+    font-family: Arial Rounded MT Bold, Helvetica Rounded, Arial, sans-serif;
 }
-
 
 a {
     color: var(--btn-secondary-text);
@@ -72,68 +65,6 @@ a:hover {
     height: 100vh;
     overflow: hidden;
 }
-
-/* Sidebar started */
-.sidebar {
-    width: 200px;
-    background-color: var(--sidebar-bg);
-    height: 100vh;
-    overflow-y: auto;
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    padding-top: 65px;
-    transition: width 0.3s ease;
-}
-
-
-.sidebar a {
-    padding: 12px 20px;
-    display: block;
-    color: var(--text-color);
-    text-decoration: none;
-    font-size: 15px;
-}
-
-.sidebar a:hover {
-    background-color: #495057;
-    color: #fff;
-}
-
-.sidebar-content {
-    margin-right: 5px;
-    gap: 20px;
-}
-
-.sidebar-content form {
-    margin: 0;
-}
-
-.sidebar-content a iconify-icon {
-    font-size: 25px;
-}
-
-.sidebar-content .sidebar-top,
-.sidebar-content .sidebar-bottom {
-    display: flex;
-    flex-direction: column;
-}
-
-.sidebar-bottom {
-    margin-top: auto;
-}
-
-
-.sidebar-content a {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 15px 15px;
-    text-decoration: none;
-}
-
-/* Sidebar ended */
 
 .main-wrapper {
     margin-left: 200px;
@@ -174,7 +105,7 @@ a:hover {
     top: 0;
     right: 0;
     z-index: 1001;
-    width:100%;
+    width: 100%;
     transition: all 0.3s ease;
 }
 
@@ -217,13 +148,6 @@ a:hover {
     background-color: #f0f0f0;
     color: red;
 }
-
-
-
-/* Footer ended */
-
-/* Card started */
-
 
 .big-number {
     font-size: 2.5rem;
@@ -296,9 +220,9 @@ a:hover {
     transition: all 0.3s ease;
 }
 
-.collapse-toggle.rotate {
+/* .collapse-toggle.rotate {
     transform: rotate(180deg);
-}
+} */
 
 .page-header {
     text-align: center;
@@ -324,7 +248,6 @@ a:hover {
 .alert-danger ul {
     list-style: none;
 }
-
 
 .alert-success {
     color: green;
@@ -374,3 +297,11 @@ iconify-icon {
 /* iconify-icon:hover {
     color: var(--primary-color);
 } */
+
+
+@media (max-width:600px) {
+    .container {
+        margin: 0 auto;
+        padding: 2rem 1rem;
+    }
+}

@@ -168,13 +168,81 @@
 }
 
 .auth__link:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 
-#toggleSidebar{
-        background-color: transparent !important;
-    }
+#toggleSidebar {
+    background-color: transparent !important;
+}
+
+
+.sidebar {
+    width: 200px;
+    background-color: var(--sidebar-bg);
+    height: 100vh;
+    overflow-y: auto;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    padding-top: 65px;
+    transition: width 0.3s ease;
+}
+
+
+.sidebar a {
+    padding: 12px 20px;
+    display: block;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.sidebar a:hover {
+    background-color: #495057;
+    color: #fff;
+    font-weight: bold;
+}
+
+.sidebar a.active {
+    background-color: #495057;
+    color: #fff;
+}
+
+.sidebar-content {
+    margin-right: 5px;
+    gap: 20px;
+}
+
+.sidebar-content form {
+    margin: 0;
+}
+
+.sidebar-content a iconify-icon {
+    font-size: 25px;
+}
+
+.sidebar-content .sidebar-top,
+.sidebar-content .sidebar-bottom {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+}
+
+
+.sidebar-content a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 15px;
+    text-decoration: none;
+}
+
+/* Sidebar ended */
 
 @media screen and (max-width: 900px) {
 
@@ -186,10 +254,10 @@
     }
 
     .navbar-left .logo {
-    width: 35px;
-    height: 35px;
-    padding-bottom: 2px;
-}
+        width: 35px;
+        height: 35px;
+        padding-bottom: 2px;
+    }
 }
 
 
@@ -531,11 +599,11 @@
         color: white !important;
     }
 
-   .page-name{
+    .page-name {
         margin-bottom: 10px;
     }
 
- /*
+    /*
     #profile-banner{
         width: 100%;
         height: 80px;

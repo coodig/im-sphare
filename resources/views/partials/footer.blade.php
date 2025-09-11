@@ -1,6 +1,5 @@
 {{-- <footer class="footer"> --}}
     <div class="footer">
-
         <div class="footer-content">
             &copy; {{ date('Y') }}
             <p style="display: flex!important">

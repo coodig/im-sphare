@@ -1,24 +1,27 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap'); */
-/* @import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700'); */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
-.homepage-container {
-    /* max-width: 1200px; */
-    margin: 0 auto;
-    padding: 30px 20px;
-    /* font-family: "Lobster"; */
-}
-
-/* ========== Hero Section ========== */
 .hero-section {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    /* background: linear-gradient(135deg, #FAFAFA, #E0E0E0); */
-    /* background: linear-gradient(135deg, Violet, Indigo, Blue, Green, Yellow, Orange, Red); */
     padding: 60px 30px;
     border-radius: 12px;
-    margin-bottom: 50px;
+    margin-bottom: 2.5rem;
+}
+
+.home-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-site-name {
+    /* font-family: "Libertinus Sans", sans-serif; */
+    font-family: "Fredoka", sans-serif;
+}
+
+.share-btn {
+    margin-right: 2rem;
 }
 
 .hero-content {
@@ -26,14 +29,15 @@
 }
 
 .hero-content h1 {
-    font-size: 4.8rem;
-    margin-bottom: 10px;
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
     font-weight: bolder;
 }
 
 .hero-content .highlight {
     color: #007bff;
     font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .tagline {
@@ -41,31 +45,11 @@
     color: var(--text-color);
     margin-bottom: 20px;
     font-weight: 500;
-    /* font-family: "Merriweather", serif; */
+    font-family: "Merriweather", serif;
 }
 
-
-/* {
-  font-family: "Merriweather", serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
-} */
-
-/* .btn-primary {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 6px;
-    font-weight: 600;
-    display: inline-block;
-    text-decoration: none;
-} */
-
 .hero-image {
-    flex: 1 1 280px;
+    flex: 1 1 250px;
     text-align: center;
     transform: translateY(-5px);
 }
@@ -73,26 +57,16 @@
 .hero-image img {
     width: 420px;
     height: 420px;
-    border-radius: 10%;
+    border-radius: 1rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* ========== Section Header ========== */
 .section-header {
     display: flex;
     align-items: center;
     gap: 5px;
-    margin-bottom: 1.8rem;
+    margin-bottom: 1.5rem;
     justify-content: center;
-}
-
-
-
-
-/* ========== About Section ========== */
-.about-section {
-    /* text-align: center; */
-    margin-bottom: 70px;
 }
 
 .section-icon {
@@ -111,7 +85,6 @@
     font-weight: 700;
 }
 
-/* ========== Skills Section ========== */
 .skills-section {
     text-align: center;
     margin-bottom: 60px;
@@ -120,8 +93,6 @@
 .skills-section h2 {
     font-size: 50px;
 }
-
-
 
 .skills-list {
     list-style: none;
@@ -134,15 +105,6 @@
     font-size: larger;
 }
 
-/* .skills-list li {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 16px;
-    border-radius: 25px;
-    font-weight: 500;
-} */
-
-/* ========== Projects Section ========== */
 .projects-section {
     margin-bottom: 60px;
 }
@@ -161,19 +123,13 @@
 
 .project-card {
     background: var(--card-bg);
-    /* border: 1px solid #ddd; */
     border-radius: 10px;
     padding: 20px;
     flex: 1 1 300px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.04);
     transition: transform 0.2s ease;
-    /* width: 300px; */
     height: 250px;
 }
-
-/* .project-card:hover {
-    transform: translateY(-5px);
-} */
 
 .btn-secondary {
     background: #6c757d;
@@ -184,7 +140,6 @@
     margin-top: 10px;
 }
 
-/* ========== GitHub Repos Section ========== */
 .github-section {
     margin-bottom: 60px;
     text-align: center;
@@ -208,7 +163,6 @@
     padding: 18px;
     border-radius: 10px;
     flex: 1 1 280px;
-    /* box-shadow: 0 4px 10px rgba(0,0,0,0.03); */
     text-align: left;
 }
 
@@ -218,7 +172,6 @@
     color: #007bff;
 }
 
-/* ========== Contact Section ========== */
 .contact-section {
     text-align: center;
     margin-bottom: 80px;
@@ -244,8 +197,6 @@
     border: 1px solid #ccc;
     font-size: 1rem;
     width: 100%;
-    /* background-color: var(--input-bg); */
-    /* color: var(--input-text); */
 }
 
 .contact-form textarea {
@@ -263,7 +214,6 @@
     cursor: pointer;
 }
 
-/* ========== Footer ========== */
 .site-footer {
     text-align: center;
     padding: 30px 20px;
@@ -276,13 +226,16 @@
     margin-top: 10px;
 }
 
+.social-links li {
+    list-style: none;
+}
+
 .social-links a {
     margin: 0 10px;
     color: #007bff;
     font-weight: 500;
 }
 
-/* ========== Responsive ========== */
 @media (max-width: 768px) {
     .hero-section {
         flex-direction: column-reverse;
@@ -301,4 +254,27 @@
     .repo-card {
         flex: 1 1 100%;
     }
+}
+
+
+@media (max-width:600px) {
+    .hero-image img {
+        margin-top: 0px;
+        width: 10rem;
+        height: 10rem;
+        border-radius: 1rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .hero-section-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+
 }

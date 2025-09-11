@@ -5,7 +5,7 @@
     {{-- <div class="page about-page"> --}}
         <div class="about-container">
 
-            <form action="{{ route('about_me.update', ['username' => Auth::user()->username]) }}" method="POST"
+            <form action="{{ route('about-me.update', ['username' => Auth::user()->username]) }}" method="POST"
                 enctype="multipart/form-data" class="about-edit-form">
                 @csrf
                 {{-- @method('PUT') --}}

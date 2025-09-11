@@ -3,7 +3,8 @@
 @section('content')
     <div class="dashboard-container">
 
-        <h2>Your Projects</h2>
+         <div class="page-name"><h2>Your Projects</h2></div>
+
 
         <div id="repoContainer">
             @foreach($savedRepos as $repo)

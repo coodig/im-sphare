@@ -5,7 +5,9 @@
     {{-- <div class="page about-page"> --}}
         <div class="contact-container">
 
-            <a href="{{route('contact.show',['username'=>Auth::user()->profile->username])}}">back</a>
+           <div class="back-btn">
+                <a href="{{url()->previous()}}">Back</a>
+           </div>
             <div class="page-header">
                 <div class="page-title">Contact Edit form</div>
                 <div class="page-description">

@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <title>{{ config('app.name') }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {{--
-    <link rel="stylesheet" href="{{ asset('asset/css/style.css') }}"> --}}
-    <link rel="stylesheet" href="{{ asset('asset/css/landing.css') }}">
+    <link rel="icon" type="image/png" href="{{ asset('asset/icons/imsphare-icon.png') }}">
 
+    <link rel="stylesheet" href="{{ asset('asset/css/landing.css') }}">
     <link rel="stylesheet" href="{{ asset('asset/css/theme.css') }}">
 
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.0/dist/iconify-icon.min.js"></script>
@@ -58,7 +57,6 @@
             </div>
         </div>
 
-
         <div class="main-content">
             <section id="imsphare-hero">
 
@@ -73,8 +71,8 @@
                         <a href="{{route('signup.show')}}" id="imsphare-btn-hero">Create Your Portfolio</a>
                     @endguest
                     @auth
-                        <a href="{{route('dashboard.show',['username'=>Auth::user()->username])}}" id="imsphare-btn-hero">Continue to Dashboard
-                            {{-- <iconify-icon icon="fa6-solid:arrow-right-long" style="cursor: pointer;"></iconify-icon> --}}
+                        <a href="{{route('dashboard.show', ['username' => Auth::user()->username])}}"
+                            id="imsphare-btn-hero">Continue to Dashboard
                         </a>
                     @endauth
                 </div>
@@ -145,9 +143,6 @@
 
             <section id="imsphare-testimonials">
                 <h2>Testimonials</h2>
-                {{-- <div class="imsphare-testimonials-image">
-                    <img src="{{asset('asset/img/l_6.svg')}}">
-                </div> --}}
                 <div class="imsphare-testimonial">
                     <!-- Testimonial 1 -->
                     <div class="imsphare-testimonials-content">
@@ -216,7 +211,7 @@
                 <!-- Right: Tech Support -->
                 <div class="footer-section">
                     <h3>Tech Support</h3>
-                    <p>Email: adarshsharma@gmail.com</a></p>
+                    <p>Email: adarshsharma1350@gmail.com</a></p>
                     <p>Phone: +91 88814 23949</a></p>
                     <p>Location: UP, India</p>
                 </div>

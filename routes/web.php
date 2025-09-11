@@ -42,9 +42,11 @@ Route::prefix('/u/{username}')->group(function () {
     Route::get('/projects', [ReposController::class, 'fetchRepos'])->name('repos.index');
 
 
-    Route::get('/about-me', [AboutController::class, 'show'])->name('about_me.show');
-    Route::get('/about-me/edit', [AboutController::class, 'edit'])->name('about_me.edit');
-    Route::post('/about-me/update', [AboutController::class, 'update'])->name('about_me.update');
+    Route::get('/about-me', [AboutController::class, 'show'])->name('about-me.show');
+    // Route::get('/about-me/edit', [AboutController::class, 'edit'])->name('about-me.edit');
+    Route::post('/about-me/update', [AboutController::class, 'update'])->name('about-me.update');
+
+    Route::get('/index-me',[AboutController::class,'index_show'])->name('index_show');
 
     Route::get('/setting', [SettingController::class, 'show'])->name('settings.show');
     Route::get('/setting/edit', [SettingController::class, 'edit'])->name('settings.edit');

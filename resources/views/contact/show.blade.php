@@ -5,7 +5,7 @@
     {{-- <div class="page about-page"> --}}
         <div class="contact-container">
 
-            <a href="{{route('contact_me.edit',['username'=>Auth::user()->profile])}}"></a>
+            <a href="{{route('contact_me.edit',['username'=>Auth::user()->profile])}}">Edit</a>
             <div class="page-header">
                 <div class="page-title">Contact</div>
                 <div class="page-description">

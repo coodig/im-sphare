@@ -23,10 +23,10 @@ class ProfileController extends Controller
     {
         $user = Auth::user()->username;
         $profile = Auth::user()->profile;
-        return view('profile.edit', compact('user','profile'));
+        return view('profile.edit', compact('user', 'profile'));
     }
 
-    public function update($username,Request $request)
+    public function update($username, Request $request)
     {
         $user = User::where('username', $username)->firstOrFail();
 
@@ -37,13 +37,12 @@ class ProfileController extends Controller
             'gender' => 'nullable|in:male,female,other',
             'dob' => 'nullable|date',
             'website' => 'nullable|string',
-
-
         ]);
 
+        // 'profile_image' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
         $user->profile()->updateOrCreate([
-            'user_id'=>$user->id
-        ],[
+            'user_id' => $user->id
+        ], [
             'name' => $request->name,
             'bio' => $request->bio,
             'location' => $request->location,
@@ -52,10 +51,7 @@ class ProfileController extends Controller
             'website' => $request->website,
         ]);
 
-        // dd($user->profile());
-
         return redirect()->route('profile.show', ['username' => Auth::user()->username])
             ->with('status', 'Profile updated successfully!');
     }
-
 }

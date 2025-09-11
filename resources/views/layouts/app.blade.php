@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Dashboard | {{ config('app.name') }}</title>
+
+    <link rel="icon" type="image/png" href="{{ asset('asset/icons/imsphare-icon.png') }}">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('asset/css/landing.css') }}">
     <link rel="stylesheet" href="{{ asset('asset/css/theme.css') }}">
@@ -44,7 +48,7 @@
             {{-- @auth --}}
 
             <div class="footer">
-                {{-- @include('partials.footer') --}}
+                @include('partials.footer')
             </div>
             {{-- @endauth --}}
         </div>

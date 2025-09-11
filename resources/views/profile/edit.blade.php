@@ -1,82 +1,81 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="profile_detail_container">
+    <div class="profile_detail_container">
+        <div class="back-btn"><a href="{{url()->previous()}}">Back</a></div>
 
-    <div class="user_profile_section">
-        <h2 class="page-name">Update Profile</h2>
+        <div class="user_profile_section">
+            <h2 class="page-name">Update Profile</h2>
 
-        <div class="profile-info">
-            <form action="{{ route('profile.update', ['username' => Auth::user()->username]) }}"
-                  method="POST" enctype="multipart/form-data">
-                @csrf
-                @method('PUT')
+            <div class="profile-info">
+                <form action="{{ route('profile.update', ['username' => Auth::user()->username]) }}" method="POST"
+                    enctype="multipart/form-data">
+                    @csrf
+                    @method('PUT')
 
-                <!-- Name -->
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name"
-                           value="{{ old('name', Auth::user()->profile->name ?? '') }}"
-                           placeholder="Name" class="form-input">
-                </div>
+                    <!-- Name -->
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name"
+                            value="{{ old('name', Auth::user()->profile->name ?? '') }}" placeholder="Name"
+                            class="form-input">
+                    </div>
 
-                <!-- Bio -->
-                <div class="form-group">
-                    <label for="bio">Bio</label>
-                    <textarea id="bio" name="bio" placeholder="Bio"
-                              class="form-textarea">{{ old('bio', Auth::user()->profile->bio ?? '') }}</textarea>
-                </div>
+                    <!-- Bio -->
+                    <div class="form-group">
+                        <label for="bio">Bio</label>
+                        <textarea id="bio" name="bio" placeholder="Bio"
+                            class="form-textarea">{{ old('bio', Auth::user()->profile->bio ?? '') }}</textarea>
+                    </div>
 
-                <!-- Location -->
-                <div class="form-group">
-                    <label for="location">Location</label>
-                    <input type="text" id="location" name="location"
-                           value="{{ old('location', Auth::user()->profile->location ?? '') }}"
-                           placeholder="Location" class="form-input">
-                </div>
+                    <!-- Location -->
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" name="location"
+                            value="{{ old('location', Auth::user()->profile->location ?? '') }}" placeholder="Location"
+                            class="form-input">
+                    </div>
 
-                <!-- Date of Birth -->
-                <div class="form-group">
-                    <label for="dob">Date of Birth</label>
-                    <input type="date" id="dob" name="dob"
-                           value="{{ old('dob', Auth::user()->profile->dob ?? '') }}"
-                           class="form-input">
-                </div>
+                    <!-- Date of Birth -->
+                    <div class="form-group">
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" id="dob" name="dob" value="{{ old('dob', Auth::user()->profile->dob ?? '') }}"
+                            class="form-input">
+                    </div>
 
-                <!-- Gender -->
-                <div class="form-group">
-                    <label for="gender">Gender</label>
-                    <select id="gender" name="gender" class="form-input">
-                        <option value=""
-                            {{ old('gender', Auth::user()->profile->gender ?? 'Not Available') == 'Not Available' ? 'selected' : '' }}>
-                            Not Available
-                        </option>
-                        <option value="male" {{ old('gender', optional(Auth::user()->profile)->gender) == 'male' ? 'selected' : '' }}>
-                            Male
-                        </option>
-                        <option value="female" {{ old('gender', optional(Auth::user()->profile)->gender) == 'female' ? 'selected' : '' }}>
-                            Female
-                        </option>
-                        <option value="other" {{ old('gender', optional(Auth::user()->profile)->gender) == 'other' ? 'selected' : '' }}>
-                            Other
-                        </option>
-                    </select>
-                </div>
+                    <!-- Gender -->
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <select id="gender" name="gender" class="form-input">
+                            <option value="" {{ old('gender', Auth::user()->profile->gender ?? 'Not Available') == 'Not Available' ? 'selected' : '' }}>
+                                Not Available
+                            </option>
+                            <option value="male" {{ old('gender', optional(Auth::user()->profile)->gender) == 'male' ? 'selected' : '' }}>
+                                Male
+                            </option>
+                            <option value="female" {{ old('gender', optional(Auth::user()->profile)->gender) == 'female' ? 'selected' : '' }}>
+                                Female
+                            </option>
+                            <option value="other" {{ old('gender', optional(Auth::user()->profile)->gender) == 'other' ? 'selected' : '' }}>
+                                Other
+                            </option>
+                        </select>
+                    </div>
 
-                <!-- Website -->
-                <div class="form-group">
-                    <label for="website">Website</label>
-                    <input type="url" id="website" name="website"
-                           value="{{ old('website', Auth::user()->profile->website ?? '') }}"
-                           placeholder="Your Website URL" class="form-input">
-                </div>
+                    <!-- Website -->
+                    <div class="form-group">
+                        <label for="website">Website</label>
+                        <input type="url" id="website" name="website"
+                            value="{{ old('website', Auth::user()->profile->website ?? '') }}"
+                            placeholder="Your Website URL" class="form-input">
+                    </div>
 
-                <!-- Submit -->
-                <button type="submit" class="btn-primary">Update</button>
-            </form>
+                    <!-- Submit -->
+                    <button type="submit" class="btn-primary">Update</button>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 @endsection
 
 

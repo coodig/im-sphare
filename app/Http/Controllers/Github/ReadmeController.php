@@ -103,8 +103,11 @@ class ReadmeController extends Controller
             ->get("https://api.github.com/repos/$owner/$repo/releases")
             ->json() ?? [];
 
+        $projects = GithubRepo::where('user_id', Auth::id())
+            ->latest('created_at')->take(4)->get();
+
 
 // dd($repoModel);
-        return view('github.repos.show', compact('repoDetails', 'parsedHtml', 'languages', 'release'));
+        return view('github.repos.show', compact('repoDetails', 'parsedHtml', 'languages', 'release','projects'));
     }
 }

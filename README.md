@@ -1,10 +1,5 @@
 # 🌐 IMSphare 
 
-
-<!-- ![License](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)  
-![Laravel](https://img.shields.io/badge/Laravel-12-red.svg)  
-![React](https://img.shields.io/badge/React-18-blue.svg)   -->
-
 ## 📖 About the Project
 
 <b>This project is a Portfolio Builder Website designed to help individuals create and showcase their professional portfolios easily.</b>
@@ -110,8 +105,6 @@ You may use, share, and adapt the code for personal and educational purposes, bu
 
 See the [LICENSE](LICENSE) file for details.
 
-
-
 ## 🤝 Contributing
 Contributions are welcome!  
 If you have suggestions for improvements, feel free to fork the repo and submit a pull request.  
@@ -128,12 +121,8 @@ Pull requests are welcome, and please open an issue first to discuss major chang
 **Adarsh Vishwakarma**  
 
 - 🌐 Portfolio: [imsphare.oranbyte.com](https://imsphare.oranbyte.com)  
-<!-- - 💼 LinkedIn: [Your LinkedIn Profile](https://linkedin.com/in/yourusername)  
-- 🐦 Twitter: [@yourhandle](https://twitter.com/yourhandle)   -->
 - 📧 Email: adarshsharama1350@gamil.com
 
-
 <h2 style="color:red">Currently in Under Development Stage...</h2>
-
 
 <p style='text-align=center'>&copy 2025 <a href="https://imsphare.oranbyte.com"> IMSphare</a> | Designed by Sphare Co.</p>

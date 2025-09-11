@@ -1,15 +1,12 @@
 .dashboard-container {
     margin: 0 auto;
     padding: 30px 20px;
-    /* font-family: "Lobster"; */
 }
 
 .dashboard-container h3 {
     font-size: xx-large;
 
 }
-
-
 
 .dashboard-title h2 {
     font-size: 50px;
@@ -23,16 +20,18 @@
 
 h2 iconify-icon{
     font-size: 50px;
-
 }
 
+.section-header{
+    display: flex;
+    justify-content: space-between;
+}
 
 .dashboard-section {
     background: var(--card-bg);
     padding: 20px 25px;
     border-radius: 8px;
     margin-bottom: 30px;
-    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); */
     flex: 1 1 50%;
 }
 
@@ -56,14 +55,8 @@ h3 iconify-icon{
     background-color: #f9f9f9;
     padding: 20px 16px;
     border-radius: 10px;
-    /* box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06); */
-    /* transition: transform 0.3s ease; */
     text-align: center;
 }
-
-/* .stat-card:hover {
-    transform: translateY(-2px);
-} */
 
 .stat-card h5 {
     color: var(--text-color);
@@ -96,17 +89,12 @@ h3 iconify-icon{
     padding-bottom: 10px;
 }
 
-/* .card h5{
-    font-size: 40px;
-} */
-
 .chart-box {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
     flex: 1 1 45%;
     min-width: 300px;
-    /* box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06); */
 }
 
 .chart-box h4 {
@@ -128,10 +116,8 @@ h3 iconify-icon{
     background: #f4f4f4;
     border-radius: 6px;
     margin-bottom: 8px;
-    /* box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03); */
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .chart-grid {
         flex-direction: column;

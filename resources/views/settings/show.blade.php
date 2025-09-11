@@ -4,42 +4,46 @@
 
     <div class="settings_container">
 
+        <div>
+            <span class="btn-edit" ><a class="btn-edit" href="{{route('settings.edit', ['username' => Auth::user()->username])}}">Edit</a></span>
+        </div>
+         <a class="btn-edit" id="edit-profile" href={{route('profile.edit', ['username' => Auth::user()->username])}}><button>
+
+                        Edit profile
+                    </button></a>
+
         <h2 class="settings-title"><iconify-icon icon="mdi:account-cog"></iconify-icon>Account Settings</h2>
 
-        <h3>Peronal Info</h3>
         <div class="settings-section">
-            <div>
-                <span><a href="{{route('settings.edit', ['username' => Auth::user()->username])}}">Edit</a></span>
+            <h3>Peronal Info</h3>
+            <div class="form_element">
+                <label for="name">Full Name</label>
+                <p id="name" name="name" class="name">{{Auth::user()->profile->name ?? 'not available'}}</p>
+
             </div>
-
+            <div class="form_element">
+                <label for="email">Email Address</label>
+                <p id="email" name="email" class="email">{{Auth::user()->email}}</p>
+            </div>
+            @auth
                 <div class="form_element">
-                    <label for="name">Full Name</label>
-                    <p id="name" name="name" class="name">{{Auth::user()->profile->name ?? 'not available'}}</p>
-
+                    <label for="phone">Phone Number</label>
+                    <p id="phone" name="phone" class="phone">{{ Auth::user()->contact->phone ?? 'not available'}}</p>
                 </div>
-                <div class="form_element">
-                    <label for="email">Email Address</label>
-                    <p id="email" name="email" class="email">{{Auth::user()->email}}</p>
-                </div>
-                @auth
-                    <div class="form_element">
-                        <label for="phone">Phone Number</label>
-                        <p id="phone" name="phone" class="phone">{{ Auth::user()->contact->phone ?? 'not available'}}</p>
-                    </div>
-                @endauth
+            @endauth
         </div>
 
         {{-- Theme Settings --}}
         <div class="settings-section">
             <h3>Appearance</h3>
 
-                <div class="form_element">
-                    <label for="theme">Theme</label>
-                    <select id="theme" name="theme" onchange="toggleTheme(this.value)">
-                        <option value="light" selected>Light</option>
-                        <option value="dark">Dark</option>
-                    </select>
-                </div>
+            <div class="form_element">
+                <label for="theme">Theme</label>
+                <select id="theme" name="theme" onchange="toggleTheme(this.value)">
+                    <option value="light" selected>Light</option>
+                    <option value="dark">Dark</option>
+                </select>
+            </div>
         </div>
 
         {{-- Notification Preferences --}}
@@ -112,14 +116,14 @@
         <div class="settings-section danger-zone">
             <h3>Danger Zone</h3>
 
-                @auth
-                    <form action="{{route('logout')}}" method="POST">
-                        @csrf
-                        <button type="submit" class="btn-logout">
-                            <iconify-icon icon="line-md:log-out"></iconify-icon>
-                            <span>Logout</span></button>
-                    </form>
-                @endauth
+            @auth
+                <form action="{{route('logout')}}" method="POST">
+                    @csrf
+                    <button type="submit" class="btn-logout">
+                        <iconify-icon icon="line-md:log-out"></iconify-icon>
+                        <span>Logout</span></button>
+                </form>
+            @endauth
         </div>
     </div>
 

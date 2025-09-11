@@ -33,21 +33,12 @@
                             <span>Built for both personal branding and professional growth.</span>
                         </li>
 
-                        {{-- <li>🧠 <span>Empower users from all backgrounds — developers, designers, writers, and more.</span></li>
-                        <li>⚡ <span>Simple interface with powerful tools for creative freedom.</span></li>
-                        <li>🛠️ <span>Built for both personal branding and professional growth.</span></li> --}}
                     </ul>
                 </div>
                 <div class="about-img">
                     <img src="{{ asset('asset/img/about_us2.svg')}}" alt="About Image">
                 </div>
-                {{-- <div class="about-footer">
-                    <p>Join us today and start building your standout online presence!</p>
-                </div> --}}
             </div>
-
-            {{--
-        </div> --}}
 
     </div>
 @endsection

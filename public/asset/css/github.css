@@ -97,31 +97,27 @@ button {
     height: fit-content;
 }
 
+
+.popular-projects-list {
+    display: flex;
+}
+
+.popular-projects {
+    width: 100wh;
+    background-color: var(--sidebar-bg);
+    padding: 10px;
+    border-radius: 1rem;
+}
+
 /* Headings */
 .div-1 h1 {
     font-size: 28px;
-    /* color: #2c3e50; */
     margin-bottom: 10px;
 }
 
 .div-1 h2 {
     font-size: 30px;
-    /* color: #34495e; */
-    /* margin-top: 25px; */
-    /* margin-bottom: 10px; */
 }
-
-
-/* Code blocks */
-/* .div-1 pre { */
-/* background-color: #f4f4f4; */
-/* padding: 10px;
-    border-radius: 5px;
-    overflow-x: auto;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 14px;
-    margin-bottom: 15px; */
-/* } */
 
 .div-1 code {
     white-space: pre-wrap;
@@ -395,16 +391,16 @@ button {
     margin-bottom: 10px;
 }
 
-.github-token-form button{
+.github-token-form button {
     font-size: large;
     padding: 5px 0;
 }
 
-.github-token-form iconify-icon{
+.github-token-form iconify-icon {
     font-size: x-large;
 }
 
-.github-token-form span{
+.github-token-form span {
     justify-content: center;
     text-align: center;
 }
@@ -424,82 +420,121 @@ button {
 @media (max-width:600px) {
 
     .div-1 {
-    background-color: var(--card-bg);
-    color: var(--text-color);
-    min-width: 70%;
-    padding: 10px 0px;
-    border-radius: 5px;
-}
+        background-color: var(--card-bg);
+        color: var(--text-color);
+        min-width: 70%;
+        padding: 10px 0px;
+        border-radius: 5px;
+    }
 
-.div-1 .div-2 h2{
-    font-size: 0.8rem;
+    .div-1 .div-2 h2 {
+        font-size: 0.8rem;
 
-}
-.repository_title {
-    font-size: 35px;
-    font-weight: 700;
-}
+    }
 
-.repository_description {
-    font-size: 15px;
-    font-weight: 600;
-}
+    .repository_title {
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
 
-.div-1 .div-2 p {
-    font-size: 7px;
-    line-height: normal;
+    .repository_description {
+        font-size: 15px;
+        font-weight: 400;
+    }
 
-}
+    .div-1 .div-2 p {
+        font-size: 7px;
+        line-height: normal;
 
-.readme-box code {
-    background-color: #f6f8fa;
-    padding: 3px 6px;
-    border-radius: 3px;
-    font-size: 12px;
-    font-family: 'Courier New', monospace;
-}
+    }
 
-.div-1 .div-2 b{
-    font-weight: 300;
-}
+    .readme-box code {
+        background-color: #f6f8fa;
+        padding: 3px 6px;
+        border-radius: 3px;
+        font-size: 12px;
+        font-family: 'Courier New', monospace;
+    }
 
-.readme-box img {
-    height: auto;
-    border-radius: 5px;
-    width: calc(50% - 10px);
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
+    .div-1 .div-2 b {
+        font-weight: 300;
+    }
 
-.readme-box pre {
-    background-color: #f6f8fa;
-    padding: 10px;
-    border-radius: 5px;
-    overflow-x: auto;
-    font-family: 'Courier New', monospace;
-    font-size: 4px;
-    margin: 0px 0;
-    /* color: #24292f; */
-}
+    .readme-box img {
+        height: auto;
+        border-radius: 5px;
+        width: calc(50% - 10px);
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .readme-box pre {
+        background-color: #f6f8fa;
+        padding: 10px;
+        border-radius: 5px;
+        overflow-x: auto;
+        font-family: 'Courier New', monospace;
+        font-size: 4px;
+        margin: 0px 0;
+        /* color: #24292f; */
+    }
 
 
-.readme-box h1, .readme-box h2, .readme-box h3, .readme-box h4, .readme-box h5, .readme-box h6 {
-    margin: 3px 0px;
-    font-weight: 600;
-    color: var(--text-color);
-}
+    .readme-box h1,
+    .readme-box h2,
+    .readme-box h3,
+    .readme-box h4,
+    .readme-box h5,
+    .readme-box h6 {
+        margin: 3px 0px;
+        font-weight: 600;
+        color: var(--text-color);
+    }
 
-.div-1 img{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    grid-template-columns: auto;
-    width: 100%;
-}
+    .div-1 img {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        grid-template-columns: auto;
+        width: 100%;
+    }
 
-.div-2 {
-    padding: 1rem;
-    border-radius: 5px;
-}
+    .div-2 {
+        padding: 1rem;
+        border-radius: 5px;
+    }
+
+    .language-list li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+        font-size: 0.8rem;
+        justify-content: space-between;
+    }
+
+    .div-2 hr {
+        border: none;
+        border-top: 1px solid #ddd;
+        margin: 0px 0;
+    }
+
+    .github-stats li {
+        margin-bottom: 5px;
+        font-size: 14px;
+    }
+
+    .popular-projects{
+        width: 100%;
+    }
+
+    .popular-projects-list{
+        display: flex;
+        flex-direction: column;
+        /* margin-top: 3px; */
+    }
+
+    .popular-projects-card{
+        padding: 0;
+    }
 
 }
