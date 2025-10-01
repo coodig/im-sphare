@@ -25,28 +25,6 @@
                                 rows="5">{{ old('content', $user_about->content) }}</textarea>
                         </div>
 
-                        {{-- <ul class="about-features">
-                            <li><iconify-icon icon="streamline-sharp:slide-show-play-solid"
-                                    class="feature-icon"></iconify-icon>
-                                <span>Showcase your skills, experiences, and projects effectively.</span>
-                            </li>
-                            <li><iconify-icon icon="gis:globe-users" class="feature-icon"></iconify-icon>
-                                <span>Empower users from all backgrounds developers, designers, writers, and more.</span>
-                            </li>
-                            <li><iconify-icon icon="vaadin:tools" class="feature-icon"></iconify-icon>
-                                <span>Simple interface with powerful tools for creative freedom.</span>
-                            </li>
-                            <li><iconify-icon icon="streamline-flex:decent-work-and-economic-growth-remix"
-                                    class="feature-icon"></iconify-icon>
-                                <span>Built for both personal branding and professional growth.</span>
-                            </li> --}}
-
-                            {{-- <li>🧠 <span>Empower users from all backgrounds — developers, designers, writers, and
-                                    more.</span></li>
-                            <li>⚡ <span>Simple interface with powerful tools for creative freedom.</span></li>
-                            <li>🛠️ <span>Built for both personal branding and professional growth.</span></li> --}}
-                            {{--
-                        </ul> --}}
                     </div>
                     <div class="form-group">
                         <label for="image">Profile Image</label><br>

@@ -1,0 +1,76 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.gallery-heading {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.profile-image-container {
+    line-height: 1;
+}
+
+.profile-image-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:15px;
+    margin: auto;
+}
+
+
+.gallery-profile-banner img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.gallery-profile-icon {
+    /* background-color: red; */
+    background-color: transparent;
+    border: none;
+    margin:0px;
+    padding: 0px;
+}
+
+.gallery-profile-icon img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #008CBA;
+  overflow: hidden;
+  width: 25%;
+  height: 0;
+  transition: .5s ease;
+}
+
+.container:hover .overlay {
+  height: 25%;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+.view-all-btn{
+    color: var(--accent-color);
+}

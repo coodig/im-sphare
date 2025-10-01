@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Grids</title>
+    </head>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            height: 100vh;
+            width: 100vw;
+        }
+        .container {
+            /* grid-column: repeat(100px,1fr); */
+            /* grid-row: repeat(100px,1fr); */
+            grid-row: 5;
+            grid-column: 4;
+            height: 100vh;
+            width: 100vw;
+            display: grid;
+            grid-template: 4;
+            grid-template-columns: 4;
+        }
+        .container .item1 {
+            grid-column-start: 1;
+            grid-column-end: 5;
+            background-color: red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container .item2 {
+            /* grid-row-start: 2; */
+            /* grid-column-start: 1; */
+            /* grid-column-end: 1; */
+            background-color: blue;
+        }
+        .container .item3 {
+            background-color: green;
+        }
+        .container .item4 {
+            background-color: pink;
+        }
+
+        .container .item5 {
+            background-color: aqua;
+        }
+        .container .item6 {
+            background-color: violet;
+        }
+        .container .item7 {
+            background-color: gray;
+        }
+        .container .item8 {
+            background-color: black;
+            color: white;
+        }
+    </style>
+    <body>
+        <section class="container">
+            <div class="item1">Header</div>
+            <div class="item2">Sidebar</div>
+            <div class="item3">Content 1</div>
+            <div class="item4">Main Content</div>
+            <div class="item5">Content 2</div>
+            <div class="item6">Content 3</div>
+            <div class="item7">Content 4</div>
+            <div class="item8">Footer</div>
+        </section>
+    </body>
+</html>

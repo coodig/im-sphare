@@ -23,9 +23,6 @@
                             style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div>
-                    {{-- <div class="map-button">
-                        <a href="https://maps.google.com/..." target="_blank" class="view-map-btn">View Larger Map</a>
-                    </div> --}}
                 </div>
 
                 <div class="contact-form">
@@ -51,8 +48,6 @@
                     </form>
 
                 </div>
-                {{-- <div class="contact-footer-1"><p>We’re here to support your journey. Whether it’s feedback, questions, or collaboration — feel free to
-                        reach out. Let’s grow together.</p></div> --}}
                 <div class="contact-footer">
                     <p>We’re here to support your journey. Whether it’s feedback, questions, or collaboration — feel free to
                         reach out. Let’s grow together.</p>

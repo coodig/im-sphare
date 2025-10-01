@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Models\Profile;
 use App\Models\SocialMediaLink;
 use App\Models\User;
+use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
 {
@@ -15,8 +17,8 @@ class ProfileController extends Controller
     {
 
         $user = User::where('username', $username)->firstOrFail();
-        $socialMediaLink = SocialMediaLink::where('user_id', $user->user_id)->get();
-        return view('profile.show', compact('user', 'socialMediaLink'));
+        // $socialMediaLink = SocialMediaLink::where('user_id', $user->user_id)->get();
+        return view('profile.show', compact('user'));
     }
 
     public function edit($username)
@@ -54,4 +56,30 @@ class ProfileController extends Controller
         return redirect()->route('profile.show', ['username' => Auth::user()->username])
             ->with('status', 'Profile updated successfully!');
     }
+
+    public function uploadProfileBanner(Request $request, $username){
+
+        $user = Auth::user()->username;
+        $request -> Validate([
+            'profile-banner'=>'required|image|mimes:jpeg,png,jpg,gif|max:2048'
+        ]);
+
+        if($user->profile && $user->profile->profile_banner){
+
+            Storage::disk('public')->delete($user->profile->profile_banner);
+        }
+
+        $path = $request->file('banner')->store('profile_media/banner','public');
+
+        $user->profile->update([
+            'profile_banner'=>$path
+        ]);
+        dd($path);
+
+        // $user->profile_image = $path;
+
+        // return redirect()->back()->with('success','Profile Banner updatted successfully..');
+
+
+   }
 }

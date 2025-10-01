@@ -24,15 +24,20 @@
                 <span class="sidebar-text">Contact Me</span>
             </a>
 
-            <a href="{{ route('about-me.show', ['username' => Auth::user()->username]) }}"
+            {{-- <a href="{{ route('about-me.show', ['username' => Auth::user()->username]) }}"
                 class="{{nav_active('about-me.show')}}">
                 <iconify-icon icon="solar:info-circle-bold-duotone"></iconify-icon>
                 <span class="sidebar-text">About Me</span>
-            </a>
-            <a href="{{ route('about-me.show', ['username' => Auth::user()->username]) }}"
-                class="{{nav_active('about-me.show')}}">
+            </a> --}}
+            <a href="{{ route('academics.show', ['username' => Auth::user()->username]) }}"
+                class="{{nav_active('academics.show')}}">
                 <iconify-icon icon="solar:notebook-bold-duotone"></iconify-icon>
                 <span class="sidebar-text">Academics</span>
+            </a>
+            <a href="{{ route('gallery.show', ['username' => Auth::user()->username]) }}"
+                class="{{nav_active('gallery.show')}}">
+                <iconify-icon icon="solar:gallery-minimalistic-bold-duotone"></iconify-icon>
+                <span class="sidebar-text">Gallery</span>
             </a>
         @endauth
     </div>

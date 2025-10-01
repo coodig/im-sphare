@@ -17,7 +17,6 @@
                             <img src="{{asset('asset/img/about.jpg')}}" alt="{{$follower->username}}">
                         </div>
                         <div class="follower-card-stats">
-                            {{-- yeh follower hai (jisne follow kiya) --}}
                             <span class="username">{{ $follower->username }}</span>
 
                             <div class="profile-stats">
@@ -25,12 +24,6 @@
                                     <span class="stat-count">25</span>
                                     <span class="stat-label">Projects</span>
                                 </div>
-                                {{-- <div class="stat-item" id="followers">
-                                    <a href="{{route('followers',['username'=>Auth::user()->username])}}">
-                                        <span class="stat-count">120</span>
-                                        <span class="stat-label">Followers</span>
-                                    </a>
-                                </div> --}}
                                 <div class="stat-item" id="following">
                                     <span class="stat-count">80</span>
                                     <span class="stat-label">Following</span>
@@ -66,15 +59,11 @@
                         </div>
                     </div>
 
-
-
-
                 @endforeach
 
             @endif
         </div>
 
     </div>
-
 
 @endsection

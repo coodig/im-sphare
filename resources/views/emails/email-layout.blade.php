@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>@yield('email-title')</title>
-    {{-- <link rel="stylesheet" href="{{asset('asset/css/email.css')}}"> --}}
-
-    <style>
+    <link rel="stylesheet" href="{{asset('asset/css/email.css')}}">
+    {{-- <style>
         body {
     margin: 0;
     padding: 0;
@@ -97,7 +96,7 @@
     }
 }
 
-</style>
+</style> --}}
 
 </head>
 

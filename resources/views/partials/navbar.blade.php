@@ -3,7 +3,8 @@
     <div class="navbar-left">
         <div class="sidebar-toggle">
             <button id="toggleSidebar" class="collapse-toggle">
-                <iconify-icon icon="bi:layout-text-sidebar-reverse"></iconify-icon>
+                {{-- <iconify-icon icon="bi:layout-text-sidebar-reverse"></iconify-icon> --}}
+                <iconify-icon icon="solar:sidebar-code-bold-duotone"></iconify-icon>
             </button>
         </div>
 
@@ -26,8 +27,8 @@
     <div class="navbar-right">
         {{-- Notification Bell icon --}}
 
-        {{-- <iconify-icon id="notificationBellIcon" icon="line-md:bell-twotone-loop" onclick="toggleNotificationDropdown()"
-            role="button" style="cursor: pointer;"></iconify-icon> --}}
+        <iconify-icon id="notificationBellIcon" icon="line-md:bell-twotone-loop" onclick="toggleNotificationDropdown()"
+            role="button" style="cursor: pointer;"></iconify-icon>
             {{-- @auth
             <x-notification-bell/>
             @endauth --}}

@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\About\AboutController;
+use App\Http\Controllers\Academics\AcademicsController;
 use App\Http\Controllers\Contact\ContactController;
 use App\Http\Controllers\DashboardController;
 // use App\Http\Controllers\SuperAdmin\UsersController;
 use App\Http\Controllers\Follower\FollowerController;
+use App\Http\Controllers\Gallery\GalleryController;
 use App\Http\Controllers\Github\GitHubTokenController;
 use App\Http\Controllers\Github\ReadmeController;
 use App\Http\Controllers\Github\ReposController;
@@ -17,7 +19,7 @@ use App\Http\Controllers\Profile\ProfileController;
 use App\Http\Controllers\Setting\SettingController;
 use App\Http\Controllers\Skills\SkillController;
 use App\Http\Controllers\SocialMediaLink\SocialMediaLinkController;
-use App\Http\Controllers\SuperAdmin\DashboardController as SuperAdminDashboardController;
+use App\Http\Controllers\SuperAdmin\SuperAdminDashboardController;
 use App\Http\Controllers\SuperAdmin\UsersController as SuperAdminUsersController;
 use Illuminate\Config\Repository;
 use Illuminate\Foundation\Console\RouteCacheCommand;
@@ -60,6 +62,18 @@ Route::prefix('/u/{username}')->group(function () {
     Route::get('/followers',[FollowerController::class,'followers'])->name('followers');
 
     Route::post('/toogle-follow',[FollowerController::class,'toogleFollow'])->name('tooglefollow');
+
+
+    Route::post('/profile/banner',[ProfileController::class,'uploadProfileBanner'])->name('profile-banner');
+
+
+
+    Route::get('/academics',[AcademicsController::class,'show'])->name('academics.show');
+    Route::get('/academics/edit',[AcademicsController::class,'edit'])->name('academics.edit');
+
+    Route::get('/gallery',[GalleryController::class,'show'])->name('gallery.show');
+    Route::get('/gallery/edit',[GalleryController::class,'edit'])->name('gallery.edit');
+
 });
 
 Route::prefix('/pages')->group(function () {

@@ -1,0 +1,1 @@
+<span style="margin:5px; position: absolute; font-weight:600; border-radius: 5px; cursor: pointer;" class="chat-with-us-btn"><a href="#"><img src="{{asset('asset/icons/chat-us-light.png')}}" alt="" style="width: 2.5rem"></a></span>

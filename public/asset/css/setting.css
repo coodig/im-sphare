@@ -163,7 +163,7 @@
 
 @media (max-width: 600px) {
     .activity-log-table thead {
-        display: none; /* Hide header on small screens */
+        display: none;
     }
 
     .activity-log-table,
@@ -337,14 +337,7 @@ h3{
 .activity-log-table th {
     text-align: left;
     padding: 8px;
-    /* border-bottom: 2px solid #ddd;  */
 }
-
-/* .activity-log-table td {
-    padding: 8px;
-    border-bottom: 1px solid #eee;
-} */
-
 
 #theme{
         padding: 10px;

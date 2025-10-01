@@ -16,7 +16,6 @@
 }
 
 .user-site-name {
-    /* font-family: "Libertinus Sans", sans-serif; */
     font-family: "Fredoka", sans-serif;
 }
 
@@ -255,7 +254,6 @@
         flex: 1 1 100%;
     }
 }
-
 
 @media (max-width:600px) {
     .hero-image img {

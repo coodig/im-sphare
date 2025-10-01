@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="{{ asset('asset/css/follower.css')}}">
     <link rel="stylesheet" href="{{ asset('asset/css/layout.css') }}">
     <link rel="stylesheet" href="{{ asset('asset/css/card.css') }}">
+    <link rel="stylesheet" href="{{ asset('asset/css/gallery.css') }}">
 
 
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.0/dist/iconify-icon.min.js"></script>
@@ -39,26 +40,23 @@
         <div class="main-wrapper">
             @include('partials.navbar')
 
-            <div class="main-content">
+            <div class="main-content" style="position: relative">
                 @yield('content')
                 @yield('scripts')
 
             </div>
-
-            {{-- @auth --}}
+            {{-- @include('partials.chat-us') --}}
 
             <div class="footer">
                 @include('partials.footer')
             </div>
-            {{-- @endauth --}}
         </div>
     </div>
 
 </body>
-{{-- <a href="{{ asset('assets/js/script.js')}}"></a> --}}
-{{--
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> --}}
 <script src="{{ asset('asset/js/script.js')}}"></script>
 <script src="{{ asset('asset/js/github.js')}}"></script>
+<script src="{{ asset('asset/js/profile.js')}}"></script>
+<script src="{{asset('jquery/jquery-3.2.1.min.js')}}"></script>
 
 </html>

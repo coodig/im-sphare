@@ -33,36 +33,38 @@ class SocialMediaLinkController extends Controller
 
         return response()->json([
             'messaage' => 'Social Media Link Created Successfully',
-            'link'=>$link,
+            'link' => $link,
         ]);
     }
 
-    public function update(Request $request, $id) {
-        $request -> validate([
-            'plateform'=>'required|string|max:100',
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'plateform' => 'required|string|max:100',
             'social_url' => 'string|url|max
                      : 100',
         ]);
 
-        $link = SocialMediaLink::where('id',$id)->where('user_id',Auth::id())->firstOrFail();
+        $link = SocialMediaLink::where('id', $id)->where('user_id', Auth::id())->firstOrFail();
 
         $link->update([
-            'plateform'=>$request->plateform,
-            'social_url'=>$request->social_url,
+            'plateform' => $request->plateform,
+            'social_url' => $request->social_url,
         ]);
 
         return response()->json([
-            'message' =>'Social media link updated successfully',
+            'message' => 'Social media link updated successfully',
             'link' => $link,
         ]);
     }
-    public function destroy($id) {
-        $link = SocialMediaLink::where('id',$id)->where('user_id',Auth
-                                                                ::id())->firstOrFail();
+    public function destroy($id)
+    {
+        $link = SocialMediaLink::where('id', $id)->where('user_id', Auth
+            ::id())->firstOrFail();
 
-                                                                $link->delete();
-                                                                return response()->json([
-                                                                    'message'=>'social media link deleted successfully',
-                                                                ]);
+        $link->delete();
+        return response()->json([
+            'message' => 'social media link deleted successfully',
+        ]);
     }
 }

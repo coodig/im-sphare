@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Superadmin;
+namespace App\Http\Controllers\SuperAdmin;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class SuperadminDashboardController extends Controller
+class SuperAdminDashboardController extends Controller
 {
     public function show(){
         $users = User::all();

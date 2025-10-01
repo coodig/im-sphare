@@ -18,16 +18,6 @@ class AboutController extends Controller
         return view('about-me.show');
     }
 
-    // public function edit($username){
-    //     if (Auth::user()->username !== $username) {
-    //     abort(403, 'Unauthorized action.');
-    // }
-    //     $user_about = UserAbout::where('user_id',Auth::id())->firstOrFail();
-    //     // dd($user_about);
-    //     return view('about-me.edit',compact('user_about'));
-    // }
-
-
     public function update(Request $request,$username){
 
         $request->validate([

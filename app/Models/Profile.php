@@ -11,12 +11,14 @@ class Profile extends Model
     protected $fillable = [
        'user_id',
         'name',
+        'avatar',
         'location',
         'dob',
         'gender',
         'bio',
         'website',
-        'privacy_level_id'
+        'privacy_level_id',
+        'profile_banner',
     ];
 
     public function user(){

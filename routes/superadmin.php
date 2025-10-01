@@ -1,6 +1,5 @@
 <?php
 
-// use App\Http\Controllers\SuperAdmin\DashboardController;
 use App\Http\Controllers\SuperAdmin\MaintenanceController;
 use App\Http\Controllers\SuperAdmin\SuperadminDashboardController;
 use App\Http\Controllers\SuperAdmin\UsersController;
@@ -21,11 +20,11 @@ Route::middleware(['auth','isSuperAdmin'])->prefix('superadmin')->name('superadm
     Route::delete('/maintenance/laravel-log', [MaintenanceController::class, 'purgeLaravelLog'])
         ->name('maintenance.purge.laravel_log');
 
-
-
     Route::get('/dashboard',[SuperadminDashboardController::class,'show'])->name('dashboard');
     Route::get('/users-list',[UsersController::class,'index'])->name('users');
 
     Route::post('/delete/{id}',[UsersController::class,'delete'])->name('delete.user');
+
+    // Route::post('add-user')
 });
 

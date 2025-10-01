@@ -24,26 +24,30 @@
                     </div>
                 </td>
                 <td>
-                    <a href="{{route('profile.show', ['username' => Auth::user()])}}" class="btn btn-dark"
-                        target="_blank">Show</a>
+                    <button class="btn btn-secondary" data-bs-target="#showUserModal" data-bs-toggle="modal">Show</button>
                 </td>
                 <td>
-
-                    <a href="{{route('profile.show', ['username' => Auth::user()])}}" class="btn btn-warning"
-                        target="_blank">Edit</a>
+                    <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editUserModal">
+                        Edit
+                    </button>
                 </td>
-
                 <td>
-                {{-- <a href="{{route('profile.show', ['username' => Auth::user()])}}" class="btn btn-danger">Delete</a>
-                --}}
-                <form action="{{route('superadmin.delete.user',[$user->id])}}" method="POST">
-                    @csrf
-                    <button type="submit" class="btn btn-danger" data-bs-toogle="modal"
-                        data-bs-target="#deleteUserModal">Delete</button>
-                </form>
+                    <form action="{{route('superadmin.delete.user', [$user->id])}}" method="POST">
+                        @csrf
+                        <button type="submit" class="btn btn-danger" data-bs-toogle="modal"
+                            data-bs-target="#deleteUserModal">Delete</button>
+                    </form>
                 </td>
                 </td>
             </tr>
         @endforeach
     </tbody>
 </table>
+
+<div class="pagination-links">
+    <span class="align-items-center text-center" id="pagination-links">{{ $users->links() }}</span>
+</div>
+
+<div>
+    <button id="unique-btn"> unique button </button>
+</div>

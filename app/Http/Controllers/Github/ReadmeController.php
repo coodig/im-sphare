@@ -43,23 +43,24 @@ class ReadmeController extends Controller
 
         if ($markdown) {
             // Handle Markdown style images ![alt](path)
-            $markdown = preg_replace_callback('/!\[([^\]]*)\]\((?!http)([^)]+)\)/',
+            $markdown = preg_replace_callback(
+                '/!\[([^\]]*)\]\((?!http)([^)]+)\)/',
                 function ($matches) use ($owner, $repo, $branch, $repoModel) {
                     $altText = $matches[1];
                     $relativePath = ltrim($matches[2], '/');
                     $rawUrl = "https://raw.githubusercontent.com/$owner/$repo/$branch/$relativePath";
 
                     // if ($repoModel) {
-                        GithubReadmeImage::updateOrCreate(
-                            [
-                                'repo_id' => $repoModel->id,
-                                'img_url' => $rawUrl
-                            ],
-                            [
-                                'alt_text' => $altText,
-                                // 'original_path' => $relativePath
-                            ]
-                        );
+                    GithubReadmeImage::updateOrCreate(
+                        [
+                            'repo_id' => $repoModel->id,
+                            'img_url' => $rawUrl
+                        ],
+                        [
+                            'alt_text' => $altText,
+                            // 'original_path' => $relativePath
+                        ]
+                    );
                     // }
 
                     return "![$altText]($rawUrl)";
@@ -75,16 +76,16 @@ class ReadmeController extends Controller
                     $rawUrl = "https://raw.githubusercontent.com/$owner/$repo/$branch/$relativePath";
 
                     // if ($repoModel) {
-                        GithubReadmeImage::updateOrCreate(
-                            [
-                                'repo_id' => $repoModel->id,
-                                'img_url' => $rawUrl
-                            ],
-                            [
-                                'alt_text' => null,
-                                // 'original_path' => $relativePath
-                            ]
-                        );
+                    GithubReadmeImage::updateOrCreate(
+                        [
+                            'repo_id' => $repoModel->id,
+                            'img_url' => $rawUrl
+                        ],
+                        [
+                            'alt_text' => null,
+                            // 'original_path' => $relativePath
+                        ]
+                    );
                     // }
 
                     return str_replace($matches[1], $rawUrl, $matches[0]);
@@ -107,7 +108,7 @@ class ReadmeController extends Controller
             ->latest('created_at')->take(4)->get();
 
 
-// dd($repoModel);
-        return view('github.repos.show', compact('repoDetails', 'parsedHtml', 'languages', 'release','projects'));
+        // dd($repoModel);
+        return view('github.repos.show', compact('repoDetails', 'parsedHtml', 'languages', 'release', 'projects'));
     }
 }

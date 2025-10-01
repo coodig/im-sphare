@@ -13,18 +13,13 @@ class SkillController extends Controller
 
 
 
-    public function show(){
-
-
+    public function show()
+    {
         return view('skills.show');
+    }
 
-
-           }
-
-           public function edit(){
-
-            return view('skills.edit');
-
-
-                  }
+    public function edit()
+    {
+        return view('skills.edit');
+    }
 }
