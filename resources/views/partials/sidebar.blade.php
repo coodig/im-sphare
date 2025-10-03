@@ -34,8 +34,8 @@
                 <iconify-icon icon="solar:notebook-bold-duotone"></iconify-icon>
                 <span class="sidebar-text">Academics</span>
             </a>
-            <a href="{{ route('gallery.show', ['username' => Auth::user()->username]) }}"
-                class="{{nav_active('gallery.show')}}">
+            <a href="{{ route('gallery.index', ['username' => Auth::user()->username]) }}"
+                class="{{nav_active('gallery.index')}}">
                 <iconify-icon icon="solar:gallery-minimalistic-bold-duotone"></iconify-icon>
                 <span class="sidebar-text">Gallery</span>
             </a>

@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->foreignId('repo_id')->constrained('github_repos')->onDelete('cascade');
             $table->text('img_url');
-
             $table->unique(['repo_id', 'img_url']);
             $table->timestamps();
         });

@@ -56,7 +56,8 @@
 </body>
 <script src="{{ asset('asset/js/script.js')}}"></script>
 <script src="{{ asset('asset/js/github.js')}}"></script>
-<script src="{{ asset('asset/js/profile.js')}}"></script>
 <script src="{{asset('jquery/jquery-3.2.1.min.js')}}"></script>
+<script src="{{ asset('asset/js/profile.js')}}"></script>
+<script src="{{ asset('asset/js/img-preview.js')}}"></script>
 
 </html>

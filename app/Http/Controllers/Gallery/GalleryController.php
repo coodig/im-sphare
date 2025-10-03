@@ -8,15 +8,24 @@ use Illuminate\Http\Request;
 
 class GalleryController extends Controller
 {
-    public function show($username){
-        $user = User::where('username',$username)->firstOrFail();
-        return view('gallery.show',compact('user'));
 
+    public function index($username)
+    {
+
+        $user = User::where('username', $username)->firstOrFail();
+        return view('gallery.index', compact('user'));
+    }
+    public function show($username)
+    {
+        $user = User::where('username', $username)->firstOrFail();
+
+        return view('gallery.show', compact('user'));
     }
 
-    public function edit($username){
-        $user = User::where('username',$username)->firstOrFail();
+    public function edit($username)
+    {
+        $user = User::where('username', $username)->firstOrFail();
 
-        return view('gallery.edit',compact('user'));
+        return view('gallery.edit', compact('user'));
     }
 }

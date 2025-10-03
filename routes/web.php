@@ -71,7 +71,8 @@ Route::prefix('/u/{username}')->group(function () {
     Route::get('/academics',[AcademicsController::class,'show'])->name('academics.show');
     Route::get('/academics/edit',[AcademicsController::class,'edit'])->name('academics.edit');
 
-    Route::get('/gallery',[GalleryController::class,'show'])->name('gallery.show');
+    Route::get('/gallery',[GalleryController::class,'index'])->name('gallery.index');
+    Route::get('/gallery/show',[GalleryController::class,'show'])->name('gallery.show');
     Route::get('/gallery/edit',[GalleryController::class,'edit'])->name('gallery.edit');
 
 });
