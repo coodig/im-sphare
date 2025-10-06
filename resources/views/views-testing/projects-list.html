@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Projects</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: #f9fafb;
+      color: #1e293b;
+    }
+
+    .projects-container {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 20px;
+    }
+
+    .page-title {
+      text-align: center;
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #2563eb;
+      animation: fadeInDown 0.6s ease;
+    }
+
+    .view-toggle {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 20px;
+    }
+
+    .toggle-btn {
+      padding: 8px 14px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background: #fff;
+      cursor: pointer;
+      margin-left: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    .toggle-btn.active {
+      background: #2563eb;
+      color: #fff;
+    }
+    .toggle-btn:hover {
+      background: #1e40af;
+      color: #fff;
+    }
+
+    /* Card View */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      animation: fadeIn 0.8s ease;
+    }
+    .project-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      overflow: hidden;
+      transform: scale(0.95);
+      opacity: 0;
+      transition: 0.3s;
+    }
+    .project-card.show {
+      transform: scale(1);
+      opacity: 1;
+    }
+    .project-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+    .project-card .content {
+      padding: 15px;
+    }
+    .project-card h4 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      color: #1e293b;
+    }
+    .project-card p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* List View */
+    .list-view {
+      display: none;
+      flex-direction: column;
+      gap: 15px;
+      animation: fadeIn 0.8s ease;
+    }
+    .list-item {
+      background: #fff;
+      border-radius: 10px;
+      padding: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      transform: translateY(20px);
+      opacity: 0;
+      transition: 0.3s;
+    }
+    .list-item.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .list-item img {
+      width: 100px;
+      height: 70px;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+    .list-content {
+      flex: 1;
+    }
+    .list-content h4 {
+      margin: 0 0 6px;
+      font-size: 17px;
+      color: #1e293b;
+    }
+    .list-content p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="projects-container">
+  <h1 class="page-title">My Projects</h1>
+
+  <!-- View Toggle -->
+  <div class="view-toggle">
+    <button class="toggle-btn active" id="cardViewBtn">Card View</button>
+    <button class="toggle-btn" id="listViewBtn">List View</button>
+  </div>
+
+  <!-- Card Grid -->
+  <div class="card-grid" id="cardView">
+    <div class="project-card">
+      <img src="https://via.placeholder.com/400x200" alt="project">
+      <div class="content">
+        <h4>Library Management System</h4>
+        <p>Advanced PHP + MySQL system with book search, transactions, and admin features.</p>
+      </div>
+    </div>
+    <div class="project-card">
+      <img src="https://via.placeholder.com/400x200" alt="project">
+      <div class="content">
+        <h4>Portfolio Builder</h4>
+        <p>Laravel platform where users can log in and create their personal portfolios.</p>
+      </div>
+    </div>
+    <div class="project-card">
+      <img src="https://via.placeholder.com/400x200" alt="project">
+      <div class="content">
+        <h4>Smart Waste Detector</h4>
+        <p>IoT-based waste detection using servo motor to separate wet and dry waste.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- List View -->
+  <div class="list-view" id="listView">
+    <div class="list-item">
+      <img src="https://via.placeholder.com/400x200" alt="project">
+      <div class="list-content">
+        <h4>Library Management System</h4>
+        <p>Advanced PHP + MySQL system with book search, transactions, and admin features.</p>
+      </div>
+    </div>
+    <div class="list-item">
+      <img src="https://via.placeholder.com/400x200" alt="project">
+      <div class="list-content">
+        <h4>Portfolio Builder</h4>
+        <p>Laravel platform where users can log in and create their personal portfolios.</p>
+      </div>
+    </div>
+    <div class="list-item">
+      <img src="https://via.placeholder.com/400x200" alt="project">
+      <div class="list-content">
+        <h4>Smart Waste Detector</h4>
+        <p>IoT-based waste detection using servo motor to separate wet and dry waste.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const cardViewBtn = document.getElementById("cardViewBtn");
+  const listViewBtn = document.getElementById("listViewBtn");
+  const cardView = document.getElementById("cardView");
+  const listView = document.getElementById("listView");
+
+  cardViewBtn.addEventListener("click", () => {
+    cardView.style.display = "grid";
+    listView.style.display = "none";
+    cardViewBtn.classList.add("active");
+    listViewBtn.classList.remove("active");
+
+    // Animate cards
+    document.querySelectorAll(".project-card").forEach((card, i) => {
+      setTimeout(() => card.classList.add("show"), i * 150);
+    });
+  });
+
+  listViewBtn.addEventListener("click", () => {
+    cardView.style.display = "none";
+    listView.style.display = "flex";
+    listViewBtn.classList.add("active");
+    cardViewBtn.classList.remove("active");
+
+    // Animate list items
+    document.querySelectorAll(".list-item").forEach((item, i) => {
+      setTimeout(() => item.classList.add("show"), i * 150);
+    });
+  });
+
+  // Trigger initial card animation
+  window.addEventListener("load", () => {
+    document.querySelectorAll(".project-card").forEach((card, i) => {
+      setTimeout(() => card.classList.add("show"), i * 150);
+    });
+  });
+</script>
+
+</body>
+</html>

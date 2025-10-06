@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Notifications</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: #f4f6f9;
+      color: #333;
+    }
+
+    .notifications-container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .notifications-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 20px;
+      border-bottom: 1px solid #e5e5e5;
+      background: #1e293b;
+      color: #fff;
+    }
+
+    .notifications-header h2 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .notifications-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .btn-primary { background: #2563eb; color: #fff; }
+    .btn-light { background: #f1f5f9; color: #333; }
+
+    .notifications-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      border-bottom: 1px solid #e5e5e5;
+      background: #fafafa;
+    }
+
+    .search-box input {
+      padding: 6px 10px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      outline: none;
+      width: 220px;
+    }
+
+    .filter-tabs {
+      display: flex;
+      gap: 12px;
+    }
+
+    .filter-tab {
+      padding: 6px 12px;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: 0.2s;
+    }
+    .filter-tab.active {
+      background: #2563eb;
+      color: #fff;
+    }
+    .filter-tab:hover { background: #e5e7eb; }
+
+    .notifications-list {
+      max-height: 500px;
+      overflow-y: auto;
+    }
+
+    .notification-item {
+      display: flex;
+      gap: 12px;
+      padding: 14px 20px;
+      border-bottom: 1px solid #f1f1f1;
+      align-items: flex-start;
+      transition: background 0.2s;
+    }
+    .notification-item.unread {
+      background: #f0f6ff;
+    }
+    .notification-item:hover {
+      background: #f9fafb;
+    }
+
+    .notification-icon {
+      font-size: 22px;
+    }
+    .notification-content {
+      flex: 1;
+    }
+    .notification-title {
+      font-weight: 600;
+      font-size: 15px;
+      margin: 0 0 4px;
+    }
+    .notification-message {
+      font-size: 14px;
+      margin: 0 0 6px;
+      color: #555;
+    }
+    .notification-meta {
+      font-size: 12px;
+      color: #777;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .mark-read {
+      font-size: 12px;
+      cursor: pointer;
+      color: #2563eb;
+    }
+    .mark-read:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<div class="notifications-container">
+  <!-- Header -->
+  <div class="notifications-header">
+    <h2>Notifications</h2>
+    <div class="notifications-actions">
+      <button class="btn btn-primary" id="markAllRead">Mark all as read</button>
+      <button class="btn btn-light">Settings ⚙️</button>
+    </div>
+  </div>
+
+  <!-- Toolbar -->
+  <div class="notifications-toolbar">
+    <div class="filter-tabs">
+      <div class="filter-tab active" data-filter="all">All</div>
+      <div class="filter-tab" data-filter="unread">Unread</div>
+      <div class="filter-tab" data-filter="system">System</div>
+      <div class="filter-tab" data-filter="messages">Messages</div>
+    </div>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search notifications...">
+    </div>
+  </div>
+
+  <!-- Notifications List -->
+  <div class="notifications-list" id="notificationsList">
+    <div class="notification-item unread" data-type="system">
+      <div class="notification-icon">⚠️</div>
+      <div class="notification-content">
+        <p class="notification-title">System Alert</p>
+        <p class="notification-message">Server reboot scheduled at 2 AM tonight.</p>
+        <div class="notification-meta">
+          <span>5 min ago</span>
+          <span class="mark-read">Mark as read</span>
+        </div>
+      </div>
+    </div>
+    <div class="notification-item unread" data-type="messages">
+      <div class="notification-icon">💬</div>
+      <div class="notification-content">
+        <p class="notification-title">New Message</p>
+        <p class="notification-message">You have 3 unread messages from John.</p>
+        <div class="notification-meta">
+          <span>20 min ago</span>
+          <span class="mark-read">Mark as read</span>
+        </div>
+      </div>
+    </div>
+    <div class="notification-item" data-type="system">
+      <div class="notification-icon">🔔</div>
+      <div class="notification-content">
+        <p class="notification-title">Reminder</p>
+        <p class="notification-message">Your password will expire in 7 days.</p>
+        <div class="notification-meta">
+          <span>2 hrs ago</span>
+          <span class="mark-read">Mark as read</span>
+        </div>
+      </div>
+    </div>
+    <div class="notification-item" data-type="messages">
+      <div class="notification-icon">📧</div>
+      <div class="notification-content">
+        <p class="notification-title">Email Update</p>
+        <p class="notification-message">Weekly report is ready for review.</p>
+        <div class="notification-meta">
+          <span>Yesterday</span>
+          <span class="mark-read">Mark as read</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const filterTabs = document.querySelectorAll(".filter-tab");
+  const notifications = document.querySelectorAll(".notification-item");
+  const searchInput = document.getElementById("searchInput");
+  const markAllReadBtn = document.getElementById("markAllRead");
+
+  // Filter logic
+  filterTabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      filterTabs.forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+      const filter = tab.dataset.filter;
+
+      notifications.forEach(item => {
+        item.style.display = "flex";
+        if (filter === "unread" && !item.classList.contains("unread")) {
+          item.style.display = "none";
+        }
+        if (filter === "system" && item.dataset.type !== "system") {
+          item.style.display = "none";
+        }
+        if (filter === "messages" && item.dataset.type !== "messages") {
+          item.style.display = "none";
+        }
+      });
+    });
+  });
+
+  // Search filter
+  searchInput.addEventListener("keyup", () => {
+    const term = searchInput.value.toLowerCase();
+    notifications.forEach(item => {
+      const text = item.innerText.toLowerCase();
+      item.style.display = text.includes(term) ? "flex" : "none";
+    });
+  });
+
+  // Mark as read
+  document.querySelectorAll(".mark-read").forEach(btn => {
+    btn.addEventListener("click", () => {
+      btn.closest(".notification-item").classList.remove("unread");
+    });
+  });
+
+  // Mark all as read
+  markAllReadBtn.addEventListener("click", () => {
+    notifications.forEach(item => item.classList.remove("unread"));
+  });
+</script>
+
+</body>
+</html>

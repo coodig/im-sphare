@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Academics Page</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background: #f4f6f9;
+      color: #333;
+    }
+
+    .academics-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .page-title {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: #1e293b;
+      animation: fadeInDown 0.7s ease;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: #2563eb;
+      border-left: 5px solid #2563eb;
+      padding-left: 10px;
+      animation: fadeInLeft 0.6s ease;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transform: translateY(20px);
+      opacity: 0;
+      animation: slideUp 0.6s forwards;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+      transition: transform 0.2s;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .card-date {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .card-details {
+      font-size: 14px;
+      margin-top: 8px;
+      color: #555;
+      line-height: 1.5;
+      display: none;
+      animation: fadeIn 0.4s;
+    }
+
+    .expand-btn {
+      font-size: 13px;
+      color: #2563eb;
+      cursor: pointer;
+      margin-top: 10px;
+      display: inline-block;
+    }
+    .expand-btn:hover {
+      text-decoration: underline;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInLeft {
+      from { opacity: 0; transform: translateX(-20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes slideUp {
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="academics-container">
+  <h1 class="page-title">🎓 Academics & Professional Experience</h1>
+
+  <!-- Professional Experience -->
+  <div class="section">
+    <h2 class="section-title">Professional Experience</h2>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Software Engineer - Google</div>
+        <div class="card-date">2023 - Present</div>
+      </div>
+      <p class="card-details">
+        Worked on developing scalable cloud services, optimized database queries,
+        and contributed to AI-based search improvements. Mentored junior developers
+        and collaborated across teams.
+      </p>
+      <span class="expand-btn">View Details</span>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Backend Developer - Microsoft</div>
+        <div class="card-date">2021 - 2023</div>
+      </div>
+      <p class="card-details">
+        Built APIs using Node.js and .NET, designed efficient database schemas,
+        and integrated security standards for enterprise solutions.
+      </p>
+      <span class="expand-btn">View Details</span>
+    </div>
+  </div>
+
+  <!-- Education -->
+  <div class="section">
+    <h2 class="section-title">Education</h2>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">B.Sc. in Computer Science - HBTU</div>
+        <div class="card-date">2019 - 2022</div>
+      </div>
+      <p class="card-details">
+        Completed with distinction. Core subjects: Data Structures, Algorithms,
+        Database Systems, AI, and Compiler Design.
+      </p>
+      <span class="expand-btn">View Details</span>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Diploma in Information Technology</div>
+        <div class="card-date">2016 - 2019</div>
+      </div>
+      <p class="card-details">
+        Specialized in software development fundamentals, C/C++, and web technologies.
+      </p>
+      <span class="expand-btn">View Details</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Expand/Collapse functionality
+  document.querySelectorAll(".expand-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const details = btn.previousElementSibling;
+      if (details.style.display === "block") {
+        details.style.display = "none";
+        btn.textContent = "View Details";
+      } else {
+        details.style.display = "block";
+        btn.textContent = "Hide Details";
+      }
+    });
+  });
+
+  // Animate cards one by one
+  document.querySelectorAll(".card").forEach((card, index) => {
+    card.style.animationDelay = `${index * 0.15}s`;
+  });
+</script>
+
+</body>
+</html>

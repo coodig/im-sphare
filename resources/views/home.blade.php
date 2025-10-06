@@ -3,8 +3,11 @@
 @section('content')
 
     <div class="container">
+        <div class="page-name">
+            <h4>Home</h4>
+        </div>
 
-        <div class="home-header">
+        {{-- <div class="home-header">
             <span class="user-site-name">{{ ucwords(str_replace(['-', '_'], ' ', Auth::user()->username))  }}</span>
             <span class="share-btn">
                 <a href="#" target="_blank" class="btn btn-primary"><iconify-icon
@@ -79,7 +82,7 @@
                 <p class="no-links">No social media links added yet.</p>
             </div>
 
-        </footer>
+        </footer> --}}
 
     </div>
 

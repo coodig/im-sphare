@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Header Notifications</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background: #1e293b;
+      color: #fff;
+    }
+    .logo {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .nav-right {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .bell {
+      font-size: 22px;
+      cursor: pointer;
+      position: relative;
+    }
+    .badge {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      background: red;
+      color: #fff;
+      font-size: 12px;
+      padding: 2px 6px;
+      border-radius: 50%;
+    }
+    .dropdown {
+      position: absolute;
+      top: 35px;
+      right: 0;
+      width: 260px;
+      background: #fff;
+      color: #333;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .dropdown.active {
+      display: flex;
+    }
+    .dropdown h4 {
+      margin: 0;
+      padding: 10px;
+      background: #f1f1f1;
+      font-size: 14px;
+      border-bottom: 1px solid #ddd;
+    }
+    .dropdown .item {
+      padding: 10px;
+      font-size: 14px;
+      border-bottom: 1px solid #eee;
+      cursor: pointer;
+    }
+    .dropdown .item:hover {
+      background: #f9f9f9;
+    }
+    .dropdown .empty {
+      padding: 10px;
+      text-align: center;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">MyApp</div>
+    <div class="nav-right">
+      <!-- Notification bell -->
+      <div class="bell" id="bell">
+        🔔
+        <span class="badge" id="badge">3</span>
+      </div>
+
+      <!-- Dropdown -->
+      <div class="dropdown" id="dropdown">
+        <h4>Notifications</h4>
+        <div class="item">New user registered</div>
+        <div class="item">Server rebooted</div>
+        <div class="item">You have 5 new messages</div>
+      </div>
+    </div>
+  </header>
+
+  <script>
+    const bell = document.getElementById("bell");
+    const dropdown = document.getElementById("dropdown");
+
+    bell.addEventListener("click", () => {
+      dropdown.classList.toggle("active");
+    });
+
+    // close if clicked outside
+    window.addEventListener("click", (e) => {
+      if (!bell.contains(e.target) && !dropdown.contains(e.target)) {
+        dropdown.classList.remove("active");
+      }
+    });
+  </script>
+
+</body>
+</html>

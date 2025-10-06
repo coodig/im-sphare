@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Settings Page</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background: #f4f6f9;
+      color: #333;
+    }
+
+    .settings-container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 240px;
+      background: #1e293b;
+      color: #fff;
+      padding: 20px;
+    }
+    .sidebar h2 {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+    .nav-item {
+      padding: 12px 10px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .nav-item.active, .nav-item:hover {
+      background: #2563eb;
+    }
+
+    /* Main area */
+    .settings-main {
+      flex: 1;
+      padding: 30px;
+      background: #fff;
+    }
+    .page-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #1e293b;
+    }
+
+    .settings-section {
+      margin-bottom: 30px;
+      animation: fadeIn 0.5s ease;
+    }
+    .settings-section h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #2563eb;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .form-input, .form-select {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 14px;
+      outline: none;
+    }
+    .form-input:focus {
+      border-color: #2563eb;
+    }
+
+    /* Toggle Switch */
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 26px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #ccc;
+      border-radius: 26px;
+      transition: 0.3s;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 20px;
+      width: 20px;
+      left: 3px;
+      bottom: 3px;
+      background: #fff;
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+    input:checked + .slider {
+      background: #2563eb;
+    }
+    input:checked + .slider:before {
+      transform: translateX(24px);
+    }
+
+    /* Save button */
+    .btn-save {
+      padding: 10px 20px;
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .btn-save:hover {
+      background: #1e40af;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="settings-container">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>⚙️ Settings</h2>
+    <div class="nav-item active" data-section="profile">Profile</div>
+    <div class="nav-item" data-section="account">Account</div>
+    <div class="nav-item" data-section="notifications">Notifications</div>
+    <div class="nav-item" data-section="privacy">Privacy</div>
+  </aside>
+
+  <!-- Main Area -->
+  <main class="settings-main">
+    <h1 class="page-title">User Settings</h1>
+
+    <!-- Profile Settings -->
+    <div class="settings-section" id="profile-section">
+      <h3>Profile Information</h3>
+      <div class="form-group">
+        <label class="form-label">Full Name</label>
+        <input type="text" class="form-input" placeholder="Enter your name">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-input" placeholder="Enter your email">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Phone</label>
+        <input type="text" class="form-input" placeholder="Enter phone number">
+      </div>
+      <button class="btn-save">Save Changes</button>
+    </div>
+
+    <!-- Account Settings -->
+    <div class="settings-section" id="account-section" style="display:none;">
+      <h3>Account Settings</h3>
+      <div class="form-group">
+        <label class="form-label">Change Password</label>
+        <input type="password" class="form-input" placeholder="New password">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Confirm Password</label>
+        <input type="password" class="form-input" placeholder="Confirm new password">
+      </div>
+      <button class="btn-save">Update Password</button>
+    </div>
+
+    <!-- Notifications -->
+    <div class="settings-section" id="notifications-section" style="display:none;">
+      <h3>Notification Preferences</h3>
+      <div class="form-group">
+        <label class="form-label">Email Notifications</label>
+        <label class="switch">
+          <input type="checkbox" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="form-group">
+        <label class="form-label">SMS Alerts</label>
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Push Notifications</label>
+        <label class="switch">
+          <input type="checkbox" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+      <button class="btn-save">Save Preferences</button>
+    </div>
+
+    <!-- Privacy -->
+    <div class="settings-section" id="privacy-section" style="display:none;">
+      <h3>Privacy Settings</h3>
+      <div class="form-group">
+        <label class="form-label">Profile Visibility</label>
+        <select class="form-select">
+          <option>Public</option>
+          <option>Friends Only</option>
+          <option>Private</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Search Visibility</label>
+        <label class="switch">
+          <input type="checkbox" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+      <button class="btn-save">Save Privacy</button>
+    </div>
+  </main>
+</div>
+
+<script>
+  // Sidebar navigation logic
+  const navItems = document.querySelectorAll(".nav-item");
+  const sections = {
+    profile: document.getElementById("profile-section"),
+    account: document.getElementById("account-section"),
+    notifications: document.getElementById("notifications-section"),
+    privacy: document.getElementById("privacy-section"),
+  };
+
+  navItems.forEach(item => {
+    item.addEventListener("click", () => {
+      navItems.forEach(i => i.classList.remove("active"));
+      item.classList.add("active");
+      const sectionId = item.dataset.section;
+
+      Object.values(sections).forEach(sec => sec.style.display = "none");
+      sections[sectionId].style.display = "block";
+    });
+  });
+</script>
+
+</body>
+</html>

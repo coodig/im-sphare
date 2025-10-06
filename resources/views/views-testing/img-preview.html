@@ -1,0 +1,100 @@
+
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Image replace preview</title>
+  <style>
+    .image-box {
+      width: 320px;
+      height: 200px;
+      border: 2px dashed #bbb;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      cursor: pointer;
+      background: #fafafa;
+    }
+    .image-box img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .hint {
+      color: #666;
+      font-size: 14px;
+      text-align: center;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h3>Image preview box — click to change</h3>
+
+  <!-- Clickable div that contains the image -->
+  <div id="imageBox" class="image-box" title="Click to select a new image">
+    <!-- initial image (replace src with your existing image path if any) -->
+    <img id="previewImg" src="https://via.placeholder.com/320x200.png?text=Existing+Image" alt="preview">
+  </div>
+
+  <!-- hidden file input -->
+  <input id="fileInput" type="file" accept="image/*" style="display:none">
+
+  <script>
+    (function img(){
+      const imageBox = document.getElementById('imageBox');
+      const fileInput = document.getElementById('fileInput');
+      const previewImg = document.getElementById('previewImg');
+
+      // Keep track of objectURL to revoke later and avoid memory leak
+      let currentObjectURL = null;
+
+      // When user clicks the div, trigger file select
+      imageBox.addEventListener('click', () => {
+        fileInput.click();
+      });
+
+      // Handle file selection
+      fileInput.addEventListener('change', (e) => {
+        const file = e.target.files && e.target.files[0];
+        if (!file) return;
+
+        // Optional: basic validation (type & size)
+        if (!file.type.startsWith('image/')) {
+          alert('Please select an image file.');
+          fileInput.value = ''; // reset
+          return;
+        }
+        const maxMB = 5;
+        if (file.size > maxMB * 1024 * 1024) {
+          alert('File too large. Max ' + maxMB + ' MB allowed.');
+          fileInput.value = '';
+          return;
+        }
+
+        // Create an object URL and set as src for preview
+        const objectURL = URL.createObjectURL(file);
+
+        // revoke previous object URL if any
+        if (currentObjectURL) {
+          URL.revokeObjectURL(currentObjectURL);
+        }
+        currentObjectURL = objectURL;
+        previewImg.src = objectURL;
+
+        // optional: clear input so same file can be re-selected later if needed
+        fileInput.value = '';
+      });
+
+      // Clean up objectURL when window unloads (good practice)
+      window.addEventListener('beforeunload', () => {
+        if (currentObjectURL) URL.revokeObjectURL(currentObjectURL);
+      });
+    })();
+  </script>
+</body>
+</html>
