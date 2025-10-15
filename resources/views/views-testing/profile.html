@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>एनिमेटेड प्रोफाइल पेज</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<style>/* बेसिक सेटअप और फॉन्ट इम्पोर्ट */
+:root {
+    --primary-color: #ff5f95;
+    --secondary-color: #4a90e2;
+    --background-color: #f0f2f5;
+    --card-bg-color: #ffffff;
+    --text-color: #333;
+    --light-text-color: #777;
+    --border-color: #ddd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* नेविगेशन बार */
+.navbar {
+    background-color: var(--card-bg-color);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+
+/* प्रोफाइल हेडर */
+.profile-header {
+    background: var(--card-bg-color);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.profile-banner {
+    height: 200px;
+}
+
+.profile-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    transform: translateY(-50px);
+}
+
+.profile-picture-container {
+    flex-shrink: 0;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid var(--card-bg-color);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    object-fit: cover;
+}
+
+.profile-details {
+    margin-left: 1.5rem;
+}
+.profile-details h1 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+.username {
+    color: var(--light-text-color);
+    margin-bottom: 0.5rem;
+}
+
+.profile-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem 1.5rem;
+}
+
+.profile-stats ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.profile-stats li {
+    text-align: center;
+}
+
+.profile-stats span {
+    font-size: 0.9rem;
+    color: var(--light-text-color);
+}
+
+/* एक्शन बटन */
+.primary-btn, .secondary-btn {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+.primary-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+.primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 95, 149, 0.4);
+}
+
+.secondary-btn {
+    background-color: #e4e6eb;
+    color: var(--text-color);
+}
+.secondary-btn:hover {
+    background-color: #d8dbdf;
+}
+
+
+/* मुख्य कंटेंट एरिया */
+.page-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+/* पोस्ट्स */
+.posts-feed h2, .sidebar h3 {
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.post-card {
+    background: var(--card-bg-color);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.post-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.post-content {
+    padding: 1.5rem;
+}
+.post-content h3 {
+    margin-bottom: 0.5rem;
+}
+.post-content p {
+    color: var(--light-text-color);
+    margin-bottom: 1rem;
+}
+.post-content a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* साइडबार */
+.widget {
+    background: var(--card-bg-color);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    margin-bottom: 1.5rem;
+}
+
+.skills-list span {
+    display: inline-block;
+    background-color: #e4e6eb;
+    padding: 5px 12px;
+    border-radius: 15px;
+    margin: 5px 5px 5px 0;
+    font-size: 0.85rem;
+}
+
+.friend-list img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 5px;
+    border: 2px solid white;
+    transition: transform 0.2s;
+}
+
+.friend-list img:hover {
+    transform: scale(1.1);
+}
+
+/* फुटर */
+.footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--light-text-color);
+    font-size: 0.9rem;
+}
+
+/* रिस्पॉन्सिव डिज़ाइन */
+@media (max-width: 768px) {
+    .page-content {
+        grid-template-columns: 1fr;
+    }
+    .profile-info {
+        flex-direction: column;
+        transform: translateY(-75px);
+        text-align: center;
+    }
+    .profile-details {
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+    .profile-stats {
+        flex-direction: column;
+        gap: 1rem;
+        padding-top: 3rem; /* Compensate for shifted info */
+    }
+    .nav-links {
+        display: none; /* Simple hiding for mobile, can be replaced with a hamburger menu */
+    }
+}</style>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-brand">ProfileUI</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Explore</a></li>
+            <li><a href="#">Messages</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header class="profile-header">
+            <div class="profile-banner">
+                <img src="https://images.unsplash.com/photo-1504805572947-34fad45aed93?q=80&w=2070&auto=format&fit=crop" alt="Cover Photo">
+            </div>
+            <div class="profile-info">
+                <div class="profile-picture-container">
+                    <img class="profile-picture" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Profile Picture">
+                </div>
+                <div class="profile-details">
+                    <h1>Alina Smith</h1>
+                    <p class="username">@alina_designs</p>
+                    <p class="bio">UI/UX Designer & Web Developer | Creating beautiful and user-friendly digital experiences.</p>
+                </div>
+            </div>
+            <div class="profile-stats">
+                <ul>
+                    <li><strong>342</strong><br><span>Posts</span></li>
+                    <li><strong>120k</strong><br><span>Followers</span></li>
+                    <li><strong>285</strong><br><span>Following</span></li>
+                </ul>
+                <div class="profile-actions">
+                    <button class="primary-btn">Follow</button>
+                    <button class="secondary-btn">Message</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="page-content">
+
+            <section class="posts-feed">
+                <h2>My Posts</h2>
+                <article class="post-card">
+                    <img src="https://images.unsplash.com/photo-1555774698-0b77e0ab2329?q=80&w=1974&auto=format&fit=crop" alt="Post Image">
+                    <div class="post-content">
+                        <h3>My Latest UI Design Project</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+                        <a href="#">Read More</a>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <img src="https://images.unsplash.com/photo-1516116216624-53e6973bea12?q=80&w=2070&auto=format&fit=crop" alt="Post Image">
+                    <div class="post-content">
+                        <h3>10 Tips for Better Web Development</h3>
+                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
+                        <a href="#">Read More</a>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop" alt="Post Image">
+                    <div class="post-content">
+                        <h3>Workspace Inspiration</h3>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident...</p>
+                        <a href="#">Read More</a>
+                    </div>
+                </article>
+
+            </section>
+
+            <aside class="sidebar">
+                <div class="widget">
+                    <h3>About Me</h3>
+                    <p>I'm a passionate designer from California. I love creating minimalist and clean designs. In my free time, I enjoy hiking and photography.</p>
+                </div>
+                <div class="widget">
+                    <h3>Skills</h3>
+                    <div class="skills-list">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>Figma</span>
+                        <span>UI/UX</span>
+                        <span>Prototyping</span>
+                        <span>Web Design</span>
+                    </div>
+                </div>
+                 <div class="widget">
+                    <h3>Friends (6)</h3>
+                    <div class="friend-list">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="friend">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="friend">
+                        <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="friend">
+                        <img src="https://randomuser.me/api/portraits/women/31.jpg" alt="friend">
+                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="friend">
+                        <img src="https://randomuser.me/api/portraits/women/11.jpg" alt="friend">
+                    </div>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Your Profile. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

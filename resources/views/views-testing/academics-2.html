@@ -1,0 +1,574 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Academics</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<style>
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-color: #005A9E; /* A professional blue */
+    --secondary-color: #1E88E5; /* A lighter blue */
+    --background-color: #f9f9f9;
+    --card-bg-color: #ffffff;
+    --text-color: #333;
+    --heading-font: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom-left-radius: 80px;
+}
+
+.hero-section h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+/* --- Programs Section --- */
+.programs-section {
+    padding: 40px 0;
+}
+
+.programs-section h2, .departments-section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.programs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Responsive grid */
+    gap: 30px;
+}
+
+.program-card {
+    background-color: var(--card-bg-color);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid var(--primary-color);
+}
+
+.program-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.program-card h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.program-card p {
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+.program-card ul {
+    list-style-type: none; /* Removes default bullets */
+    margin-bottom: 25px;
+}
+
+.program-card li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.program-card li::before {
+    content: '✓'; /* Custom bullet point */
+    color: var(--secondary-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+
+/* --- Button --- */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+}
+
+
+/* --- Departments Section --- */
+.departments-section {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.department-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.department-item {
+    background-color: #eef5ff;
+    color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.department-item:hover {
+    background-color: #dbeaff;
+}
+
+
+/* --- Footer --- */
+.main-footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* --- Keyframe Animation For Cards --- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* style.css में इस सेक्शन को बदलें */
+.program-card {
+    background-color: var(--card-bg-color);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid var(--primary-color);
+
+    /* --- ये दो नई लाइनें जोड़ें --- */
+    opacity: 0; /* शुरू में कार्ड छिपा रहेगा */
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* कार्ड्स को एक-एक करके लाने के लिए यह नया कोड जोड़ें */
+.program-card:nth-child(1) { animation-delay: 0.1s; }
+.program-card:nth-child(2) { animation-delay: 0.2s; }
+.program-card:nth-child(3) { animation-delay: 0.3s; }
+</style>
+<body>
+
+    <header class="hero-section">
+        <div class="container">
+            <h1>Our Academic Programs</h1>
+            <p>Explore our diverse range of programs designed for excellence and innovation.</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="programs-section">
+            <h2>Degree Programs</h2>
+            <div class="programs-grid">
+
+                <div class="program-card">
+                    <h3>Bachelor of Technology (B.Tech)</h3>
+                    <p>An undergraduate program focused on engineering and technology with various specializations.</p>
+                    <ul>
+                        <li>Computer Science & Engineering</li>
+                        <li>Mechanical Engineering</li>
+                        <li>Civil Engineering</li>
+                        <li>Electronics & Communication</li>
+                    </ul>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+
+                <div class="program-card">
+                    <h3>Master of Technology (M.Tech)</h3>
+                    <p>A postgraduate program for advanced study and research in specialized areas of engineering.</p>
+                    <ul>
+                        <li>Structural Engineering</li>
+                        <li>Artificial Intelligence</li>
+                        <li>VLSI Design</li>
+                    </ul>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+
+                <div class="program-card">
+                    <h3>Doctor of Philosophy (Ph.D.)</h3>
+                    <p>The highest academic degree, focusing on original research and contribution to knowledge.</p>
+                     <ul>
+                        <li>Advanced Materials</li>
+                        <li>Robotics</li>
+                        <li>Biotechnology</li>
+                    </ul>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section class="departments-section">
+            <h2>Explore Our Departments</h2>
+            <div class="department-list">
+                <span class="department-item">School of Engineering</span>
+                <span class="department-item">School of Sciences</span>
+                <span class="department-item">School of Humanities</span>
+                <span class="department-item">School of Management</span>
+            </div>
+        </section>
+
+        <div class="program-card featured">
+    <h3>Master of Technology (M.Tech)</h3>
+    </div>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 Your Institution Name. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>My Academic Journey</title>
+        <link rel="stylesheet" href="style.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <style>
+        /* --- Global Styles & Variables --- */
+        :root {
+            --primary-color: #007bff; /* A vibrant blue */
+            --secondary-color: #0056b3;
+            --background-color: #f8f9fa;
+            --card-bg-color: #ffffff;
+            --text-color: #343a40;
+            --heading-font: "Poppins", sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            line-height: 1.7;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 50px;
+        }
+
+        /* --- User Profile Header --- */
+        .user-profile {
+            background: linear-gradient(
+                135deg,
+                var(--primary-color),
+                var(--secondary-color)
+            );
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .user-profile .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .profile-info h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin: 0;
+        }
+        .profile-info .subtitle {
+            font-size: 1.1rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        /* --- Timeline Section --- */
+        .timeline {
+            position: relative;
+            padding-left: 40px; /* Space for the timeline line and dots */
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 10px;
+            top: 5px;
+            bottom: 5px;
+            width: 4px;
+            background: #e9ecef;
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -5px; /* (dot_width/2) - (line_width/2) = 24/2 - 4/2 = 10px -> left -10px */
+            top: 5px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            border: 4px solid var(--background-color);
+        }
+
+        .timeline-content {
+            background-color: var(--card-bg-color);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+        }
+
+        .timeline-content h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        .institution {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--text-color);
+        }
+
+        .date {
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-bottom: 10px;
+        }
+
+        /* --- Achievements Section --- */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .achievement-card {
+            background-color: var(--card-bg-color);
+            border-radius: 8px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .achievement-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .achievement-card h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        .issuer {
+            font-weight: 600;
+            margin: 5px 0;
+        }
+        .view-credential {
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        .view-credential:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Footer --- */
+        .main-footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            color: #6c757d;
+        }
+    </style>
+    <body>
+        <header class="user-profile">
+            <div class="container">
+                <img
+                    src="https://via.placeholder.com/150"
+                    alt="User Profile Picture"
+                    class="profile-pic"
+                />
+                <div class="profile-info">
+                    <h1>आपका नाम (Your Name)</h1>
+                    <p class="subtitle">
+                        Software Developer | Lifelong Learner | Tech Enthusiast
+                    </p>
+                </div>
+            </div>
+        </header>
+
+        <main class="container">
+            <section class="timeline-section">
+                <h2>Education Timeline</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Bachelor of Technology (B.Tech)</h3>
+                            <p class="institution">University/College Name</p>
+                            <p class="date">August 2021 - May 2025</p>
+                            <p>
+                                Specialization in Computer Science &
+                                Engineering. Focused on subjects like Data
+                                Structures, AI, and Web Development.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Intermediate / Class 12th</h3>
+                            <p class="institution">School/College Name</p>
+                            <p class="date">April 2019 - March 2021</p>
+                            <p>
+                                Completed my higher secondary education with a
+                                focus on Physics, Chemistry, and Mathematics
+                                (PCM).
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>High School / Class 10th</h3>
+                            <p class="institution">School Name</p>
+                            <p class="date">Completed in March 2019</p>
+                            <p>Built a strong foundation in core subjects.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="achievements-section">
+                <h2>Certificates & Achievements</h2>
+                <div class="achievements-grid">
+                    <article class="achievement-card">
+                        <div class="card-icon">🏆</div>
+                        <h4>Smart India Hackathon 2025 Winner</h4>
+                        <p class="issuer">Issued by: Govt. of India</p>
+                        <p class="date">Achieved: Sep 2025</p>
+                        <a href="#" class="view-credential">View Details</a>
+                    </article>
+
+                    <article class="achievement-card">
+                        <div class="card-icon">📜</div>
+                        <h4>Certified Cloud Practitioner</h4>
+                        <p class="issuer">Issued by: Amazon Web Services</p>
+                        <p class="date">Achieved: Jan 2025</p>
+                        <a href="#" class="view-credential">View Credential</a>
+                    </article>
+
+                    <article class="achievement-card">
+                        <div class="card-icon">💻</div>
+                        <h4>CodeFest '24 - 1st Runner Up</h4>
+                        <p class="issuer">Organized by: Tech University</p>
+                        <p class="date">Achieved: Oct 2024</p>
+                        <a href="#" class="view-credential">View Details</a>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer class="main-footer">
+            <p>Portfolio of Your Name | &copy; 2025</p>
+        </footer>
+    </body>
+</html>

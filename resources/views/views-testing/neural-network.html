@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neural Network Demo</title>
+<style>
+  body { font-family: Arial, sans-serif; text-align:center; background:#f8f9fa; }
+  h1 { color:#333; }
+  canvas { border:1px solid #ccc; margin-top:15px; background:white; }
+  button { margin:10px; padding:8px 12px; border-radius:6px; border:1px solid #ccc; cursor:pointer; }
+  button:hover { background:#e9ecef; }
+  #log { font-size:14px; color:#444; margin-top:8px; white-space:pre; text-align:left; display:inline-block; }
+</style>
+</head>
+<body>
+<h1>🧠 Simple Neural Network Demo</h1>
+<p>2 inputs → 3 hidden neurons → 1 output</p>
+<button id="train">Train 1000 Epochs</button>
+<button id="predict">Test Prediction</button>
+<br>
+<canvas id="graph" width="300" height="300"></canvas>
+<div id="log"></div>
+
+<script>
+function sigmoid(x){ return 1 / (1 + Math.exp(-x)); }
+function dSigmoid(y){ return y * (1 - y); }
+
+const inputs = [
+  [0,0],
+  [0,1],
+  [1,0],
+  [1,1]
+];
+const outputs = [ [0],[1],[1],[0] ]; // XOR output
+
+// Random initialization
+let w1 = Array(2).fill().map(()=>[Math.random(), Math.random(), Math.random()]); // 2x3
+let w2 = Array(3).fill().map(()=>[Math.random()]); // 3x1
+let lr = 0.5;
+let log = document.getElementById("log");
+const ctx = document.getElementById("graph").getContext("2d");
+
+function train(iter=1000){
+  for(let n=0;n<iter;n++){
+    for(let i=0;i<inputs.length;i++){
+      const x = inputs[i];
+      const y = outputs[i];
+
+      // Forward pass
+      let hidden = w1.map(row => sigmoid(row[0]*x[0] + row[1]*x[1]));
+      let output = sigmoid(hidden[0]*w2[0][0] + hidden[1]*w2[1][0] + hidden[2]*w2[2][0]);
+
+      // Backpropagation
+      let error = y[0] - output;
+      let dOutput = error * dSigmoid(output);
+
+      let dHidden = hidden.map((h,j)=> dOutput * w2[j][0] * dSigmoid(h));
+
+      // Update weights
+      for(let j=0;j<3;j++){
+        w2[j][0] += lr * dOutput * hidden[j];
+      }
+      for(let j=0;j<3;j++){
+        w1[j][0] += lr * dHidden[j] * x[0];
+        w1[j][1] += lr * dHidden[j] * x[1];
+      }
+    }
+  }
+  log.textContent = "Training done ("+iter+" epochs)";
+  drawDecisionBoundary();
+}
+
+function predict(x1,x2){
+  let hidden = w1.map(row => sigmoid(row[0]*x1 + row[1]*x2));
+  let output = sigmoid(hidden[0]*w2[0][0] + hidden[1]*w2[1][0] + hidden[2]*w2[2][0]);
+  return output;
+}
+
+// Draw classification map
+function drawDecisionBoundary(){
+  const imageData = ctx.createImageData(300,300);
+  for(let y=0;y<300;y++){
+    for(let x=0;x<300;x++){
+      let o = predict(x/300, y/300);
+      let color = o*255;
+      let index = (y*300 + x)*4;
+      imageData.data[index] = color;
+      imageData.data[index+1] = 0;
+      imageData.data[index+2] = 255-color;
+      imageData.data[index+3] = 255;
+    }
+  }
+  ctx.putImageData(imageData,0,0);
+}
+
+document.getElementById("train").onclick=()=>train(1000);
+document.getElementById("predict").onclick=()=>{
+  let test = [Math.random(), Math.random()];
+  let result = predict(test[0], test[1]);
+  log.textContent = `Input: [${test.map(v=>v.toFixed(2)).join(', ')}] → Output: ${result.toFixed(3)}`;
+};
+</script>
+</body>
+</html>
