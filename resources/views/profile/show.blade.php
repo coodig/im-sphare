@@ -31,8 +31,8 @@
                         </label>
                     </form>
 
-{{-- <div class="preview-image" id="preview-image" style="height: 300px;wi
-400px; "></div> --}}
+                    {{-- <div class="preview-image" id="preview-image" style="height: 300px;wi
+    400px; "></div> --}}
                 </div>
             </div>
 
@@ -83,8 +83,6 @@
                         Edit profile
                     </button></a>
             </div>
-
-
 
         </div>
     </div>
