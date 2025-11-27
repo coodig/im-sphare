@@ -57,6 +57,7 @@
 
     --btn-outline-border: #6B7280;
     --btn-outline-text: #374151;
+    --hover-color: black;
 }
 
 
@@ -120,4 +121,5 @@ body.dark-theme {
 
     --btn-outline-border: #9CA3AF;
     --btn-outline-text: #E5E7EB;
+    --hover-color:white;
 }

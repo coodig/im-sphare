@@ -45,7 +45,7 @@
     <div class="sidebar-bottom">
         @auth
             <a href="{{ route('settings.show', ['username' => Auth::user()->username ?? '']) }}"
-                class="{{nav_active('settings.show')}}"><iconify-icon icon="solar:settings-bold-duotone"></iconify-icon>
+                class="{{nav_active('settings.show')}}"><iconify-icon  class="sidebar-icon" icon="solar:settings-bold-duotone"></iconify-icon>
                 <span class="sidebar-text">Setting</span></a>
             <form action="{{ route('logout') }}" method="POST">
                 @csrf

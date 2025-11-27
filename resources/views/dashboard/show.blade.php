@@ -6,7 +6,9 @@
         <div class="dashboard-title">
             <h2>
                 Welcome,
-                {{ ucwords(Auth::user()->profile->name ?? str_replace(['_', '@', '-'], ' ', Auth::user()->username)) }}
+                <span class="name">
+                    {{ ucwords(Auth::user()->profile->name ?? str_replace(['_', '@', '-'], ' ', Auth::user()->username)) }}
+                </span>
                 <iconify-icon icon="noto:waving-hand"></iconify-icon>
             </h2>
 

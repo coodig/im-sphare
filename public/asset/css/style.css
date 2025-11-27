@@ -13,7 +13,7 @@
 }
 
 ::selection {
-    background-color: #E7F6F2;
+    background-color: skyblue;
     color: #000000;
 }
 
@@ -22,7 +22,6 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
-    /* background-color: #c3e7f4; */
     color: var(--text-color);
     font-family: "Libertinus Sans";
     font-weight: 400;
