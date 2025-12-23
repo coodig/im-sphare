@@ -126,3 +126,7 @@ Pull requests are welcome, and please open an issue first to discuss major chang
 <h2 style="color:red">Currently in Under Development Stage...</h2>
 
 <p style='text-align=center'>&copy 2025 <a href="https://imsphare.oranbyte.com"> IMSphare</a> | Designed by Sphare Co.</p>
+
+
+###### started working with versions 
+> current version 0.1
