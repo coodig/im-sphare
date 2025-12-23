@@ -44,6 +44,11 @@ body {
     top: 0;
     left: 0;
     width: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    --webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    height: 75px;
 }
 
 .navbar-left,
@@ -152,14 +157,18 @@ body {
     background-color: var(--primary-color);
     color: black;
     text-decoration: none;
-    border-radius: 10px;
+    border-radius: 9999px;
+    cursor: pointer;
     font-weight: 600;
     transition: 0.3s;
     line-height: 1.5;
+    --transtion: 0.3s ease-in-out;
+    --offset:2px;
+
 }
 
 #imsphare-btn-hero:hover {
-    background-color: var(--accent-color);
+    background-color: var(--hover-primary-color);
 }
 
 /* Hero image */

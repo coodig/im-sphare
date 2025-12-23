@@ -95,13 +95,12 @@
     flex: 1 2 200px;
     transition: transform 0.2s ease;
     border: 1px solid var(--border-color);
-    min-width: 200px;
-    max-width: 50%;
+    /* min-width: 200px; */
+    max-width: 100%;
 }
 
 .card-stat-item p{
     margin-bottom:0px;
-
     font-size: 0.8rem;
 
 }

@@ -19,7 +19,11 @@
         @if ($hasGithubToken)
             <div class="card-grid">
                 <div class="card">
-                    <h5><iconify-icon icon="si:projects-duotone"></iconify-icon>Projects</h5>
+                    <h5><iconify-icon icon="si:projects-duotone"></iconify-icon>Public Projects</h5>
+                    <p class="big-number">{{$totalRepos}}</p>
+                </div>
+                <div class="card">
+                    <h5><iconify-icon icon="si:projects-duotone"></iconify-icon>Private Projects</h5>
                     <p class="big-number">{{$totalRepos}}</p>
                 </div>
                 <div class="card">
@@ -34,9 +38,7 @@
             </div>
 
             <div class="section">
-
-                <h3><iconify-icon icon="streamline-flex:decent-work-and-economic-growth-remix"></iconify-icon>Recently Updated
-                    Projects</h3>
+                <h3><iconify-icon icon="streamline-flex:decent-work-and-economic-growth-remix"></iconify-icon>Activity stats</h3>
                 <div class="insights">
                     <div class="barChartInsights">
                         <div><canvas id="repoBarChart"></canvas></div>
@@ -59,11 +61,13 @@
                 <div class="card-grid">
                     @foreach ($repos as $repo)
                         <div class="card">
-                            <h5>{{ucfirst($repo->name)}}</h5>
-                            <p>{{ucfirst($repo->description ?? 'not available')}}</p>
-                            <small><a href="{{$repo->html_url}}" target="_blank">Show</a></small>
-                        </div>
-                    @endforeach
+                            {{-- <li> --}}
+                                <h5>{{ucfirst($repo->name)}}</h5>
+                                <p>{{ucfirst($repo->description ?? 'not available')}}</p>
+                                <small><a href="{{$repo->html_url}}" target="_blank">Show</a></small>
+                                </div>
+                            {{-- </li> --}}
+                                @endforeach
                 </div>
             </div>
 

@@ -5,7 +5,7 @@
 
     <div class="hero-section">
         <div class="hero-left">
-            <h2 class="hero-content">Hi, I am <span class="name" id="name">{{ ucfirst(Auth::user()->username)}}</span></h2>
+            <h2 class="hero-content">Hi, I am <span class="name" id="name">{{ ucwords(Auth::user()->profile->name ?? str_replace(['_', '@', '-'], ' ', Auth::user()->username)) }}</span></h2>
             <p class="description">Full Stack Web Developer & UI/UX Designer</p>
             <div class="hero-section-action-buttons">
                 <a href="#projects" class=" view-work" id="view-work">View Work</a>
