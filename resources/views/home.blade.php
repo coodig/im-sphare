@@ -5,11 +5,17 @@
 
     <div class="hero-section">
         <div class="hero-left">
-            <h2 class="hero-content">Hi, I am <span class="name" id="name">{{ ucwords(Auth::user()->profile->name ?? str_replace(['_', '@', '-'], ' ', Auth::user()->username)) }}</span></h2>
+            <h2 class="hero-content">Hi, I am <span class="name"
+                    id="name">{{ ucwords(Auth::user()->profile->name ?? str_replace(['_', '@', '-'], ' ', Auth::user()->username)) }}</span>
+            </h2>
             <p class="description">Full Stack Web Developer & UI/UX Designer</p>
             <div class="hero-section-action-buttons">
-                <a href="#projects" class=" view-work" id="view-work">View Work</a>
-                <a href="#" class="contact-me" id="contact-me">Contact Me</a>
+                {{-- <a href="#projects" class=" view-work" id="view-work">View Work</a> --}}
+                <x-action-button url="{{ route('dashboard.show', ['username' => auth()->user()->username]) }}" type="view"
+        label="View Work" id="view-work"/>
+                {{-- <a href="#" class="contact-me" id="contact-me">Contact Me</a> --}}
+                <x-action-button url="{{ route('dashboard.show', ['username' => auth()->user()->username]) }}" type="view"
+        label="View Work" />
             </div>
         </div>
         <div class="hero-right">
@@ -74,7 +80,9 @@
                     Solutions.
                     I am always eager to learn new technologies and improve my skills to deliver high-quality software.
                 </p>
-                <a href="#contact" class="hire-btn">Hire Me</a>
+                {{-- <a href="#contact" class="hire-btn">Hire Me</a> --}}
+                <x-action-button url="{{ route('dashboard.show', ['username' => auth()->user()->username]) }}" type="view"
+        label="Hire Me" />
             </div>
 
             <div class="section-right">
@@ -152,37 +160,5 @@
         </div>
     </div>
 
-    {{-- <div class="book-div">
 
-        <div class="book">
-            <p>Hello</p>
-            <div class="cover">
-                <p>Hover Me</p>
-            </div>
-        </div>
-        <div class="book">
-            <p>Hello</p>
-            <div class="cover">
-                <p>Hover Me</p>
-            </div>
-        </div>
-        <div class="book">
-            <p>Hello</p>
-            <div class="cover">
-                <p>Hover Me</p>
-            </div>
-        </div>
-        <div class="book">
-            <p>Hello</p>
-            <div class="cover">
-                <p>Hover Me</p>
-            </div>
-        </div>
-        <div class="book">
-            <p>Hello</p>
-            <div class="cover">
-                <p>Hover Me</p>
-            </div>
-        </div>
-    </div> --}}
 @endsection

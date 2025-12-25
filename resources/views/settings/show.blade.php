@@ -4,15 +4,22 @@
 
     <div class="settings_container">
 
-        <div>
+        {{-- <div>
             <span class="btn-edit" ><a class="btn-edit" href="{{route('settings.edit', ['username' => Auth::user()->username])}}">Edit</a></span>
-        </div>
-         <a class="btn-edit" id="edit-profile" href={{route('profile.edit', ['username' => Auth::user()->username])}}><button>
+        </div> --}}
+
+
+
+
+        <div class="section-header">
+                  <h2 class="settings-title"><iconify-icon icon="mdi:account-cog"></iconify-icon>Account Settings</h2>
+                    <span>
+                         <a class="btn btn-primary" id="edit-profile" href={{route('profile.edit', ['username' => Auth::user()->username])}}><button>
 
                         Edit profile
                     </button></a>
-
-        <h2 class="settings-title"><iconify-icon icon="mdi:account-cog"></iconify-icon>Account Settings</h2>
+                    </span>
+                </div>
 
         <div class="settings-section">
             <h3>Peronal Info</h3>

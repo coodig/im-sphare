@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="{{ asset('asset/css/landing.css') }}">
     <link rel="stylesheet" href="{{ asset('asset/css/theme.css') }}">
+    <link rel="stylesheet" href="{{ asset('asset/css/components.css') }}">
 
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.0/dist/iconify-icon.min.js"></script>
 
@@ -71,9 +72,10 @@
                         <a href="{{route('signup.show')}}" id="imsphare-btn-hero">Create Your Portfolio</a>
                     @endguest
                     @auth
-                        <a href="{{route('dashboard.show', ['username' => Auth::user()->username])}}"
-                            id="imsphare-btn-hero">Continue to Dashboard
-                        </a>
+                        {{-- <a href="{{route('dashboard.show', ['username' => Auth::user()->username])}}" id="imsphare-btn-hero">Continue to Dashboard</a> --}}
+
+                        <x-action-button url="{{ route('dashboard.show',['username' =>auth()->user()->username
+                        ]) }}" type="view" label="Continue to Dashboard"/>
                     @endauth
                 </div>
             </section>

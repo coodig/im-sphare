@@ -1,0 +1,40 @@
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    font-size: 14px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* TYPES */
+.btn-add {
+    background: #198754;
+}
+
+.btn-edit {
+    background: #0d6efd;
+}
+
+.btn-update {
+    background: #6f42c1;
+}
+
+.btn-delete {
+    background: #dc3545;
+}
+
+.btn-view {
+    color: blue;
+    border: solid blue 3px;
+    border-radius: 20px;
+    padding: 4px 10px;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
