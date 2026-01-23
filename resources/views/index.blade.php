@@ -72,7 +72,6 @@
                         <a href="{{route('signup.show')}}" id="imsphare-btn-hero">Create Your Portfolio</a>
                     @endguest
                     @auth
-                        {{-- <a href="{{route('dashboard.show', ['username' => Auth::user()->username])}}" id="imsphare-btn-hero">Continue to Dashboard</a> --}}
 
                         <x-action-button url="{{ route('dashboard.show',['username' =>auth()->user()->username
                         ]) }}" type="view" label="Continue to Dashboard"/>
@@ -111,7 +110,6 @@
                 <h2>How It Works</h2>
                 <div id="imsphare-steps">
                     <div class="imsphare-step">
-                        <!-- Testimonial 1 -->
                         <div class="imsphare-step-content">
                             <div class="step-avatar">
                                 <img src="{{asset('asset/img/l_3.svg')}}" alt="User Photo">
@@ -121,7 +119,6 @@
                             </div>
                         </div>
 
-                        <!-- Testimonial 2 -->
                         <div class="imsphare-step-content">
                             <div class="step-avatar">
                                 <img src="{{asset('asset/img/l_4.svg')}}" alt="User Photo">
@@ -146,7 +143,6 @@
             <section id="imsphare-testimonials">
                 <h2>Testimonials</h2>
                 <div class="imsphare-testimonial">
-                    <!-- Testimonial 1 -->
                     <div class="imsphare-testimonials-content">
                         <div class="testimonial-avatar">
                             <img src="{{asset('asset/img/profile.svg')}}" alt="User Photo">
@@ -158,7 +154,6 @@
                         </div>
                     </div>
 
-                    <!-- Testimonial 2 -->
                     <div class="imsphare-testimonials-content">
                         <div class="testimonial-avatar">
                             <img src="{{asset('asset/img/profile.svg')}}" alt="User Photo">
@@ -170,7 +165,6 @@
                         </div>
                     </div>
                 </div>
-
             </section>
 
             <section id="imsphare-cta">
@@ -192,7 +186,6 @@
 
         <div class="imsphare-footer">
             <div class="footer-container">
-                <!-- Left: Links -->
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <a href="{{ route('privacy.show') }}" class="footer-link">Privacy Policy</a>
@@ -200,7 +193,6 @@
                     <a href="{{ route('about_us.show')}}" class="footer-link">About Us</a>
                 </div>
 
-                <!-- Middle: Social Media -->
                 <div class="footer-section">
                     <h3>Follow Us</h3>
 
@@ -210,7 +202,6 @@
 
                 </div>
 
-                <!-- Right: Tech Support -->
                 <div class="footer-section">
                     <h3>Tech Support</h3>
                     <p>Email: adarshsharma1350@gmail.com</a></p>

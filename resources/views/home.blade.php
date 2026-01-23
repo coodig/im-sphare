@@ -85,6 +85,17 @@
         label="Hire Me" />
             </div>
 
+            <x-card title="Total Revenue" icon="solar:wallet-money-bold-duotone">
+    <h2 class="text-3xl font-bold text-primary">$45,200</h2>
+    <p class="text-muted text-sm mt-1">+12% from last month</p>
+</x-card><x-card title="Total Revenue" icon="solar:wallet-money-bold-duotone">
+    <h2 class="text-3xl font-bold text-primary">$45,200</h2>
+    <p class="text-muted text-sm mt-1">+12% from last month</p>
+</x-card><x-card title="Total Revenue" icon="solar:wallet-money-bold-duotone">
+    <h2 class="text-3xl font-bold text-primary">$45,200</h2>
+    <p class="text-muted text-sm mt-1">+12% from last month</p>
+</x-card>
+
             <div class="section-right">
 
                 <div class="skill-bar">
