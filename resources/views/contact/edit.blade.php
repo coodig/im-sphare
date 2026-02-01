@@ -1,8 +1,8 @@
+{{-- <div class="page about-page"> --}}
 @extends('layouts.app')
 
 @section('content')
 
-    {{-- <div class="page about-page"> --}}
         <div class="contact-container">
 
            <div class="back-btn">
@@ -58,3 +58,4 @@
 
     </div>
 @endsection
+

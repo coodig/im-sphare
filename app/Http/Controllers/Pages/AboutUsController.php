@@ -9,6 +9,6 @@ class AboutUsController extends Controller
 {
     public function show(){
 
-        return view('pages.about.show');
+        return view('pages.about-us.show');
            }
 }

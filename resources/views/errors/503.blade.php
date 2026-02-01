@@ -1,9 +1,16 @@
-@extends('errors::minimal')
+@extends('errors.layout')
 
-@section('title', __('Service Unavailable'))
-{{-- @section('code', '503')
-@section('message', __('Service Unavailable')) --}}
+@section('title', 'Maintenance')
+@section('code', '503')
+
+@section('message')
+    We'll be <br> back soon
+@endsection
+
+@section('description')
+    We are performing scheduled maintenance to improve our services. Please check back in a few minutes.
+@endsection
 
 @section('image')
-    <img src="{{ asset('asset/error/503.svg') }}" alt="404 Not Found" style="width:500px;">
+    <iconify-icon icon="solar:traffic-cone-bold-duotone" class="text-[12rem] text-white/90"></iconify-icon>
 @endsection

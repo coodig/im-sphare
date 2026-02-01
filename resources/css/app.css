@@ -1,11 +1,98 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
+/* v4 में @tailwind base/components/utilities की जरूरत नहीं है।
+   @import "tailwindcss"; ही सारा काम कर देता है।
+*/
 
+@layer base {
+  /* 1. YOUR CUSTOM COLOR VARIABLES (Old Theme) */
+  :root {
+    --primary-color: #00bcd4;
+    --bg-color: #f9f9f9;
+    --text-color: #2c3e50;
+    --sidebar-bg: #ffffff;
+    --navbar-bg: #ffffff;
+    --footer-bg: #f0f0f0;
+    --card-bg: #ffffff;
+    --accent-color: #6c757d;
+    --border-color: #e0e0e0;
+    --muted-text: #7f8c8d;
+    --success: #2ecc71;
+    --danger: #e74c3c;
+    --warning: #ffc107;
+    --info: #17a2b8;
+    --main-bg: #f5f6fa;
+    --footer-bottom: #DDEFFD;
+
+    /* Button Colors */
+    --btn-primary: #2563EB;
+    --btn-primary-hover: #1D4ED8;
+    --hover-primary-color: rgb(70, 70, 176);
+  }
+
+  /* DARK THEME SUPPORT */
+  body.dark-theme {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --sidebar-bg: #0E1A2B;
+    --navbar-bg: #1a1a1a;
+    --footer-bg: #1a1a2e;
+    --card-bg: #0E1A2B;
+    --primary-color: #00acc1;
+    --accent-color: #ff8a65;
+    --border-color: #2a2a2a;
+    --muted-text: #a0a0a0;
+    --success: #27ae60;
+    --danger: #c0392b;
+    --warning: #b1880c;
+    --info: #0d6b7a;
+    --main-bg: #121212;
+    --footer-bottom: #263238;
+
+    /* Button Colors Dark */
+    --btn-primary: #3B82F6;
+    --btn-primary-hover: #60A5FA;
+  }
+}
+
+/* 2. TAILWIND THEME CONFIGURATION (v4) */
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    /* Fonts */
+    --font-sans: 'Lexend Deca', 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+
+    /* Mapping Variables to Tailwind Classes */
+    --color-primary: var(--primary-color);
+
+    /* Backgrounds */
+    --color-body: var(--bg-color);
+    --color-main: var(--main-bg);
+    --color-sidebar: var(--sidebar-bg);
+    --color-card: var(--card-bg);
+    --color-navbar: var(--navbar-bg);
+    --color-footer: var(--footer-bg);
+
+    /* Text Colors */
+    --color-text-main: var(--text-color);
+    --color-muted: var(--muted-text);
+
+    /* Borders */
+    --color-custom: var(--border-color);
+
+    /* Status Colors */
+    --color-success: var(--success);
+    --color-danger: var(--danger);
+    --color-warning: var(--warning);
+    --color-info: var(--info);
+
+    /* Button Colors */
+    --color-btn-primary: var(--btn-primary);
+    --color-btn-hover: var(--btn-primary-hover);
+}
+
+/* 3. GLOBAL STYLES */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-sans);
+    transition: background-color 0.3s, color 0.3s;
 }
