@@ -1,9 +1,12 @@
 @import "tailwindcss";
 
-/* =========================================
-   1. YOUR CUSTOM COLOR VARIABLES (Old Theme)
-   ========================================= */
-:root {
+/* v4 में @tailwind base/components/utilities की जरूरत नहीं है।
+   @import "tailwindcss"; ही सारा काम कर देता है।
+*/
+
+@layer base {
+  /* 1. YOUR CUSTOM COLOR VARIABLES (Old Theme) */
+  :root {
     --primary-color: #00bcd4;
     --bg-color: #f9f9f9;
     --text-color: #2c3e50;
@@ -25,10 +28,10 @@
     --btn-primary: #2563EB;
     --btn-primary-hover: #1D4ED8;
     --hover-primary-color: rgb(70, 70, 176);
-}
+  }
 
-/* DARK THEME SUPPORT */
-body.dark-theme {
+  /* DARK THEME SUPPORT */
+  body.dark-theme {
     --bg-color: #121212;
     --text-color: #e0e0e0;
     --sidebar-bg: #0E1A2B;
@@ -49,34 +52,31 @@ body.dark-theme {
     /* Button Colors Dark */
     --btn-primary: #3B82F6;
     --btn-primary-hover: #60A5FA;
+  }
 }
 
-/* =========================================
-   2. TAILWIND THEME CONFIGURATION (v4)
-   ========================================= */
+/* 2. TAILWIND THEME CONFIGURATION (v4) */
 @theme {
     /* Fonts */
     --font-sans: 'Lexend Deca', 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
 
     /* Mapping Variables to Tailwind Classes */
-
-    /* Use class="text-primary" */
     --color-primary: var(--primary-color);
 
     /* Backgrounds */
-    --color-body: var(--bg-color);          /* Use class="bg-body" */
-    --color-main: var(--main-bg);           /* Use class="bg-main" */
-    --color-sidebar: var(--sidebar-bg);     /* Use class="bg-sidebar" */
-    --color-card: var(--card-bg);           /* Use class="bg-card" */
-    --color-navbar: var(--navbar-bg);       /* Use class="bg-navbar" */
-    --color-footer: var(--footer-bg);       /* Use class="bg-footer" */
+    --color-body: var(--bg-color);
+    --color-main: var(--main-bg);
+    --color-sidebar: var(--sidebar-bg);
+    --color-card: var(--card-bg);
+    --color-navbar: var(--navbar-bg);
+    --color-footer: var(--footer-bg);
 
     /* Text Colors */
-    --color-text-main: var(--text-color);   /* Use class="text-text-main" */
-    --color-muted: var(--muted-text);       /* Use class="text-muted" */
+    --color-text-main: var(--text-color);
+    --color-muted: var(--muted-text);
 
     /* Borders */
-    --color-custom: var(--border-color);    /* Use class="border-custom" */
+    --color-custom: var(--border-color);
 
     /* Status Colors */
     --color-success: var(--success);
@@ -89,9 +89,7 @@ body.dark-theme {
     --color-btn-hover: var(--btn-primary-hover);
 }
 
-/* =========================================
-   3. GLOBAL STYLES
-   ========================================= */
+/* 3. GLOBAL STYLES */
 body {
     background-color: var(--bg-color);
     color: var(--text-color);

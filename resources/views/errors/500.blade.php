@@ -1,10 +1,16 @@
-@extends('errors::minimal')
+@extends('errors.layout')
 
-@section('title', __('Server Error'))
-{{-- @section('code', '500')
-@section('message', __('Server Error')) --}}
+@section('title', 'Server Error')
+@section('code', '500')
 
+@section('message')
+    Internal <br> Error
+@endsection
+
+@section('description')
+    Something went wrong on our servers. We are currently working to fix this issue.
+@endsection
 
 @section('image')
-    <img src="{{ asset('asset/error/500.svg') }}" alt="404 Not Found" style="width:500px;">
+    <iconify-icon icon="solar:server-square-bold-duotone" class="text-[12rem] text-white/90"></iconify-icon>
 @endsection

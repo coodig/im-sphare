@@ -13,7 +13,12 @@ use App\Http\Controllers\Github\ReposController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\Pages\AboutUsController;
+use App\Http\Controllers\Pages\ComingSoonController;
+use App\Http\Controllers\Pages\ContactUsController;
+use App\Http\Controllers\Pages\CookiesPolicyController;
+use App\Http\Controllers\Pages\HelpCenterController;
 use App\Http\Controllers\Pages\PrivacyController;
+use App\Http\Controllers\Pages\SecurityController;
 use App\Http\Controllers\Pages\TermsController;
 use App\Http\Controllers\Profile\ProfileController;
 use App\Http\Controllers\Setting\SettingController;
@@ -25,7 +30,7 @@ use Illuminate\Config\Repository;
 use Illuminate\Foundation\Console\RouteCacheCommand;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/',[LandingController::class,'show'])->name('landing.show');
+Route::get('/', [LandingController::class, 'show'])->name('landing.show');
 
 Route::post('/github/token/store', [GitHubTokenController::class, 'store'])->name('github.token.store');
 
@@ -48,39 +53,43 @@ Route::prefix('/u/{username}')->group(function () {
     // Route::get('/about-me/edit', [AboutController::class, 'edit'])->name('about-me.edit');
     Route::post('/about-me/update', [AboutController::class, 'update'])->name('about-me.update');
 
-    Route::get('/index-me',[AboutController::class,'index_show'])->name('index_show');
+    Route::get('/index-me', [AboutController::class, 'index_show'])->name('index_show');
 
     Route::get('/setting', [SettingController::class, 'show'])->name('settings.show');
     Route::get('/setting/edit', [SettingController::class, 'edit'])->name('settings.edit');
-    Route::post('/setting/update',[SettingController::class,'update'])->name('settings.update');
+    Route::post('/setting/update', [SettingController::class, 'update'])->name('settings.update');
 
     Route::get('/contact', [ContactController::class, 'show'])->name('contact.show');
     Route::get('/contact-me/edit', [ContactController::class, 'edit'])->name('contact_me.edit');
     // Route::post('/contact-me/update',[ContactController::class,'update'])->name('contact_me.update')
 
 
-    Route::get('/followers',[FollowerController::class,'followers'])->name('followers');
+    Route::get('/followers', [FollowerController::class, 'followers'])->name('followers');
 
-    Route::post('/toogle-follow',[FollowerController::class,'toogleFollow'])->name('tooglefollow');
-
-
-    Route::post('/profile/banner',[ProfileController::class,'uploadProfileBanner'])->name('profile-banner');
+    Route::post('/toogle-follow', [FollowerController::class, 'toogleFollow'])->name('tooglefollow');
 
 
+    Route::post('/profile/banner', [ProfileController::class, 'uploadProfileBanner'])->name('profile-banner');
 
-    Route::get('/academics',[AcademicsController::class,'show'])->name('academics.show');
-    Route::get('/academics/edit',[AcademicsController::class,'edit'])->name('academics.edit');
 
-    Route::get('/gallery',[GalleryController::class,'index'])->name('gallery.index');
-    Route::get('/gallery/show',[GalleryController::class,'show'])->name('gallery.show');
-    Route::get('/gallery/edit',[GalleryController::class,'edit'])->name('gallery.edit');
 
+    Route::get('/academics', [AcademicsController::class, 'show'])->name('academics.show');
+    Route::get('/academics/edit', [AcademicsController::class, 'edit'])->name('academics.edit');
+
+    Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery.index');
+    Route::get('/gallery/show', [GalleryController::class, 'show'])->name('gallery.show');
+    Route::get('/gallery/edit', [GalleryController::class, 'edit'])->name('gallery.edit');
 });
 
 Route::prefix('/pages')->group(function () {
-    Route::get('/about-us', [AboutUsController::class, 'show'])->name('about_us.show');
+    Route::get('/about-us', [AboutUsController::class, 'show'])->name('about-us.show');
     Route::get('/terms', [TermsController::class, 'show'])->name('terms.show');
     Route::get('/privacy', [PrivacyController::class, 'show'])->name('privacy.show');
+    Route::get('/coming-soon', [ComingSoonController::class, 'show'])->name('coming-soon.show');
+    Route::get('/help-center', [HelpCenterController::class, 'show'])->name('help-center.show');
+    Route::get('/contact-us', [ContactUsController::class, 'show'])->name('contact-us.show');
+    Route::get('/security', [SecurityController::class, 'show'])->name('security.show');
+    Route::get('/cookies-policy', [CookiesPolicyController::class, 'show'])->name('cookies-policy.show');
 });
 
 Route::post('/settings/privacy', [PrivacyController::class, 'updatePrivacy'])->name('privacy.update');
@@ -94,11 +103,8 @@ Route::get('/skills/update', [SkillController::class, 'edit'])->name('skills.upd
 
 Route::prefix('super-admin')->name('superadmin.')->group(function () {
     Route::get('dashboard', [SuperAdminDashboardController::class, 'index'])->name('dashboard');
-    Route::resource('users',SuperAdminUsersController::class);
+    Route::resource('users', SuperAdminUsersController::class);
 });
-
-
-
 
 
 // Error page testing routes

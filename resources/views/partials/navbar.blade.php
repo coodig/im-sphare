@@ -1,69 +1,129 @@
-<nav class="custom-navbar">
+{{-- Search Bar --}}
+{{-- <form class="search" action="#" method="GET">
+    <input type="text" name="query" placeholder="Search..." />
+    <button type="submit">
+        <iconify-icon icon="ic:baseline-search"></iconify-icon>
+    </button>
+</form> --}}
+{{-- <img src="{{ asset('asset/iocns/light-logo.png') }}" alt="Logo" class="logo"> --}}
+{{-- Brand --}}
+{{-- <iconify-icon icon="bi:layout-text-sidebar-reverse"></iconify-icon> --}}
+{{-- <nav class="custom-navbar">
 
     <div class="navbar-left">
         <div class="sidebar-toggle">
             <button id="toggleSidebar" class="collapse-toggle">
-                {{-- <iconify-icon icon="bi:layout-text-sidebar-reverse"></iconify-icon> --}}
                 <iconify-icon icon="solar:sidebar-code-bold-duotone"></iconify-icon>
             </button>
         </div>
 
-        {{-- Brand --}}
         <div class="brand">
-            {{-- <img src="{{ asset('asset/iocns/light-logo.png') }}" alt="Logo" class="logo"> --}}
-            <a href="{{route('landing.show')}}"><img src="{{ asset('asset/icons/imsphare-icon.png') }}" alt="Logo" class="logo" dark-theme>
-            <span class="brand-name">IMSPhare</span></a>
+            <a href="{{route('landing.show')}}"><img src="{{ asset('asset/icons/imsphare-icon.png') }}" alt="Logo"
+                    class="logo" dark-theme>
+                <span class="brand-name">IMSPhare</span></a>
         </div>
 
-        {{-- Search Bar --}}
-        {{-- <form class="search" action="#" method="GET">
-            <input type="text" name="query" placeholder="Search..." />
-            <button type="submit">
-                <iconify-icon icon="ic:baseline-search"></iconify-icon>
-            </button>
-        </form> --}}
     </div>
 
     <div class="navbar-right">
-        {{-- Notification Bell icon --}}
 
         <iconify-icon id="notificationBellIcon" icon="line-md:bell-twotone-loop" onclick="toggleNotificationDropdown()"
             role="button" style="cursor: pointer;"></iconify-icon>
-            {{-- @auth
-            <x-notification-bell/>
-            @endauth --}}
-        {{-- Theme Toggle --}}
         <iconify-icon id="themeToggleIcon" icon="line-md:moon-filled-to-sunny-filled-loop-transition"
             onclick="toggleTheme()" role="button" style="cursor: pointer;"></iconify-icon>
 
-        {{-- Full Screen --}}
         <iconify-icon id="fullScreenIcon" icon="solar:full-screen-square-bold-duotone" onclick="fullScreen()"
             role="button" style="cursor: pointer;"></iconify-icon>
 
-        {{-- Auth Buttons --}}
         @guest
-            <div class="auth-method">
-                <a href="{{ route('signup.show') }}" class="signup">SignUp</a>
-                &nbsp;/&nbsp;
-                <a href="{{ route('login.show') }}" class="login" id="auth-login-btn">LogIn</a>
-            </div>
+        <div class="auth-method">
+            <a href="{{ route('signup.show') }}" class="signup">SignUp</a>
+            &nbsp;/&nbsp;
+            <a href="{{ route('login.show') }}" class="login" id="auth-login-btn">LogIn</a>
+        </div>
         @endguest
 
         @auth
-            <span class="welcome user-name">
-    Welcome,&nbsp;
-    {{ ucwords(Auth::user()->profile->name ?? str_replace(['_', '@', '-'], ' ', Auth::user()->username)) }}
-</span>
+        <span class="welcome user-name">
+            Welcome,&nbsp;
+            {{ ucwords(Auth::user()->profile->name ?? str_replace(['_', '@', '-'], ' ', Auth::user()->username)) }}
+        </span>
 
-            <a href="{{ route('profile.show', ['username' => Auth::user()->username])}}">
-                    <div class="profile-icon">
-                        <div class="outer">
-                            <div class="inner">
-                                {{-- <img src="{{asset('asset/js/about.jpg')}}" alt=""> --}}
-                            </div>
-                        </div>
+        <a href="{{ route('profile.show', ['username' => Auth::user()->username])}}">
+            <div class="profile-icon">
+                <div class="outer">
+                    <div class="inner">
+                    </div>
+                </div>
+            </div>
+        </a>
+        @endauth
+    </div>
+</nav> --}}
+
+{{-- <img src="{{asset('asset/js/about.jpg')}}" alt=""> --}}
+{{-- @auth
+<x-notification-bell />
+@endauth --}}
+
+
+<nav class="flex items-center justify-between h-full px-4 md:px-8">
+
+    <div class="flex items-center gap-4">
+        <button id="toggleSidebar"
+            class="lg:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/5 text-text-main transition-colors">
+            <iconify-icon icon="solar:hamburger-menu-bold-duotone" width="24"></iconify-icon>
+        </button>
+
+        <a href="{{route('landing.show')}}" class="flex items-center cursor-pointer gap-2 lg:hidden">
+            <img src="{{ asset('asset/icons/imsphare-icon.png') }}" alt="Logo" class="w-8 h-8">
+            <span class="font-bold text-lg text-text-main">IMSPhare</span>
+        </a>
+    </div>
+
+    <div class="flex items-center gap-3 md:gap-5 ml-auto">
+
+        <button
+            class="relative p-2 rounded-full hover:bg-gray-100 dark:hover:bg-white/5 text-text-main transition-colors group">
+            <iconify-icon icon="solar:bell-bing-bold-duotone" width="24"
+                class="group-hover:text-primary transition-colors"></iconify-icon>
+            <span
+                class="absolute top-2 right-2.5 w-2 h-2 bg-red-500 rounded-full border border-white dark:border-black"></span>
+        </button>
+
+        <button onclick="toggleTheme()"
+            class="px-2 py-1.5 rounded-full hover:bg-gray-100 dark:hover:bg-gray/5 text-text-main transition-colors">
+            <iconify-icon icon="line-md:moon-filled-to-sunny-filled-loop-transition" width="24"></iconify-icon>
+        </button>
+
+        <button onclick="fullScreen()"
+            class="hidden md:block p-2 rounded-full hover:bg-gray-100 dark:hover:bg-white/5 text-text-main transition-colors">
+            <iconify-icon icon="solar:full-screen-square-bold-duotone" width="24"></iconify-icon>
+        </button>
+
+        @auth
+            <div class="pl-2 border-l border-custom flex items-center gap-3">
+                <div class="hidden md:block text-right">
+                    <p class="text-sm font-bold text-text-main leading-tight">
+                        {{ ucwords(Auth::user()->profile->name ?? Auth::user()->username) }}
+                    </p>
+                    <p class="text-xs text-muted">{{ ucfirst(Auth::user()->role) }}</p>
+                </div>
+
+                <a href="{{ route('profile.show', ['username' => Auth::user()->username])}}" class="relative group">
+                    <div class="w-10 h-10 rounded-full border-2 border-primary p-0.5 hover:scale-105 transition-transform">
+                        <img src="{{ asset('asset/img/profile.svg') }}"
+                            class="w-full h-full rounded-full object-cover bg-gray-200">
                     </div>
                 </a>
+            </div>
         @endauth
+
+        @guest
+            <a href="{{ route('login.show') }}"
+                class="px-5 py-2 rounded-full bg-primary text-white text-sm font-bold shadow-md hover:bg-primary-hover transition-all">
+                Login
+            </a>
+        @endguest
     </div>
 </nav>
