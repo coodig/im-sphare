@@ -12,7 +12,8 @@ use Illuminate\Support\Facades\Mail;
 
 class SignUpController extends Controller
 {
-    public function signUp(Request $request){
+    public function signUp(Request $request)
+    {
 
         $request->validate([
             'username' => 'required|string|max:255|unique:users,username',
@@ -25,15 +26,19 @@ class SignUpController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password)
         ]);
+        try {
 
-        Mail::to($user->email)->send(new WelcomeMail($user));
-        Auth::login($user);
+            Mail::to($user->email)->send(new WelcomeMail($user));
+        } catch (\Exception $e) {
+        }
+        Auth::login($user, true);
 
         // dd($user);
-        return redirect()->route('dashboard.show',['username'=>Auth::user()->username])->with('success', 'User registered successfully!');
+        return redirect()->route('dashboard.show', ['username' => Auth::user()->username])->with('success', 'User registered successfully!');
     }
 
-     public function show(){
+    public function show()
+    {
         return view('authentication.signup');
     }
 }

@@ -1,4 +1,7 @@
-@import "tailwindcss";
+/* @import "tailwindcss"; */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* v4 में @tailwind base/components/utilities की जरूरत नहीं है।
    @import "tailwindcss"; ही सारा काम कर देता है।

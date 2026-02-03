@@ -97,11 +97,9 @@ class GoogleController extends Controller
     {
         $googleUser = Socialite::driver('google')->user();
 
-        // Check if user already exists by email
         $user = User::where('email', $googleUser->getEmail())->first();
 
         if (!$user) {
-            // Agar naya user hai to username generate karo
             $baseUsername = Str::slug($googleUser->getName(), '-');
             $username = $baseUsername;
             $count = 1;
@@ -111,7 +109,6 @@ class GoogleController extends Controller
                 $count++;
             }
 
-            // Naya user create karo
             $user = User::create([
                 'username' => $username,
                 'email'    => $googleUser->getEmail(),
@@ -120,14 +117,16 @@ class GoogleController extends Controller
             ]);
         }
 
-        // Login karao
-        Mail::to($user->email)->send(new WelcomeMail($user));
+        try {
+
+            Mail::to($user->email)->send(new WelcomeMail($user));
+        } catch (\Exception $e) {
+        }
         Auth::login($user);
 
         if ($user->role === 'superadmin') {
             return redirect()->route('superadmin.maintenance.show');
         }
-        // Redirect to dashboard
         return redirect()->route('dashboard.show', [
             'username' => $user->username
         ]);
