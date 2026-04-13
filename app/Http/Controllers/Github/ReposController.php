@@ -15,7 +15,6 @@ class ReposController extends Controller
     {
         $user = Auth::user();
 
-        // 1. Get Token
         $githubTokenModel = GitHubToken::where('user_id', $user->id)->first();
 
         if (!$githubTokenModel) {
@@ -28,7 +27,6 @@ class ReposController extends Controller
 
         if ($response->successful()) {
             $repos = $response->json();
-
             foreach ($repos as $repo) {
                 GithubRepo::updateOrCreate(
                     [
@@ -52,11 +50,16 @@ class ReposController extends Controller
             }
         }
 
+        $query = GithubRepo::where('user_id', $user->id);
 
-        $savedRepos = GithubRepo::where('user_id', $user->id)
-            ->latest('pushed_at')
-            ->paginate(15);
+        if ($request->has('search') && $request->search != '') {
+            $query->where('name', 'like', '%' . $request->search . '%');
+        }
+        // $savedRepos = GithubRepo::where('user_id', $user->id)
+        //     ->latest('pushed_at')
+        //     ->paginate(15)->withQueryString();
 
+        $savedRepos = $query->latest('pushed_at')->paginate(15)->withQueryString();
         return view('github.repos.index', compact('savedRepos'));
     }
 }

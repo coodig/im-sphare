@@ -61,8 +61,8 @@ Route::prefix('/u/{username}')->group(function () {
     Route::get('/setting/edit', [SettingController::class, 'edit'])->name('settings.edit');
     Route::post('/setting/update', [SettingController::class, 'update'])->name('settings.update');
 
-    Route::get('/contact', [ContactController::class, 'show'])->name('contact.show');
-    Route::get('/contact-me/edit', [ContactController::class, 'edit'])->name('contact_me.edit');
+    Route::get('/contact-me', [ContactController::class, 'show'])->name('contact-me.show');
+    Route::get('/contact-me/edit', [ContactController::class, 'edit'])->name('contact-me.edit');
     // Route::post('/contact-me/update',[ContactController::class,'update'])->name('contact_me.update')
 
 

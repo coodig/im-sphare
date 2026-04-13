@@ -117,7 +117,7 @@
                     <h4 class="font-bold text-text-main">Questions regarding the Terms?</h4>
                     <p class="text-sm">Our support team is here to help you understand your rights.</p>
                 </div>
-                <a href="{{ route('contact.show', ['username' => 'admin']) }}" class="px-6 py-2.5 rounded-full bg-primary text-white font-bold hover:bg-primary-hover transition-all">
+                <a href="{{ route('contact-us.show', ['username' => 'admin']) }}" class="px-6 py-2.5 rounded-full bg-primary text-white font-bold hover:bg-primary-hover transition-all">
                     Contact Us
                 </a>
             </div>

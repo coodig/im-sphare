@@ -6,7 +6,7 @@
 
     <div class="flex flex-col md:flex-row justify-between items-end gap-4 mb-10">
         <div>
-            <div class="inline-block px-3 py-1 mb-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs font-bold uppercase tracking-wider">
+            <div class="inline-block px-3 py-1 mb-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs font-bold uppercase tracking-wider">
                 System
             </div>
             <h1 class="text-3xl md:text-4xl font-bold text-text-main flex items-center gap-3">

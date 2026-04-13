@@ -215,7 +215,7 @@
             <div class="bg-card rounded-[2rem] border border-custom shadow-apple overflow-hidden">
                 <div class="px-6 py-4 border-b border-custom bg-gray-50/50 dark:bg-white/5 flex items-center gap-2">
                     <iconify-icon icon="solar:document-text-bold-duotone" class="text-xl text-orange-500"></iconify-icon>
-                    <h3 class="font-bold text-text-main">README.md</h3>
+                    <h3 class="font-bold text-text-main text-black">README.md</h3>
                 </div>
 
                 <div class="p-6 md:p-8 prose dark:prose-invert max-w-none">

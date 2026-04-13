@@ -23,7 +23,7 @@
             <div class="space-y-6">
                 <div class="flex items-center gap-2 mb-2">
                     <div class="p-2 rounded-lg bg-blue-50 dark:bg-blue-900/20 text-blue-600">
-                        <iconify-icon icon="solar:mortarboard-bold-duotone" class="text-xl"></iconify-icon>
+                        <iconify-icon icon="iconify solar--book-2-bold-duotone" class="text-xl"></iconify-icon>
                     </div>
                     <h2 class="text-xl font-bold text-text-main">Education</h2>
                 </div>

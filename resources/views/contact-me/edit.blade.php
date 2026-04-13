@@ -143,7 +143,7 @@
                                     placeholder="+91 00000 00000"
                                     class="w-full pl-11 pr-4 py-3.5 rounded-xl bg-body border border-custom focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all font-medium text-text-main">
                             </div>
-                        </div>
+                        </div>s
                     </div>
                 </div>
 

@@ -9,9 +9,11 @@ use Illuminate\Support\Facades\Auth;
 
 class ContactController extends Controller
 {
-    public function show(){
+    public function show($username){
+        $username = Auth::user()->username;
 
-        return view('contact.show')       ;
+
+        return view('contact-me.show')       ;
 
     }
 
@@ -20,7 +22,7 @@ class ContactController extends Controller
         $username = Auth::user()->username;
         // dd($username);
 
-        return view('contact.edit',compact('username'));
+        return view('contact-me.edit',compact('username'));
         }
 
         public function update(Request $request,$username){

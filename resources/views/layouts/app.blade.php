@@ -113,7 +113,7 @@
                 --primary-color: #2997ff; --btn-primary-hover: #0071e3;
                 --bg-color: #000000; --card-bg: #1c1c1e;
                 --sidebar-bg: #1c1c1e; --navbar-bg: rgba(28, 28, 30, 0.9);
-                --text-color: #f5f5f7; --muted-text: #86868b;
+                --text-color: #828282; --muted-text: #86868b;
                 --border-color: #424245; --footer-bg: #151516;
             }
             body {
@@ -130,6 +130,7 @@
 
 <body class="overflow-hidden h-screen w-full flex text-sm md:text-base">
 
+    {{-- --text-color: #f5f5f7; --muted-text: #86868b; --}}
     <aside class="w-64 h-full bg-sidebar border-r border-custom hidden lg:flex flex-col transition-colors duration-500 z-20">
         @include('partials.sidebar')
     </aside>
@@ -145,6 +146,7 @@
         </main>
 
         <footer class="bg-body border-t border-custom p-4 text-center text-xs text-muted shrink-0">
+
             @include('partials.footer')
         </footer>
     </div>

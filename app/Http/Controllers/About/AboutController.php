@@ -14,6 +14,7 @@ class AboutController extends Controller
 {
 
     public function show($username){
+        $username = Auth::user()->username;
 
         return view('about-me.show');
     }
