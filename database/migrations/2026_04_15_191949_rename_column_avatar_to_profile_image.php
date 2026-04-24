@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('privacy_levels', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('user_profile', function (Blueprint $table) {
+            $table->renameColumn('avatar','profile_image');
         });
     }
 
@@ -22,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('privacy_levels');
+        Schema::table('user_profile', function (Blueprint $table) {
+            $table->renameColumn('profile_image','avatar');
+        });
     }
 };

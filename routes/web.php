@@ -12,6 +12,7 @@ use App\Http\Controllers\Github\ReadmeController;
 use App\Http\Controllers\Github\ReposController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\LoginActivity\LoginActivityController;
 use App\Http\Controllers\Pages\AboutUsController;
 use App\Http\Controllers\Pages\APIAccessController;
 use App\Http\Controllers\Pages\ComingSoonController;
@@ -67,11 +68,11 @@ Route::prefix('/u/{username}')->group(function () {
 
 
     Route::get('/followers', [FollowerController::class, 'followers'])->name('followers');
-
     Route::post('/toogle-follow', [FollowerController::class, 'toogleFollow'])->name('tooglefollow');
 
 
     Route::post('/profile/banner', [ProfileController::class, 'uploadProfileBanner'])->name('profile-banner');
+    Route::post('/profile/image', [ProfileController::class, 'uploadProfileImage'])->name('profile-image');
 
 
 
@@ -81,6 +82,9 @@ Route::prefix('/u/{username}')->group(function () {
     Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery.index');
     Route::get('/gallery/show', [GalleryController::class, 'show'])->name('gallery.show');
     Route::get('/gallery/edit', [GalleryController::class, 'edit'])->name('gallery.edit');
+
+    Route::get('/login-activities',[LoginActivityController::class,'index'])->name('login-activity.index');
+    Route::get('/login-activities/show',[LoginActivityController::class,'show'])->name('login-activity.show');
 });
 
 
@@ -128,3 +132,7 @@ Route::prefix('/pages')->group(function () {
     Route::get('/cookies-policy', [CookiesPolicyController::class, 'show'])->name('cookies-policy.show');
     Route::get('/api-access', [APIAccessController::class, 'show'])->name('api-access.show');
 });
+
+// Route::get('countries',function(){
+//     return view('superadmin.masters.show');
+// });

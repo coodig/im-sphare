@@ -107,12 +107,12 @@
                     <p class="text-sm font-bold text-text-main leading-tight">
                         {{ ucwords(Auth::user()->profile->name ?? Auth::user()->username) }}
                     </p>
-                    <p class="text-xs text-muted">{{ ucfirst(Auth::user()->role) }}</p>
+                    <p class="text-xs text-muted">{{ ucfirst(Auth::user()->role?->name ?? 'User') }}</p>
                 </div>
 
                 <a href="{{ route('profile.show', ['username' => Auth::user()->username])}}" class="relative group">
                     <div class="w-10 h-10 rounded-full border-2 border-primary p-0.5 hover:scale-105 transition-transform">
-                        <img src="{{ asset('asset/img/profile.svg') }}"
+                        <img src="{{ Auth::user()->profile?->profile_image ? asset('storage/'.Auth::user()->profile->profile_image) : asset('asset/img/profile.svg') }}"
                             class="w-full h-full rounded-full object-cover bg-gray-200">
                     </div>
                 </a>

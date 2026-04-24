@@ -11,8 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('github_repos', function (Blueprint $table) {
-            $table->unsignedBigInteger('github_id')->unique()->after('id');
+        Schema::create('study_fields', function (Blueprint $table) {
+            $table->id();
+            $table->string('name')->unique();
+            $table->string('slug')->unique();
+            $table->boolean('is_active')->default(1);
+            $table->timestamps();
         });
     }
 
@@ -21,8 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('github_repos', function (Blueprint $table) {
-            $table->dropColumn('github_id');
-        });
+        Schema::dropIfExists('study_fields');
     }
 };

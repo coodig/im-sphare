@@ -23,7 +23,7 @@
     <div class="hidden md:block w-1 h-1 rounded-full bg-gray-300"></div>
 
     <div class="flex gap-4">
-        <a href="{{ route('help-center.show') }}" class="hover:text-primary transition-colors">Help Center</a>
+        {{-- <a href="{{ route('help-center.show') }}" class="hover:text-primary transition-colors">Help Center</a> --}}
         <a href="{{ route('privacy.show') }}" class="hover:text-primary transition-colors">Privacy</a>
         <a href="{{ route('contact-us.show') }}" class="hover:text-primary transition-colors">Contact Us</a>
         <a href="{{ route('terms.show')}}" class="hover:text-primary transition-colors">Terms</a>

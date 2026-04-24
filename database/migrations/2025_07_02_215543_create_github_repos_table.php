@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('github_repos', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->integer('github_id')->nullable();
-            $table->string('repo_id')->unique(); // GitHub repo ID
+            $table->unsignedBigInteger('github_id')->nullable()->unique();
+            $table->string('repo_id')->unique();
             $table->string('name');
             $table->string('full_name')->nullable();
             $table->text('description')->nullable();

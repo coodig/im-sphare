@@ -35,16 +35,16 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="md:col-span-2 group relative h-64 rounded-[2rem] overflow-hidden border border-custom shadow-apple cursor-pointer"
-                 onclick="openModal('{{ asset('asset/img/profile-banner.jpeg') }}')">
-                <img src="{{ asset('asset/img/profile-banner.jpeg') }}" alt="Profile Banner" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                 onclick="openModal('{{ Auth::user()->profile?->profile_banner ? asset('storage/'.Auth::user()->profile->profile_banner) : asset('asset/img/profile-banner.jpeg') }}')">
+                <img src="{{ Auth::user()->profile?->profile_banner ? asset('storage/'.Auth::user()->profile->profile_banner) : asset('asset/img/profile-banner.jpeg') }}" alt="Profile Banner" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 <div class="absolute bottom-4 left-4 px-3 py-1 bg-black/50 backdrop-blur-md rounded-lg text-white text-xs font-bold border border-white/20">
                     Current Banner
                 </div>
             </div>
 
-            <div class="group relative h-64 rounded-[2rem] overflow-hidden border border-custom shadow-apple cursor-pointer"
-                 onclick="openModal('{{ asset('asset/img/about.jpg') }}')">
-                <img src="{{ asset('asset/img/about.jpg') }}" alt="Profile Avatar" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <div class="group relative h-64 rounded-full overflow-hidden border border-custom shadow-apple cursor-pointer"
+                 onclick="openModal('{{ Auth::user()->profile?->profile_image ? asset('storage/'.Auth::user()->profile->profile_image) : asset('asset/img/about.jpg') }}')">
+                <img src="{{ Auth::user()->profile?->profile_image ? asset('storage/'.Auth::user()->profile->profile_image) : asset('asset/img/about.jpg') }}" alt="Profile Avatar" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 <div class="absolute bottom-4 left-4 px-3 py-1 bg-black/50 backdrop-blur-md rounded-lg text-white text-xs font-bold border border-white/20">
                     Current Avatar
                 </div>

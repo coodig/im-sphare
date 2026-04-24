@@ -187,11 +187,6 @@
                             </a>
                         @endguest
                         @auth
-                            {{-- <x-action-button
-                                url="{{ route('dashboard.show', ['username' => auth()->user()->username]) }}" type="view"
-                                label="Continue to Dashboard"
-                                class="inline-block px-8 py-3 bg-primary text-white text-lg font-bold rounded-full shadow-apple hover:shadow-apple-hover hover:bg-primary-hover transition-all" />
-                            --}}
                             <a href="{{route('dashboard.show', ['username' => Auth::user()->username])}}"
                                 class="inline-block px-8 py-3 bg-primary text-white text-lg font-bold rounded-full shadow-apple hover:shadow-apple-hover hover:bg-primary-hover transform transition-all">
                                 Continue to Dashboard
@@ -430,6 +425,7 @@
                             coming soon!
                         </div>
                     </div>
+                    {{-- <div class="flex justify-end"><a href="#">more<iconify-icon icon=""></iconify-icon></a></div> --}}
                 </div>
             </section>
 
@@ -495,7 +491,7 @@
                                     <a href="{{ route('api-access.show') }}"
                                         class="text-muted hover:text-primary transition-colors text-sm font-medium flex items-center gap-2">
                                         API Access <span
-                                            class="px-1.5 py-0.5 rounded text-[10px] bg-primary/10 text-primary font-bold border border-primary/20">SOON</span>
+                                            class="px-1.5 py-0.5 rounded text-[10px] bg-primary/10 text-green-600 font-bold border border-primary/20">SOON</span>
                                     </a>
                                 </li>
                             </ul>
@@ -513,9 +509,9 @@
                                 <li><a href="{{ route('contact-us.show') }}"
                                         class="text-muted hover:text-primary transition-colors text-sm font-medium">Contact
                                         Support</a></li>
-                                <li><a href="#"
+                                {{-- <li><a href="#"
                                         class="text-muted hover:text-primary transition-colors text-sm font-medium">Brand
-                                        Kit</a></li>
+                                        Kit</a></li> --}}
                             </ul>
                         </div>
 

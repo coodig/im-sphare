@@ -11,10 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('privacy_levels', function (Blueprint $table) {
+        Schema::create('states', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('country_id')->constrained('countries')->onDelete('cascade');
             $table->string('name');
-            $table->string('label');
+            $table->string('slug');
+            $table->string('description')->nullable();
+            $table->unique(['country_id', 'slug']);
+            $table->boolean('is_active')->default(1);
             $table->timestamps();
         });
     }
@@ -24,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('privacy_levels');
+        Schema::dropIfExists('states');
     }
 };

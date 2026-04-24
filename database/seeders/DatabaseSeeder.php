@@ -3,7 +3,13 @@
 namespace Database\Seeders;
 
 use App\Models\Follower;
+use App\Models\LoginActivity;
+use App\Models\Masters\Role;
 use App\Models\User;
+use Database\Seeders\Masters\CountrySeeder;
+use Database\Seeders\Masters\GenderSeeder;
+use Database\Seeders\Masters\RoleSeeder;
+use Database\Seeders\Masters\StateSeeder;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,10 +20,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        $this->call([
 
-        $this->call(User::class);
-
-        $this->call(Follower::class);
+            // CountrySeeder::class
+            // RoleSeeder::class
+            // PrivacyLevelsSeeder::class
+            // GenderSeeder::class
+            StateSeeder::class
+        ]);
     }
 }

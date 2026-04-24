@@ -9,12 +9,18 @@ class LoginActivity extends Model
     protected $fillable = [
         'user_id',
         'ip_address',
-        'browser',
+        'status_id',
+        'user_agent',
+        'os',
         'device',
-        // 'location',
-        // 'operating_system',
-        // 'status',
+        'location',
+        '',
         'logged_in_at',
 
     ];
+
+    public function status(){
+        return  $this->belongsTo(Status::class,'status_id');
+    }
 }
+

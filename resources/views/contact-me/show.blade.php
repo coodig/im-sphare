@@ -120,34 +120,39 @@
                     <h3 class="text-2xl font-bold text-text-main mb-8">Send a Message</h3>
 
                     <form action="#" method="POST" class="space-y-6">
+                    {{-- <form action="{{ route('send.message',['username'=>Auth::user()->username]) }}" method="POST" class="space-y-6"> --}}
                         @csrf
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label for="name" class="block text-sm font-bold text-text-main mb-2 ml-1">Your Name</label>
-                                <p class="text-white  w-full py-4 font-medium text-text-main">
-                                    {{ ucwords(Auth::user()->profile->name) ?? ucwords(Auth::user()->username) }}</p>
-                                {{-- <input type="text" id="name" name="name" placeholder="John Doe" {{--
+                                {{-- <p class="text-white  w-full py-4 font-medium text-text-main">
+                                    {{ ucwords(Auth::user()->profile->name) ?? ucwords(Auth::user()->username) }}
+                                </p> --}}
+                                <input type="text" id="name" name="name" placeholder="John Doe"
                                     class="w-full px-5 py-4 rounded-2xl bg-body border border-custom focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all font-medium text-text-main">
-                                --}}
+
                             </div>
                             <div>
                                 <label for="email" class="block text-sm font-bold text-text-main mb-2 ml-1">Your
                                     Email</label>
-                                {{-- <input type="email" id="email" name="email" placeholder="john@example.com"
+                                <input type="email" id="email" name="email" placeholder="john@example.com"
                                     class="w-full px-5 py-4 rounded-2xl bg-body border border-custom focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all font-medium text-text-main">
-                                --}}
-                                <p class="text-white  w-full py-4 font-medium text-text-main">{{ Auth::user()->email }}</p>
+
+                                {{-- <p class="text-white  w-full py-4 font-medium text-text-main">{{ Auth::user()->email }}</p> --}}
                             </div>
                         </div>
 
-                        <div class="flex justify-evenly">
-                            <div>
+                        {{-- <div class=""> --}}
+                            {{-- <div>
                                 <label for="message"
                                     class="block text-sm font-bold text-text-main mb-2 ml-1">Message</label>
-                                <p class=" font-medium text-text-main">Hello! I create modern digital solutions. My focus is on solving complex problems with efficient code. Whether it is a web application using Laravel/React or a system-level project in C++, I aim for perfection.
+                                <p class=" font-medium text-text-main">Hello! I create modern digital solutions. My focus is
+                                    on solving complex problems with efficient code. Whether it is a web application using
+                                    Laravel/React or a system-level project in C++, I aim for perfection.
 
-Currently, I am working on a challenging project—creating my own programming language using C++—to demonstrate my deep understanding of compilers.</p>
-                            </div>
+                                    Currently, I am working on a challenging project—creating my own programming language
+                                    using C++—to demonstrate my deep understanding of compilers.</p>
+                            </div> --}}
                             <div>
                                 <label for="message"
                                     class="block text-sm font-bold text-text-main mb-2 ml-1">Message</label>
@@ -155,7 +160,7 @@ Currently, I am working on a challenging project—creating my own programming l
                                     placeholder="Hi Adarsh, I'd like to talk about..."
                                     class="w-full px-5 py-4 rounded-2xl bg-body border border-custom focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all font-medium text-text-main resize-none"></textarea>
                             </div>
-                        </div>
+                        {{-- </div> --}}
 
                         <div class="flex justify-end pt-2">
                             <button type="button"
@@ -173,9 +178,9 @@ Currently, I am working on a challenging project—creating my own programming l
             class="bg-card rounded-[2.5rem] border border-custom shadow-apple p-2 h-[400px] relative group overflow-hidden">
 
             <div
-                class="absolute top-6 left-6 z-10 px-5 py-2.5 bg-card/90 backdrop-blur-md rounded-full border border-custom shadow-lg text-sm font-bold text-text-main flex items-center gap-2">
-                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                Located in Gorakhpur
+                class="absolute top-6 right-6 z-10 px-5 py-2.5 bg-card/90 backdrop-blur-md rounded-full border border-custom shadow-lg text-sm font-bold text-text-main flex items-center gap-2">
+                {{-- class="absolute top-6 left-6 z-10 px-5 py-2.5 bg-card/90 backdrop-blur-md rounded-full border border-custom shadow-lg text-sm font-bold text-text-main flex items-center gap-2"> --}}
+                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>Located in Gorakhpur
             </div>
 
             <iframe

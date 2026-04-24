@@ -19,12 +19,8 @@
             <div class="bg-card rounded-[2rem] border border-custom shadow-apple p-6 text-center sticky top-24">
 
                 <div class="relative w-32 h-32 mx-auto mb-4">
-                    <img src="{{ Auth::user()->profile->avatar_url ?? asset('asset/img/about.jpg') }}"
-                         alt="Avatar"
-                         class="w-full h-full rounded-full object-cover border-4 border-body shadow-lg">
-                    <div class="absolute bottom-0 right-0 p-2 bg-primary text-white rounded-full border-2 border-card flex items-center justify-center">
-                        <iconify-icon icon="solar:pen-bold" class="text-sm"></iconify-icon>
-                    </div>
+                         <img src="{{ Auth::user()->profile?->profile_image ? asset('storage/'.Auth::user()->profile->profile_image): asset('asset/img/profile.svg') }}"
+                                        alt="image" class="w-full h-full rounded-full object-cover border-4 border-body shadow-lg">
                 </div>
 
                 <h2 class="text-xl font-bold text-text-main mb-1">
@@ -96,7 +92,7 @@
                                 </span>
                                 <input type="text" id="location" name="location"
                                     value="{{ old('location', Auth::user()->profile->location ?? '') }}"
-                                    placeholder="City, Country"
+                                    placeholder="Country"
                                     class="w-full pl-11 pr-4 py-3.5 rounded-xl bg-body border border-custom focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all font-medium text-text-main">
                             </div>
                         </div>
@@ -125,6 +121,26 @@
                                     <option value="male" {{ old('gender', optional(Auth::user()->profile)->gender) == 'male' ? 'selected' : '' }}>Male</option>
                                     <option value="female" {{ old('gender', optional(Auth::user()->profile)->gender) == 'female' ? 'selected' : '' }}>Female</option>
                                     <option value="other" {{ old('gender', optional(Auth::user()->profile)->gender) == 'other' ? 'selected' : '' }}>Other</option>
+                                </select>
+                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-muted pointer-events-none">
+                                    <iconify-icon icon="solar:alt-arrow-down-bold" class="text-sm"></iconify-icon>
+                                </span>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="country" class="block text-sm font-bold text-text-main mb-2 ml-1">Country</label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-muted">
+                                    <iconify-icon icon="solar:users-group-rounded-bold-duotone" class="text-lg"></iconify-icon>
+                                </span>
+                                <select id="country" name="country"
+                                    class="w-full pl-11 pr-4 py-3.5 rounded-xl bg-body border border-custom focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all font-medium text-text-main appearance-none">
+                                    <option value="" disabled selected>Select Country</option>
+                                    @foreach ($countries as $country)
+
+                                    <option value="{{ $country->name }}" {{ old('country', optional(Auth::user()->profile)->country) == $country->name ? 'selected' : '' }}>{{ $country->name }}</option>
+
+                                    @endforeach
                                 </select>
                                 <span class="absolute right-4 top-1/2 -translate-y-1/2 text-muted pointer-events-none">
                                     <iconify-icon icon="solar:alt-arrow-down-bold" class="text-sm"></iconify-icon>

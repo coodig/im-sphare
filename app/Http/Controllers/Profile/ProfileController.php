@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Profile;
 
 use App\Http\Controllers\Controller;
+use App\Models\Masters\Country;
 use App\Models\Profile;
 use App\Models\SocialMediaLink;
 use App\Models\User;
+use BaconQrCode\Renderer\Path\Path;
 use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,6 +19,8 @@ class ProfileController extends Controller
     {
 
         $user = User::where('username', $username)->firstOrFail();
+        // $countries = Country::all();
+        // dd($countries);
         // $socialMediaLink = SocialMediaLink::where('user_id', $user->user_id)->get();
         return view('profile.show', compact('user'));
     }
@@ -24,8 +28,10 @@ class ProfileController extends Controller
     public function edit($username)
     {
         $user = Auth::user()->username;
+        $countries = Country::all('name');
         $profile = Auth::user()->profile;
-        return view('profile.edit', compact('user', 'profile'));
+        // dd($countries);
+        return view('profile.edit', compact('user', 'profile','countries'));
     }
 
     public function update($username, Request $request)
@@ -57,29 +63,47 @@ class ProfileController extends Controller
             ->with('status', 'Profile updated successfully!');
     }
 
-    public function uploadProfileBanner(Request $request, $username){
+    public function uploadProfileBanner(Request $request, $username)
+    {
 
-        $user = Auth::user()->username;
-        $request -> Validate([
-            'profile-banner'=>'required|image|mimes:jpeg,png,jpg,gif|max:2048'
+        $user = Auth::user();
+        $request->validate([
+            'profile-banner' => 'required|image|mimes:jpeg,png,jpg,gif|max:4096'
         ]);
 
-        if($user->profile && $user->profile->profile_banner){
+        if ($user->profile && $user->profile->profile_banner) {
+            // if($user->profile->profile_banner){
 
             Storage::disk('public')->delete($user->profile->profile_banner);
         }
 
-        $path = $request->file('banner')->store('profile_media/banner','public');
+        $path = $request->file('profile-banner')->store('profile_media/banner', 'public');
 
         $user->profile->update([
-            'profile_banner'=>$path
+            'profile_banner' => $path
         ]);
-        dd($path);
+        // dd($path);
 
-        // $user->profile_image = $path;
+        $user->profile_image = $path;
 
-        // return redirect()->back()->with('success','Profile Banner updatted successfully..');
+        return redirect()->back()->with('success', 'Profile Banner updatted successfully..');
+    }
 
+    public function uploadProfileImage(Request $request,$username)
+    {
 
-   }
+        $user = Auth::user();
+        $request->validate(['profile-image' => 'required|image|mimes:jpeg,png,jpg,gif|max:4096']);
+
+        if($user->profile && $user->profile->profile_image ){
+            Storage::disk('public')->delete($user->profile->profile_image);
+        }
+
+        $path = $request->file('profile-image')->store('profile_media/image','public');
+
+        $user->profile->update(['profile_image'=>$path]);
+
+        $user->profile->profile_image;
+        return redirect()->back()->with('success','Profile Image updated successfully..');
+    }
 }
