@@ -111,13 +111,13 @@
                                     {{ ucwords(str_replace(['-', '_'], ' ', $repo->name)) }}
                                 </h5>
 
-                                <div class="text-muted group-hover:text-primary transition-colors shrink-0"
+                                {{-- <div class="text-muted group-hover:text-primary transition-colors shrink-0"
                                     title="GitHub Repository">
                                     <a
                                         href="{{ $repo->html_url }}/archive/refs/heads/{{ $repo->default_branch ?? 'main'}}.zip">
                                         <iconify-icon icon="solar:download-bold-duotone" width="22"></iconify-icon>
                                     </a>
-                                </div>
+                                </div> --}}
                             </div>
 
                             <p class="text-xs text-muted line-clamp-2 mb-4 flex-grow">
