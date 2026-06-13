@@ -117,7 +117,7 @@
                                         <p class="text-xs text-muted">Sync repositories</p>
                                     </div>
                                 </div>
-                                @if(isset($githubToken) && $githubToken) <span
+                                @if(Auth::user()->githubToken()->exists()) <span
                                     class="px-2 py-1 rounded-full bg-green-500/10 text-green-500 text-[10px] font-bold border border-green-500/20">Connected</span>
                                 @else
                                     <span
@@ -162,7 +162,7 @@
                         No recent suspicious activity detected.
                     </div>
 
-                    <div class="justify-between text-text-main align-center"><a
+                    <div class="items-end text-text-main align-center"><a
                             href="{{ route('login-activity.index', ['username' => Auth::user()->username]) }}">View
                             All</a><iconify-icon icon="solar:map-arrow-right-bold-duotone"></iconify-icon></div>
                 </div>

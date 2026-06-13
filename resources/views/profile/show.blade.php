@@ -15,7 +15,7 @@
 
                     <label for="profile-banner" class="cursor-pointer block h-full w-full relative">
                         <img
-                            src="{{ Auth::user()->profile?->profile_banner ? asset('storage/'.Auth::user()->profile->profile_banner) : asset('asset/img/profile-banner.jpeg') }}"
+                            src="{{ Auth::user()->profile?->profile_banner ? asset('storage/'.Auth::user()->profile->profile_banner) : asset('asset/img/profile-banner-4k.jpg') }}"
                             alt="Cover"
                             class="w-full h-full object-cover transition-transform duration-700 group-hover/banner:scale-105">
 

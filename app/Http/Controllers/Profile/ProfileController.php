@@ -19,9 +19,6 @@ class ProfileController extends Controller
     {
 
         $user = User::where('username', $username)->firstOrFail();
-        // $countries = Country::all();
-        // dd($countries);
-        // $socialMediaLink = SocialMediaLink::where('user_id', $user->user_id)->get();
         return view('profile.show', compact('user'));
     }
 
@@ -30,8 +27,7 @@ class ProfileController extends Controller
         $user = Auth::user()->username;
         $countries = Country::all('name');
         $profile = Auth::user()->profile;
-        // dd($countries);
-        return view('profile.edit', compact('user', 'profile','countries'));
+        return view('profile.edit', compact('user', 'profile', 'countries'));
     }
 
     public function update($username, Request $request)
@@ -47,7 +43,6 @@ class ProfileController extends Controller
             'website' => 'nullable|string',
         ]);
 
-        // 'profile_image' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
         $user->profile()->updateOrCreate([
             'user_id' => $user->id
         ], [
@@ -63,7 +58,7 @@ class ProfileController extends Controller
             ->with('status', 'Profile updated successfully!');
     }
 
-    public function uploadProfileBanner(Request $request, $username)
+    public function uploadProfileBanner(Request $request)
     {
 
         $user = Auth::user();
@@ -71,39 +66,40 @@ class ProfileController extends Controller
             'profile-banner' => 'required|image|mimes:jpeg,png,jpg,gif|max:4096'
         ]);
 
-        if ($user->profile && $user->profile->profile_banner) {
-            // if($user->profile->profile_banner){
+        $profile = Profile::firstOrCreate(['user_id' => $user->id]);
 
-            Storage::disk('public')->delete($user->profile->profile_banner);
+        if ($profile && $profile->profile_banner) {
+
+            Storage::disk('public')->delete($profile->profile_banner);
         }
 
         $path = $request->file('profile-banner')->store('profile_media/banner', 'public');
 
-        $user->profile->update([
+        $profile->update([
             'profile_banner' => $path
         ]);
-        // dd($path);
 
-        $user->profile_image = $path;
+        $profile->profile_banner;
 
         return redirect()->back()->with('success', 'Profile Banner updatted successfully..');
     }
 
-    public function uploadProfileImage(Request $request,$username)
+    public function uploadProfileImage(Request $request)
     {
 
         $user = Auth::user();
         $request->validate(['profile-image' => 'required|image|mimes:jpeg,png,jpg,gif|max:4096']);
 
-        if($user->profile && $user->profile->profile_image ){
-            Storage::disk('public')->delete($user->profile->profile_image);
+        $profile = Profile::firstOrCreate(['user_id' => $user->id]);
+        if ($profile && $profile->profile_image) {
+            Storage::disk('public')->delete($profile->profile_image);
         }
 
-        $path = $request->file('profile-image')->store('profile_media/image','public');
+        $path = $request->file('profile-image')->store('profile_media/image', 'public');
 
-        $user->profile->update(['profile_image'=>$path]);
+        $profile->update(['profile_image' => $path]);
 
-        $user->profile->profile_image;
-        return redirect()->back()->with('success','Profile Image updated successfully..');
+        $profile->profile_image;
+        return redirect()->back()->with('success', 'Profile Image updated successfully..');
     }
 }

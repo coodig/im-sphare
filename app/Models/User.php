@@ -56,6 +56,11 @@ class User extends Authenticatable
         return $this->hasOne(Profile::class);
     }
 
+    public function media()
+    {
+        return $this->hasMany(Media::class);
+    }
+
 
     public function contact()
     {
@@ -90,12 +95,12 @@ class User extends Authenticatable
     public function followers()
     {
 
-        return $this->belongsToMany(User::class, 'followers', 'user_id', 'follower_id')->withPivot(['status','is_favorite','notifications_enabled','muted','remarks','blocked_at','unfollowed_at'])->withTimestamps();
+        return $this->belongsToMany(User::class, 'followers', 'user_id', 'follower_id')->withPivot(['status', 'is_favorite', 'notifications_enabled', 'muted', 'remarks', 'blocked_at', 'unfollowed_at'])->withTimestamps();
     }
 
     public function following()
     {
 
-        return $this->belongsToMany(User::class, 'followers', 'follower_id', 'user_id')->withPivot(['status','is_favorite','notifications_enabled','muted','remarks','blocked_at','unfollowed_at'])->withTimestamps();
+        return $this->belongsToMany(User::class, 'followers', 'follower_id', 'user_id')->withPivot(['status', 'is_favorite', 'notifications_enabled', 'muted', 'remarks', 'blocked_at', 'unfollowed_at'])->withTimestamps();
     }
 }

@@ -16,7 +16,13 @@ class AboutController extends Controller
     public function show($username){
         $username = Auth::user()->username;
 
+
         return view('about-me.show');
+    }
+
+    public function edit($username){
+        $user=Auth::user()->username;
+        return view('about-me.edit',compact('user'));
     }
 
     public function update(Request $request,$username){

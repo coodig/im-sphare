@@ -34,7 +34,7 @@
 <div class="container mx-auto px-4 mb-20">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        <a href="#" class="group bg-card p-8 rounded-[2rem] border border-custom hover:border-primary/50 transition-all hover:-translate-y-1 hover:shadow-lg">
+        <a href="http://127.0.0.1:3000/docs.html?file=sphare-research-lab/imsphare/00_overview.md" target="_blank" class="group bg-card p-8 rounded-[2rem] border border-custom hover:border-primary/50 transition-all hover:-translate-y-1 hover:shadow-lg">
             <div class="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-500 mb-6 group-hover:scale-110 transition-transform">
                 <iconify-icon icon="solar:rocket-2-bold-duotone" class="text-3xl"></iconify-icon>
             </div>
@@ -60,7 +60,7 @@
             </span>
         </a>
 
-        <a href="#" class="group bg-card p-8 rounded-[2rem] border border-custom hover:border-primary/50 transition-all hover:-translate-y-1 hover:shadow-lg">
+        <a href="http://127.0.0.1:3000/docs.html?file=sphare-research-lab/imsphare/15_security.md" target="_blank" class="group bg-card p-8 rounded-[2rem] border border-custom hover:border-primary/50 transition-all hover:-translate-y-1 hover:shadow-lg">
             <div class="w-14 h-14 rounded-2xl bg-green-500/10 flex items-center justify-center text-green-500 mb-6 group-hover:scale-110 transition-transform">
                 <iconify-icon icon="solar:shield-keyhole-bold-duotone" class="text-3xl"></iconify-icon>
             </div>
@@ -73,7 +73,7 @@
             </span>
         </a>
 
-        <a href="#" class="group bg-card p-8 rounded-[2rem] border border-custom hover:border-primary/50 transition-all hover:-translate-y-1 hover:shadow-lg">
+        <a href="http://127.0.0.1:3000/docs.html?file=sphare-research-lab/imsphare/06_api_reference.md" target="_blank" class="group bg-card p-8 rounded-[2rem] border border-custom hover:border-primary/50 transition-all hover:-translate-y-1 hover:shadow-lg">
             <div class="w-14 h-14 rounded-2xl bg-orange-500/10 flex items-center justify-center text-orange-500 mb-6 group-hover:scale-110 transition-transform">
                 <iconify-icon icon="solar:code-circle-bold-duotone" class="text-3xl"></iconify-icon>
             </div>
@@ -123,16 +123,19 @@
 
     <div class="bg-card rounded-[2rem] border border-custom divide-y divide-custom overflow-hidden">
 
-        <div class="p-5 flex items-center justify-between hover:bg-white/5 transition-colors cursor-pointer group">
-            <div class="flex items-center gap-4">
-                <iconify-icon icon="solar:document-text-linear" class="text-2xl text-muted group-hover:text-primary transition-colors"></iconify-icon>
-                <div>
-                    <h4 class="font-bold text-text-main text-base md:text-lg group-hover:text-primary transition-colors">How to generate a GitHub Personal Access Token?</h4>
-                    <p class="text-sm text-muted hidden md:block">Step-by-step guide to configuring fine-grained tokens.</p>
+        <a href="http://127.0.0.1:3000/docs.html?file=sphare-research-lab/article/help-center/imsphare/how-to-generate-a-github-personal-access-token.md" target="_blank">
+
+            <div class="p-5 flex items-center justify-between hover:bg-white/5 transition-colors cursor-pointer group">
+                <div class="flex items-center gap-4">
+                    <iconify-icon icon="solar:document-text-linear" class="text-2xl text-muted group-hover:text-primary transition-colors"></iconify-icon>
+                    <div>
+                        <h4 class="font-bold text-text-main text-base md:text-lg group-hover:text-primary transition-colors">How to generate a GitHub Personal Access Token?</h4>
+                        <p class="text-sm text-muted hidden md:block">Step-by-step guide to configuring fine-grained tokens.</p>
+                    </div>
                 </div>
+                <iconify-icon icon="solar:alt-arrow-right-linear" class="text-xl text-muted group-hover:translate-x-1 transition-transform"></iconify-icon>
             </div>
-            <iconify-icon icon="solar:alt-arrow-right-linear" class="text-xl text-muted group-hover:translate-x-1 transition-transform"></iconify-icon>
-        </div>
+        </a>
 
         <div class="p-5 flex items-center justify-between hover:bg-white/5 transition-colors cursor-pointer group">
             <div class="flex items-center gap-4">
@@ -181,7 +184,7 @@
                 If you couldn't find the answer in our documentation, our support team at Sphare Co. is here to assist you.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#" class="px-8 py-3.5 rounded-full bg-primary text-white font-bold shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all hover:scale-105 active:scale-95 flex items-center gap-2">
+                <a href="{{ route('contact-us.show') }}" class="px-8 py-3.5 rounded-full bg-primary text-white font-bold shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all hover:scale-105 active:scale-95 flex items-center gap-2">
                     <iconify-icon icon="solar:chat-round-dots-bold"></iconify-icon>
                     Contact Support
                 </a>

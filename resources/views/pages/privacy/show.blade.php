@@ -110,7 +110,7 @@
                 <p>
                     If you have any questions about this Privacy Policy, please contact us at:
                 </p>
-                <a href="{{ route('contact.show', ['username' => 'admin']) }}" class="inline-flex items-center gap-2 mt-4 px-6 py-3 rounded-full bg-body border border-custom text-text-main font-bold hover:bg-primary hover:text-white hover:border-primary transition-all">
+                <a href="{{ route('contact-us.show', ['username' => 'admin']) }}" class="inline-flex items-center gap-2 mt-4 px-6 py-3 rounded-full bg-body border border-custom text-text-main font-bold hover:bg-primary hover:text-white hover:border-primary transition-all">
                     <iconify-icon icon="solar:letter-bold-duotone"></iconify-icon> Contact Support
                 </a>
             </section>

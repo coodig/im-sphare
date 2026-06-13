@@ -16,9 +16,16 @@ class AcademicsController extends Controller
 
     }
 
+    public function update(){
+    }
+
     public function edit($username){
         $user = User::where('username',$username)->firstOrFail();
 
         return view('academics.edit',compact('user'));
+    }
+
+    public function delete(){
+
     }
 }

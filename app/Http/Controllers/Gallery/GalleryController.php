@@ -28,4 +28,8 @@ class GalleryController extends Controller
 
         return view('gallery.edit', compact('user'));
     }
+
+    public function upload_image(){
+
+    }
 }

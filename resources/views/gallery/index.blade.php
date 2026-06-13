@@ -15,7 +15,7 @@
             </div>
 
             @if(Auth::check() && Auth::id() === $user->id)
-                <a href="{{ route('gallery.edit', ['username' => Auth::user()->username]) }}"
+                <a href="{{ route('media.uploadImageForm', ['username' => Auth::user()->username]) }}"
                     class="px-5 py-2.5 rounded-full bg-primary text-white font-bold text-sm shadow-apple hover:bg-primary-hover hover:-translate-y-0.5 transition-all flex items-center gap-2">
                     <iconify-icon icon="solar:upload-track-bold-duotone" class="text-lg"></iconify-icon>
                     Upload New
@@ -37,8 +37,8 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="md:col-span-2 group relative h-64 rounded-[2rem] overflow-hidden border border-custom shadow-apple cursor-pointer"
-                    onclick="openModal('{{ Auth::user()->profile?->profile_banner ? asset('storage/' . Auth::user()->profile->profile_banner) : asset('asset/img/profile-banner.jpeg') }}')">
-                    <img src="{{ Auth::user()->profile?->profile_banner ? asset('storage/' . Auth::user()->profile->profile_banner) : asset('asset/img/profile-banner.jpeg') }}"
+                    onclick="openModal('{{ Auth::user()->profile?->profile_banner ? asset('storage/' . Auth::user()->profile->profile_banner) : asset('asset/img/profile-banner-4k.jpg') }}')">
+                    <img src="{{ Auth::user()->profile?->profile_banner ? asset('storage/' . Auth::user()->profile->profile_banner) : asset('asset/img/profile-banner-4k.jpg') }}"
                         alt="Profile Banner"
                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     <div
@@ -49,7 +49,7 @@
 
                 <div class="group relative h-64 rounded-full overflow-hidden border border-custom shadow-apple cursor-pointer"
                     onclick="openModal('{{ Auth::user()->profile?->profile_image ? asset('storage/' . Auth::user()->profile->profile_image) : asset('asset/img/about.jpg') }}')">
-                    <img src="{{ Auth::user()->profile?->profile_image ? asset('storage/' . Auth::user()->profile->profile_image) : asset('asset/img/about.jpg') }}"
+                    <img src="{{ Auth::user()->profile?->profile_image ? asset('storage/' . Auth::user()->profile->profile_image) : asset('asset/img/profile.svg') }}"
                         alt="Profile Avatar"
                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     <div

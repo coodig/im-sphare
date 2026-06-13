@@ -21,7 +21,7 @@
                 Upload New Images
             </h3>
 
-            <form action="#" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('media.uploadImage',['username'=>Auth::user()->username]) }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="relative w-full group">
@@ -38,7 +38,7 @@
                             <p class="text-xs text-muted">SVG, PNG, JPG or GIF (MAX. 5MB)</p>
                         </div>
 
-                        <input id="gallery-upload" name="images[]" type="file" class="hidden" multiple
+                        <input id="gallery-upload" name="images[]" type="file[]" class="hidden" multiple
                             onchange="showPreviewCount(this)" />
                     </label>
                 </div>

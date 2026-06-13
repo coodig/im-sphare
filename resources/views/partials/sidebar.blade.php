@@ -31,12 +31,13 @@
                 <span>Dashboard</span>
             </a>
 
-            <a href="{{ route('repos.index', ['username' => Auth::user()->username]) }}"
-                class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 {{ getActiveClass('repos.index') }}">
-                <iconify-icon icon="solar:folder-with-files-bold-duotone" class="text-xl"></iconify-icon>
-                <span>Projects</span>
-            </a>
-
+             @if (!empty(Auth::user()->githubToken()->exists()))
+                <a href="{{ route('repos.index', ['username' => Auth::user()->username]) }}"
+                    class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 {{ getActiveClass('repos.index') }}">
+                    <iconify-icon icon="solar:folder-with-files-bold-duotone" class="text-xl"></iconify-icon>
+                    <span>Projects</span>
+                </a>
+            @endif
             <a href="{{ route('contact-me.show', ['username' => Auth::user()->username]) }}"
                 class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 {{ getActiveClass('contact-me.show') }}">
                 <iconify-icon icon="solar:phone-calling-rounded-bold-duotone" class="text-xl"></iconify-icon>

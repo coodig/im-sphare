@@ -67,28 +67,28 @@
 
         <div>
             <label for="email" class="block text-sm font-medium text-muted mb-1.5 ml-1">Email Address<span class="text-red-500">*</span></label>
-            <input type="email" name="email" id="email"
+            <input type="email" name="email" id="email" value="{{ old('email') }}"
                 class="w-full px-5 py-3.5 rounded-xl bg-body border border-transparent text-text-main placeholder-muted/60 focus:bg-card focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all font-medium"
                 placeholder="name@example.com" required>
             @error('email')
-                <small class="text-danger text-xs font-semibold ml-1 mt-1 block">{{ $message }}</small>
+                <small class="text-red-500 text-xs font-semibold ml-1 mt-1 block">{{ $message }}</small>
             @enderror
         </div>
 
         <div>
             <div class="flex justify-between items-center mb-1.5 ml-1">
                 <label for="password" class="block text-sm font-medium text-muted">Password<span class="text-red-500">*</span></label>
-                <a href="{{ route('forgotpass.show') }}" class="text-xs font-semibold text-primary hover:underline">
+                {{-- <a href="{{ route('forgotpass.show') }}" class="text-xs font-semibold text-primary hover:underline">
                     Forgot Password?
-                </a>
+                </a> --}}
             </div>
 
-            <input type="password" name="password" id="password"
+            <input type="password" name="password" id="password" value="{{ old('password') }}"
                 class="w-full px-5 py-3.5 rounded-xl bg-body border border-transparent text-text-main placeholder-muted/60 focus:bg-card focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all font-medium"
                 placeholder="••••••••" required>
 
             @error('password')
-                <small class="text-danger text-xs font-semibold ml-1 mt-1 block">{{ $message }}</small>
+                <small class="text-red-500 text-xs font-semibold ml-1 mt-1 block">{{ $message }}</small>
             @enderror
         </div>
 
@@ -96,13 +96,13 @@
             Log In
         </button>
 
-        <div class="relative flex py-2 items-center">
+        {{-- <div class="relative flex py-2 items-center">
             <div class="flex-grow border-t border-custom"></div>
             <span class="flex-shrink-0 mx-4 text-muted text-xs uppercase tracking-wider">Or login with</span>
             <div class="flex-grow border-t border-custom"></div>
-        </div>
+        </div> --}}
 
-        <div class="grid grid-cols-2 gap-4">
+        {{-- <div class="grid grid-cols-2 gap-4">
             <a href="{{ url('auth/google') }}" class="flex items-center justify-center gap-2 py-3 rounded-xl border border-custom hover:bg-body transition-colors font-medium text-text-main group">
                 <iconify-icon icon="logos:google-icon" width="20"></iconify-icon>
                 <span class="group-hover:text-primary transition-colors">Google</span>
@@ -111,7 +111,7 @@
                 <iconify-icon icon="logos:github-icon" width="20" style="filter: invert(1);"></iconify-icon>
                 <span>GitHub</span>
             </a>
-        </div>
+        </div> --}}
 
         <div class="text-center mt-6">
             <p class="text-muted text-sm">

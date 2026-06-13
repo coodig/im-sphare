@@ -19,16 +19,20 @@ class UsersController extends Controller
         return view('superadmin.users.index', compact('users'));
     }
 
-    public function create(){
+    public function create()
+    {
         alert("this is create a user");
     }
 
-    public function show($id){
+    public function show($id)
+    {
         $user = User::findOrFail($id);
+        // dd($user);
         return response()->json($user);
-           }
+    }
 
-    public function delete($id){
+    public function delete($id)
+    {
         $user = User::findOrFail($id);
         $user->delete();
 

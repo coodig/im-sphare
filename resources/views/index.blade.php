@@ -97,9 +97,14 @@
                         <span
                             class="hidden md:block font-medium text-text-main">Welcome,&nbsp;{{ ucwords(Auth::user()->profile->name ?? Auth::user()->username)}}</span>
                         <a href="{{ route('profile.show', ['username' => Auth::user()->username])}}" class="relative group">
-                            <div
+                            {{-- <div
                                 class="w-10 h-10 rounded-full border-2 border-primary flex items-center justify-center p-0.5 hover:scale-105 transition-transform">
                                 <div class="w-full h-full rounded-full bg-primary"></div>
+                            </div> --}}
+                            <div
+                                class="w-10 h-10 rounded-full border-2 border-primary p-0.5 hover:scale-105 transition-transform">
+                                <img src="{{ Auth::user()->profile?->profile_image ? asset('storage/' . Auth::user()->profile->profile_image) : asset('asset/img/profile.svg') }}"
+                                    class="w-full h-full rounded-full object-cover bg-gray-200">
                             </div>
                         </a>
                     </div>
@@ -326,7 +331,7 @@
                     <div
                         class="bg-card p-8 rounded-3xl shadow-apple border border-custom flex-1 min-w-[300px] hover:-translate-y-2 transition-transform duration-300 scroll-trigger delay-100">
                         <div class="w-24 h-24 mx-auto mb-6">
-                            <img src="{{asset('asset/img/profile.svg')}}" alt="User Photo"
+                            <img src="{{asset('asset/img/oranbyte-logo.png')}}" alt="User Photo"
                                 class="w-full h-full object-cover rounded-full border-4 border-text-main">
                         </div>
                         <div class="text-text-main">
@@ -339,7 +344,7 @@
                     <div
                         class="bg-card p-8 rounded-3xl shadow-apple border border-custom flex-1 min-w-[300px] hover:-translate-y-2 transition-transform duration-300 scroll-trigger delay-200">
                         <div class="w-24 h-24 mx-auto mb-6">
-                            <img src="{{asset('asset/img/profile.svg')}}" alt="User Photo"
+                            <img src="{{asset('asset/img/coodig-logo.png')}}" alt="User Photo"
                                 class="w-full h-full object-cover rounded-full border-4 border-text-main">
                         </div>
                         <div class="text-text-main">
@@ -425,23 +430,24 @@
                             coming soon!
                         </div>
                     </div>
-                    {{-- <div class="flex justify-end"><a href="#">more<iconify-icon icon=""></iconify-icon></a></div> --}}
+                    {{-- <div class="flex justify-end"><a href="#">more<iconify-icon icon=""></iconify-icon></a></div>
+                    --}}
                 </div>
             </section>
 
         </div>
 
         <footer
-            class="bg-body pt-20 pb-10 border-t border-custom transition-colors duration-500 relative overflow-hidden">
+            class="bg-body  pt-20 pb-10 border-t border-custom transition-colors duration-500 relative overflow-hidden">
 
             <div
                 class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-custom to-transparent">
             </div>
 
             <div class="max-w-7xl mx-auto px-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 mb-16">
 
-                    <div class="lg:col-span-4 space-y-6">
+                    <div class="lg:col-span-3 space-y-6">
                         <a href="{{ url('/') }}" class="flex items-center gap-2 group">
                             <img src="{{ asset('asset/icons/imsphare-icon.png') }}" alt="Logo"
                                 class="w-8 h-8 group-hover:rotate-12 transition-transform duration-300">
@@ -471,7 +477,7 @@
                         </div>
                     </div>
 
-                    <div class="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div class="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-8">
 
                         <div>
                             <h3 class="font-bold text-text-main mb-6">Product</h3>
@@ -509,9 +515,8 @@
                                 <li><a href="{{ route('contact-us.show') }}"
                                         class="text-muted hover:text-primary transition-colors text-sm font-medium">Contact
                                         Support</a></li>
-                                {{-- <li><a href="#"
-                                        class="text-muted hover:text-primary transition-colors text-sm font-medium">Brand
-                                        Kit</a></li> --}}
+                                <li><a href="{{ route('help-center.show') }}"
+                                        class="text-muted hover:text-primary transition-colors text-sm font-medium">Help Center</a></li>
                             </ul>
                         </div>
 
@@ -533,6 +538,25 @@
                                             class="text-muted hover:text-primary transition-colors text-sm font-medium">Security</a>
                                     </li>
                                 @endauth
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-text-main mb-6">Other Plateform</h3>
+                            <ul class="space-y-4">
+                                <li><a href="https://sphare-codex.oranbyte.com/" target="_blank"
+                                        class="text-muted hover:text-primary transition-colors text-sm font-medium">Sphare Codex</a></li>
+                                {{-- <li><a href="{{ route('terms.show')}}"
+                                        class="text-muted hover:text-primary transition-colors text-sm font-medium">Terms
+                                        of Service</a></li>
+                                @auth
+
+                                    <li><a href="{{ route('cookies-policy.show') }}"
+                                            class="text-muted hover:text-primary transition-colors text-sm font-medium">Cookie
+                                            Policy</a></li>
+                                    <li><a href="{{ route('security.show') }}"
+                                            class="text-muted hover:text-primary transition-colors text-sm font-medium">Security</a>
+                                    </li>
+                                @endauth --}}
                             </ul>
                         </div>
 

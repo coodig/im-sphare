@@ -16,9 +16,12 @@ class LogInController extends Controller
             'password' => 'required|string|min:5',
         ]);
 
+
         if (Auth::attempt($credentials)) {
             return redirect()->route('dashboard.show', ['username' => Auth::user()->username])->with(['success' => 'Logged in successfully!', 'user' => Auth::user()->username]);
         }
+
+        // dd($credentials);
 
         return back()->withErrors([
             'email' => 'Invalid Email',

@@ -1,72 +1,3 @@
-{{-- Search Bar --}}
-{{-- <form class="search" action="#" method="GET">
-    <input type="text" name="query" placeholder="Search..." />
-    <button type="submit">
-        <iconify-icon icon="ic:baseline-search"></iconify-icon>
-    </button>
-</form> --}}
-{{-- <img src="{{ asset('asset/iocns/light-logo.png') }}" alt="Logo" class="logo"> --}}
-{{-- Brand --}}
-{{-- <iconify-icon icon="bi:layout-text-sidebar-reverse"></iconify-icon> --}}
-{{-- <nav class="custom-navbar">
-
-    <div class="navbar-left">
-        <div class="sidebar-toggle">
-            <button id="toggleSidebar" class="collapse-toggle">
-                <iconify-icon icon="solar:sidebar-code-bold-duotone"></iconify-icon>
-            </button>
-        </div>
-
-        <div class="brand">
-            <a href="{{route('landing.show')}}"><img src="{{ asset('asset/icons/imsphare-icon.png') }}" alt="Logo"
-                    class="logo" dark-theme>
-                <span class="brand-name">IMSPhare</span></a>
-        </div>
-
-    </div>
-
-    <div class="navbar-right">
-
-        <iconify-icon id="notificationBellIcon" icon="line-md:bell-twotone-loop" onclick="toggleNotificationDropdown()"
-            role="button" style="cursor: pointer;"></iconify-icon>
-        <iconify-icon id="themeToggleIcon" icon="line-md:moon-filled-to-sunny-filled-loop-transition"
-            onclick="toggleTheme()" role="button" style="cursor: pointer;"></iconify-icon>
-
-        <iconify-icon id="fullScreenIcon" icon="solar:full-screen-square-bold-duotone" onclick="fullScreen()"
-            role="button" style="cursor: pointer;"></iconify-icon>
-
-        @guest
-        <div class="auth-method">
-            <a href="{{ route('signup.show') }}" class="signup">SignUp</a>
-            &nbsp;/&nbsp;
-            <a href="{{ route('login.show') }}" class="login" id="auth-login-btn">LogIn</a>
-        </div>
-        @endguest
-
-        @auth
-        <span class="welcome user-name">
-            Welcome,&nbsp;
-            {{ ucwords(Auth::user()->profile->name ?? str_replace(['_', '@', '-'], ' ', Auth::user()->username)) }}
-        </span>
-
-        <a href="{{ route('profile.show', ['username' => Auth::user()->username])}}">
-            <div class="profile-icon">
-                <div class="outer">
-                    <div class="inner">
-                    </div>
-                </div>
-            </div>
-        </a>
-        @endauth
-    </div>
-</nav> --}}
-
-{{-- <img src="{{asset('asset/js/about.jpg')}}" alt=""> --}}
-{{-- @auth
-<x-notification-bell />
-@endauth --}}
-
-
 <nav class="flex items-center justify-between h-full px-4 md:px-8">
 
     <div class="flex items-center gap-4">
@@ -107,7 +38,7 @@
                     <p class="text-sm font-bold text-text-main leading-tight">
                         {{ ucwords(Auth::user()->profile->name ?? Auth::user()->username) }}
                     </p>
-                    <p class="text-xs text-muted">{{ ucfirst(Auth::user()->role?->name ?? 'User') }}</p>
+                    <p class="text-xs text-muted">{{ ucfirst(Auth::user()->role) }}</p>
                 </div>
 
                 <a href="{{ route('profile.show', ['username' => Auth::user()->username])}}" class="relative group">
